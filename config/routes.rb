@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :stories do
-    patch 'status', on: :member
+    patch 'toggle_status', on: :member
     resources :blocks, only: [:create]
   end
   resources :blocks, only: [:update, :destroy] do
