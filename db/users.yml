@@ -1,0 +1,4 @@
+users:
+  - email: 'alan.turing@42.com'
+    password: 'enigma'
+    username: 'alanturing'

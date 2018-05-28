@@ -1,0 +1,89 @@
+stories:
+  - title: 'Art History'
+    status: 'published'
+    description: 'Some infos about art history'
+    blocks:
+      - position: 1
+        title: 'Renaissance'
+        events:
+          - title:
+            content: |
+              ''
+            date:
+            photo_url:
+            location:
+          - title:
+            content: |
+              ''
+            date:
+            photo_url:
+            location:
+          - title:
+            content: |
+              ''
+            date:
+            photo_url:
+            location:
+      - position: 2
+        title: 'Mannerism'
+        events:
+          - title:
+            content: |
+              ''
+            date:
+            photo_url:
+            location:
+          - title:
+            content: |
+              ''
+            date:
+            photo_url:
+            location:
+          - title:
+            content: |
+              ''
+            date:
+            photo_url:
+            location:
+      - position: 3
+        title: 'Baroque'
+        events:
+          - title:
+            content: |
+              ''
+            date:
+            photo_url:
+            location:
+          - title:
+            content: |
+              ''
+            date:
+            photo_url:
+            location:
+          - title:
+            content: |
+              ''
+            date:
+            photo_url:
+            location:
+      - position: 4
+        title: 'Romantism'
+        events:
+          - title:
+            content: |
+              ''
+            date:
+            photo_url:
+            location:
+          - title:
+            content: |
+              ''
+            date:
+            photo_url:
+            location:
+          - title:
+            content: |
+              ''
+            date:
+            photo_url:
+            location:
