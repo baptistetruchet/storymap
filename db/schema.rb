@@ -10,10 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_28_103526) do
+ActiveRecord::Schema.define(version: 2018_05_28_115709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "blocks", force: :cascade do |t|
+    t.bigint "story_id"
+    t.string "title"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["story_id"], name: "index_blocks_on_story_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.bigint "block_id"
+    t.string "title"
+    t.text "content"
+    t.date "date"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["block_id"], name: "index_events_on_block_id"
+  end
+
+  create_table "stories", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "title"
+    t.string "status"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_stories_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,8 +58,12 @@ ActiveRecord::Schema.define(version: 2018_05_28_103526) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "blocks", "stories"
+  add_foreign_key "events", "blocks"
+  add_foreign_key "stories", "users"
 end
