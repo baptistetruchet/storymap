@@ -1,89 +1,88 @@
 stories:
-  - title: 'Art History'
-    status: 'published'
-    description: 'Some infos about art history'
+  - attributes:
+      title: 'Art History'
+      published: true
+      description: 'Some infos about art history'
     blocks:
-      - position: 1
-        title: 'Renaissance'
+      - attributes:
+          position: 1
+          title: 'Renaissance'
         events:
-          - title:
+          - title: 'Brunelleschi creates linear perspective'
             content: |
-              ''
-            date:
-            photo_url:
-            location:
-          - title:
+              'Brunelleschi created linear perspective,
+              which is where all of the lines in a painting
+              or drawing meet one vanishing point which
+              maked the drawing or painting look 3D and
+              more realistic.'
+            date: '1420-01-01'
+            photo_url: 'https://en.wikipedia.org/wiki/File:Brunelleschi%27s_perspective_experiment.jpg'
+            address: 'Florence, Italy'
+          - title: 'Johann Gutenberg invents the printing press'
             content: |
-              ''
-            date:
-            photo_url:
-            location:
-          - title:
+              'Johann Gutenberg invented the printing press,
+              which is now used for news paper, books,
+              and is now called a printer.
+              You use it every day, it is used for everything
+              that has printed words/ letters.'
+            date: '1445-01-01'
+            photo_url: 'https://en.wikipedia.org/wiki/File:Featherbed_Alley_Printshop_Bermuda.jpg'
+            address: 'Strasbourg, France'
+          - title: 'Michelangelo paints the Sistine chapel'
             content: |
-              ''
-            date:
-            photo_url:
-            location:
-      - position: 2
-        title: 'Mannerism'
+              'Michelangelo begins painting the ceiling
+              of the Sistine chapel it includes many biblical
+              scenes and it is one of the most known/
+              most important pieces of art from the renaissance.'
+            date: '1508-01-01'
+            photo_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Sistine_Chapel_ceiling_02.jpg/660px-Sistine_Chapel_ceiling_02.jpg'
+            address: 'Vatican city'
+          - title: 'Leonardo Da Vinci paints "The Last Supper'
+            content: |
+              'The last supper is a biblical piece,
+              it shows the last supper from final days of Jesus's
+              life. it is a very important piece of renaissance art,\
+               and one of the most famous pieces by Leonardo Da Vinci.'
+            date: '1495-01-01'
+            photo_url: 'https://upload.wikimedia.org/wikipedia/commons/2/23/Leonardo_da_Vinci_-_Last_Supper_%28copy%29_-_WGA12732.jpg'
+            address: 'Santa Maria delle Grazie'
+      - attributes:
+          position: 2
+          title: 'Impressionism'
         events:
-          - title:
+          - title: 'landscape of Montmorency to the Salon'
             content: |
-              ''
-            date:
-            photo_url:
-            location:
-          - title:
+              'Pissarro submits a landscape of
+              Montmorency to the Salon, the official
+               art exhibition sponsored by the French
+               government, and it is accepted'
+            date: '1859-01-01'
+            photo_url: 'https://arthistoryproject.com/site/assets/files/6847/camille_pissarro_paysage_a_montmorency.1200x0.jpg'
+            address: "Montmorency, Val-d'Oise, France"
+          - title: 'Franco-Prussian war'
             content: |
-              ''
-            date:
-            photo_url:
-            location:
-          - title:
+              'The Franco-Prussian war begins on 19 July and ends
+               with a Prussian and German victory on 10 May 1871.
+               Monet moves to London. Renoir and Bazille are
+               conscripted; Bazille is killed in action.'
+            date: '1870-07-19'
+            photo_url: 'https://i.pinimg.com/originals/2b/82/d1/2b82d1de3c3c64219f535102208b19f8.jpg'
+            address: 'France'
+          - title: 'Last Impressionist exhibition'
             content: |
-              ''
-            date:
-            photo_url:
-            location:
-      - position: 3
-        title: 'Baroque'
-        events:
-          - title:
-            content: |
-              ''
-            date:
-            photo_url:
-            location:
-          - title:
-            content: |
-              ''
-            date:
-            photo_url:
-            location:
-          - title:
-            content: |
-              ''
-            date:
-            photo_url:
-            location:
-      - position: 4
-        title: 'Romantism'
-        events:
-          - title:
-            content: |
-              ''
-            date:
-            photo_url:
-            location:
-          - title:
-            content: |
-              ''
-            date:
-            photo_url:
-            location:
-          - title:
-            content: |
-              ''
-            date:
-            photo_url:
-            location:
+              '1886 The last Impressionist exhibition is held.
+              Pissarro exhibits his first 'pointilliste' works and
+              nsists on including Seurat and Signac. Monet, Renoir
+              and Sisley again refuse to participate.'
+            date: '1886-05-15'
+            photo_url: 'https://fthmb.tqn.com/f6mzf-WzsgnXF7Nqt-WjTQrEqmc=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/mfp_mma_12-56a0380c3df78cafdaa0893b.jpg'
+            address: 'Paris, France'
+      - attributes:
+          position: 3
+          title: 'Mannerism'
+      - attributes:
+          position: 4
+          title: 'Baroque'
+      - attributes:
+          position: 5
+          title: 'Romantism'
