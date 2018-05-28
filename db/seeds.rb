@@ -33,16 +33,18 @@ stories["stories"].each do |story|
   s.user = User.first
   s.save!
 
-  story['blocks'].each do |block_details|
-    block = Block.new(block_details['attributes'])
-    block.story = s
-    block.save!
+  if story.key?('blocks')
+    story['blocks'].each do |block_details|
+      block = Block.new(block_details['attributes'])
+      block.story = s
+      block.save!
 
-    if block_details.key?('events')
-      block_details['events'].each do |event_details|
-        event = Event.new(event_details)
-        event.block = block
-        event.save!
+      if block_details.key?('events')
+        block_details['events'].each do |event_details|
+          event = Event.new(event_details)
+          event.block = block
+          event.save!
+        end
       end
     end
   end
