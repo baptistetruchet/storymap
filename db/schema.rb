@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2018_05_28_132700) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.string "photo_url"
     t.index ["block_id"], name: "index_events_on_block_id"
   end
 
