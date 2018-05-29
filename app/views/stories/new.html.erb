@@ -1,5 +1,12 @@
-<%= simple_form_for(@story) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.submit class: "btn btn-warning" %>
-<% end %>
+<div class="container">
+  <h1>CREATE RESTAURANT</h1>
+
+  <div class="form-container">
+    <%= simple_form_for @story do |f| %>
+      <%= f.input :title, label: false, placeholder: "TITLE" %>
+      <%= f.input :description, label: false, placeholder: "DESCRIPTION" %>
+      <%= f.submit "CREATE", class: "mysubmit" %>
+    <% end %>
+  </div>
+</div>
+
