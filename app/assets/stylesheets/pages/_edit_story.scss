@@ -1,0 +1,22 @@
+.title-story-edit {
+  position: absolute;
+  margin: 20px;
+  opacity: 0.9;
+  border-radius: 10px;
+  top: 50px;
+  bottom: 0px;
+  left: 10px;
+  z-index: 97;
+  background-color: white;
+  width: 330px;
+  padding: 10px;
+  overflow-y: scroll;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.edit-page {
+  position: relative;
+}
