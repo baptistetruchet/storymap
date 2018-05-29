@@ -12,7 +12,7 @@
         <%= link_to edit_block_path(block) do %>
           <i class="far fa-edit" aria-hidden="true"></i>
         <% end %>
-        <%= link_to delete_block_path(block),
+        <%= link_to block_path(block),
         method: :delete,
         data: { confirm: "Are you sure?"} do %>
           <i class="fa fa-trash-alt" aria-hidden="true"></i>
@@ -25,7 +25,7 @@
                 <%= link_to edit_event_path(event) do %>
                   <i class="far fa-edit" aria-hidden="true"></i>
                 <% end %>
-                <%= link_to delete_event_path(event),
+                <%= link_to event_path(event),
                 method: :delete,
                 data: { confirm: "Are you sure?"} do %>
                   <i class="fa fa-trash-alt" aria-hidden="true"></i>

@@ -6,12 +6,9 @@ Rails.application.routes.draw do
     patch 'toggle_status', on: :member
     resources :blocks, only: [:create, :new]
   end
-  resources :blocks, only: [:edit, :update] do
+  resources :blocks, only: [:edit, :update, :destroy] do
     resources :events, only: [:create, :new]
   end
-  resources :events, only: [:edit, :update]
-  resources :events, only: [:destroy], as: 'delete_event'
-  resources :blocks, only: [:destroy], as: 'delete_block'
-
+  resources :events, only: [:edit, :update, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
