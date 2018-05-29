@@ -9,6 +9,10 @@ class StoryPolicy < ApplicationPolicy
     scope.where(id: record.id, published: true).exists? || (scope.where(id: record.id) && record.user == user)
   end
 
+  def edit_story_details?
+    record.user == user
+  end
+
   def create?
     true
   end
