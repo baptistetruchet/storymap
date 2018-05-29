@@ -4,3 +4,24 @@
   id="map"
   data-markers="<%= @markers.to_json %>" >
 </div>
+
+<% if @blocks %>
+  <ul>
+    <% @blocks.each do |block| %>
+      <li id="block-<%=block.id%>"><%= block.title %></li>
+      <% if block.events %>
+        <ul>
+          <% block.events.each do |event| %>
+            <li id="event-<%=event.id%>"><%= event.title %></li>
+          <% end %>
+        </ul>
+        <%= link_to new_block_event_path(block) do %>
+          <i class="fas fa-plus">Add event</i>
+         <% end %>
+       <% end %>
+    <% end %>
+  </ul>
+<% end %>
+<%= link_to new_story_block_path(@story) do %>
+  <i class="fas fa-plus">Add block</i>
+ <% end %>
