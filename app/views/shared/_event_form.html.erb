@@ -1,0 +1,7 @@
+<%= simple_form_for [@block, @event] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :content %>
+  <%= f.input :date %>
+  <%= f.input :address %>
+  <%= f.submit class: "btn btn-warning" %>
+<% end %>

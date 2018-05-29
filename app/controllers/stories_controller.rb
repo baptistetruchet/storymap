@@ -28,6 +28,7 @@ class StoriesController < ApplicationController
   end
 
   def edit
+    @blocks = @story.blocks
   end
 
   def update

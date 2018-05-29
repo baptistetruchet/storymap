@@ -4,3 +4,42 @@
   id="map"
   data-markers="<%= @markers.to_json %>" >
 </div>
+
+<% if @blocks %>
+  <ul>
+    <% @blocks.each do |block| %>
+      <li id="block-<%=block.id%>"><%= block.title %>
+        <%= link_to edit_block_path(block) do %>
+          <i class="far fa-edit" aria-hidden="true"></i>
+        <% end %>
+        <%= link_to block_path(block),
+        method: :delete,
+        data: { confirm: "Are you sure?"} do %>
+          <i class="fa fa-trash-alt" aria-hidden="true"></i>
+        <% end %>
+      </li>
+      <% if block.events %>
+        <ul>
+          <% block.events.each do |event| %>
+            <li id="event-<%=event.id%>"><%= event.title %>
+                <%= link_to edit_event_path(event) do %>
+                  <i class="far fa-edit" aria-hidden="true"></i>
+                <% end %>
+                <%= link_to event_path(event),
+                method: :delete,
+                data: { confirm: "Are you sure?"} do %>
+                  <i class="fa fa-trash-alt" aria-hidden="true"></i>
+                <% end %>
+            </li>
+          <% end %>
+        </ul>
+        <%= link_to new_block_event_path(block) do %>
+          <i class="fas fa-plus">Add event</i>
+         <% end %>
+       <% end %>
+    <% end %>
+  </ul>
+<% end %>
+<%= link_to new_story_block_path(@story) do %>
+  <i class="fas fa-plus">Add block</i>
+ <% end %>

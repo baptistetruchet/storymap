@@ -10,10 +10,10 @@ class EventPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    record.block.story.user == user
   end
 
   def destroy?
-    record.user == user
+    record.block.story.user == user
   end
 end
