@@ -10,10 +10,10 @@ class BlockPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    record.story.user == user
   end
 
   def destroy?
-    record.user == user
+    record.story.user == user
   end
 end

@@ -8,11 +8,29 @@
 <% if @blocks %>
   <ul>
     <% @blocks.each do |block| %>
-      <li id="block-<%=block.id%>"><%= block.title %></li>
+      <li id="block-<%=block.id%>"><%= block.title %>
+        <%= link_to edit_block_path(block) do %>
+          <i class="far fa-edit" aria-hidden="true"></i>
+        <% end %>
+        <%= link_to delete_block_path(block),
+        method: :delete,
+        data: { confirm: "Are you sure?"} do %>
+          <i class="fa fa-trash-alt" aria-hidden="true"></i>
+        <% end %>
+      </li>
       <% if block.events %>
         <ul>
           <% block.events.each do |event| %>
-            <li id="event-<%=event.id%>"><%= event.title %></li>
+            <li id="event-<%=event.id%>"><%= event.title %>
+                <%= link_to edit_event_path(event) do %>
+                  <i class="far fa-edit" aria-hidden="true"></i>
+                <% end %>
+                <%= link_to delete_event_path(event),
+                method: :delete,
+                data: { confirm: "Are you sure?"} do %>
+                  <i class="fa fa-trash-alt" aria-hidden="true"></i>
+                <% end %>
+            </li>
           <% end %>
         </ul>
         <%= link_to new_block_event_path(block) do %>
