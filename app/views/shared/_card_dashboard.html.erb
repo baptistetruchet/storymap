@@ -1,0 +1,22 @@
+<div class="card">
+  <% story_photo = story_picture(story) %>
+  <div class="card_content" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= story_photo %>);">
+    <div class="card_content_container">
+      <div class="info">
+        <h3><%=  story.title %></h3>
+      </div>
+    </div>
+  <%= link_to '', edit_story_path(story.id), class: "card-link" %>
+  </div>
+  <div class="card_footer">
+    <div class="card_footer_wrapper">
+      <div class="delete">
+        <%= link_to story_path(story),
+        method: :delete,
+        data: { confirm: "Are you sure?"} do %>
+          <p> Delete this StoryMap </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
