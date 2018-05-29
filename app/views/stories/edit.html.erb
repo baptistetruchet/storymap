@@ -1,4 +1,7 @@
-<h1>Edit <%= @story.title %></h1>
+<h1><%= @story.title %>
+<%= link_to edit_story_details_path(@story) do %>
+  <i class="far fa-edit" aria-hidden="true"></i>
+<% end %></h1>
 
 <div
   id="map"

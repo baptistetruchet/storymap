@@ -1,6 +1,6 @@
 class StoriesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_story, only: [:show, :edit, :update, :destroy]
+  before_action :set_story, only: [:show, :edit, :edit_story_details, :update, :destroy]
   before_action :set_markers, only: [:show, :edit]
 
   def index
@@ -31,10 +31,17 @@ class StoriesController < ApplicationController
     @blocks = @story.blocks
   end
 
+  def edit_story_details
+  end
+
   def update
+    @story.update(story_params)
+    redirect_to edit_story_path(@story)
   end
 
   def destroy
+    @story.destroy
+    redirect_to dashboard_path
   end
 
   private
