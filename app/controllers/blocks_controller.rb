@@ -12,8 +12,8 @@ class BlocksController < ApplicationController
     @block = Block.new(block_params)
     authorize @block
     @block.story = @story
-    @block.position = @story.blocks.length
-   if @block.save
+    @block.position = @story.blocks.length + 1
+   if @block.save!
       redirect_to edit_story_path(@story)
     else
       render :new
@@ -33,9 +33,6 @@ class BlocksController < ApplicationController
     authorize @block
     init = params[:positionInit].to_i + 1
     fin = params[:positionFin].to_i + 1
-    puts "params:"
-    puts fin
-    puts init
     blocks = @block.story.blocks
     direction_aug = (init - fin) < 0 ? true : false #check if block was moved up or down
     if direction_aug
@@ -66,7 +63,13 @@ class BlocksController < ApplicationController
   end
 
   def destroy
+    position = @block.position
+    blocks = @block.story.blocks
     @block.destroy
+    blocks.each do |block|
+      block.position -= 1 if block.position > position
+      block.save
+    end
     redirect_to edit_story_path(@block.story)
   end
 
