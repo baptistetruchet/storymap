@@ -1,44 +1,22 @@
 import "popper.js";
 import "bootstrap";
-import $ from 'jquery';
 
 import { drag } from '../components/drag.js';
+import { rolling } from '../components/sidebar';
+import { flow } from '../components/timeline';
 
 const blocksList = document.getElementById('blocks-list');
 if (blocksList) {drag()}
 
 $(window, document, undefined).ready(function() {
 
-  $('input').blur(function() {
-    var $this = $(this);
-    if ($this.val())
-      $this.addClass('used');
-    else
-      $this.removeClass('used');
-  });
+const sidebar = document.getElementById('wrapper-blocks');
+if (sidebar) {
+  rolling();
+}
 
-  var $ripples = $('.ripples');
+const timeline = document.getElementById('timeline');
+if (timeline) {
+  flow();
+}
 
-  $ripples.on('click.Ripples', function(e) {
-
-    var $this = $(this);
-    var $offset = $this.parent().offset();
-    var $circle = $this.find('.ripplesCircle');
-
-    var x = e.pageX - $offset.left;
-    var y = e.pageY - $offset.top;
-
-    $circle.css({
-      top: y + 'px',
-      left: x + 'px'
-    });
-
-    $this.addClass('is-active');
-
-  });
-
-  $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd', function(e) {
-    $(this).removeClass('is-active');
-  });
-
-});

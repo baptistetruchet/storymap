@@ -1,0 +1,40 @@
+#timeline {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: black;
+  padding: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.event {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  border: 1px solid white;
+  opacity: 0.4;
+  &.is-active {
+    opacity: 1;
+  }
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+}
+
+.interval {
+  height: 1px;
+  background-color: white;
+  width: 200px;
+  opacity: 0.4;
+  transition: transform 300ms linear 0ms, background-color 300ms linear 0ms, opacity 300ms linear 0ms;
+  &.is-done {
+    opacity: 1;
+  }
+}
+
+.opacity-none {
+  opacity: 1;
+}
