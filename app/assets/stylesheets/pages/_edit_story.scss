@@ -13,10 +13,22 @@
   overflow-y: scroll;
 }
 
-ul {
-  list-style-type: none;
-}
-
 .edit-page {
   position: relative;
+}
+
+.block-item {
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: $light-gray;
+  padding-left: 7px;
+}
+
+.events-list {
+  padding-left: 25px;
+}
+
+#blocks-list {
+  padding: 1px;
+  list-style-type: none;
 }

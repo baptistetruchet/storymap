@@ -12,7 +12,7 @@
     <div class="full-list">
       <ul id="blocks-list">
         <% @blocks.sort_by{|b| b.position}.each do |block| %>
-          <li id="block-<%=block.id%>">
+          <li class="block-item"id="block-<%=block.id%>">
             <%= render 'block_list', block: block %>
             <% if block.events %>
               <%= render 'event_list', block: block %>

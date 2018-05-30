@@ -1,4 +1,4 @@
-<ul>
+<ul class="events-list">
   <% block.events.each do |event| %>
     <li id="event-<%=event.id%>"><%= event.title %>
         <%= link_to edit_event_path(event) do %>
@@ -12,6 +12,6 @@
     </li>
   <% end %>
   <%= link_to new_block_event_path(block) do %>
-   <li><strong>+</strong> Add Event</li><hr>
+   <p><strong>+</strong> Add Event</p><hr>
   <% end %>
 </ul>
