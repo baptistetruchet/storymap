@@ -12,7 +12,7 @@ class BlocksController < ApplicationController
     @block = Block.new(block_params)
     authorize @block
     @block.story = @story
-    @block.position = @story.blocks.length + 1
+    # @block.position = @story.blocks.length + 1
    if @block.save
       redirect_to edit_story_path(@story)
     else

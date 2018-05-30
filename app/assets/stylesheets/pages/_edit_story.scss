@@ -1,4 +1,4 @@
-.title-story-edit {
+.story-edit-div {
   position: absolute;
   margin: 20px;
   opacity: 0.9;
@@ -11,6 +11,10 @@
   width: 330px;
   padding: 10px;
   overflow-y: scroll;
+}
+
+.full-list {
+  margin-left: 10px;
 }
 
 ul {

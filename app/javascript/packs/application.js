@@ -1,5 +1,9 @@
 import "bootstrap";
 import $ from 'jquery';
+import { drag } from '../components/drag.js';
+
+const blocksList = document.getElementById('blocks-list');
+if (blocksList) {drag()}
 
 $(window, document, undefined).ready(function() {
 

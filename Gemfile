@@ -20,6 +20,9 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
+gem 'acts_as_list'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
