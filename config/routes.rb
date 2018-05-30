@@ -6,8 +6,12 @@ Rails.application.routes.draw do
     patch 'toggle_status', on: :member
     resources :blocks, only: [:create, :new]
   end
+
   resources :blocks, only: [:edit, :update, :destroy] do
     resources :events, only: [:create, :new]
+    member do
+      patch :update_position
+    end
   end
   resources :events, only: [:edit, :update, :destroy]
   get "/dashboard", to: "pages#dashboard"
