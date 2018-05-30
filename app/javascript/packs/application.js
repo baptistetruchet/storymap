@@ -1,7 +1,7 @@
 import "bootstrap";
 
 import { rolling } from '../components/sidebar';
-import { flow } from '../components/timeline';
+import { flow, nextBlock } from '../components/timeline';
 
 const sidebar = document.getElementById('wrapper-blocks');
 if (sidebar) {
@@ -11,5 +11,6 @@ if (sidebar) {
 const timeline = document.getElementById('timeline');
 if (timeline) {
   flow();
+  nextBlock();
 }
 

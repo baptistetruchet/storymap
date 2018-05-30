@@ -10,11 +10,13 @@
 }
 
 .event {
+  position: relative;
   width: 10px;
   height: 10px;
   border-radius: 100%;
   border: 1px solid white;
   opacity: 0.4;
+  transition: opacity 200ms linear 0ms;
   &.is-active {
     opacity: 1;
   }
@@ -22,12 +24,23 @@
     cursor: pointer;
     opacity: 1;
   }
+  &:hover > .event-title {
+    visibility: visible;
+  }
+  &.start {
+    width: 13px;
+    height: 13px;
+  }
+  &.end {
+    width: 13px;
+    height: 13px;
+  }
 }
 
 .interval {
   height: 1px;
   background-color: white;
-  width: 200px;
+  width: 80px;
   opacity: 0.4;
   transition: transform 300ms linear 0ms, background-color 300ms linear 0ms, opacity 300ms linear 0ms;
   &.is-done {
@@ -41,4 +54,15 @@
 
 .hidden-timeline {
   visibility: hidden;
+}
+
+.event-title {
+  position: absolute;
+  bottom: 30px;
+  color: white;
+  font-weight: 300;
+  font-size: 15px;
+  width: 400px;
+  visibility: hidden;
+  transition: visibility 200ms linear 0ms;
 }

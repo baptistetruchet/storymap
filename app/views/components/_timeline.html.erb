@@ -3,13 +3,18 @@
   <div id="timeline" block-id=<%= counter %>
     <% unless counter == 0 %>
     class="hidden-timeline"
-    <% end %>
-    >
-    <div class="event opacity-none"></div>
+    <% end %>>
+    <div class="event start opacity-none"></div>
     <% block.events.each do |event| %>
       <div class="interval"></div>
-      <div class="event"></div>
+      <div class="event">
+        <div class="event-title"><%= event.title %></div>
+      </div>
     <% end %>
+  <div class="interval"></div>
+  <div class="event end">
+    <div class="event-title">next block</div>
+  </div>
   </div>
   <% counter += 1 %>
 <% end %>
