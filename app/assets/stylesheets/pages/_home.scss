@@ -1,1 +1,133 @@
-// Specific CSS for your home-page
+#home-container {
+  margin: 80px 25px 25px 25px;
+  background: white;
+}
+
+#home-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 50px;
+  margin-bottom: 400px;
+}
+
+.head-text-container {
+  width: 500px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.head-text {
+  h1 {
+    color: $blue;
+    font-weight: bold;
+    font-size: 4em;
+  }
+  h3 {
+    margin-top: 0;
+    font-weight: 500;
+    font-size: 1.5em;
+    margin-bottom: 35px;
+  }
+  p {
+    font-weight: 300;
+    color: darken($light-gray, 45%);
+  }
+}
+
+.head-link {
+  display: flex;
+  flex-direction: column;
+}
+
+#wrapper-blue {
+  background-color: $blue;
+  border-radius: 15px;
+  height: 50vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+#wave {
+  position: absolute;
+  width: 100%;
+  top: 40vh;
+}
+
+.container-media {
+  width: 980px;
+  height: 550px;
+  background: white;
+  z-index: 100;
+  position: relative;
+  top: -275px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px darken($light-gray, 40%);
+}
+
+.steps {
+  h2 {
+    padding-top: 300px;
+    background: $light-gray;
+    width: 100%;
+    margin: auto;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 2.7em;
+  }
+}
+
+.step {
+  position: relative;
+  background: $light-gray;
+  height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+#last {
+  position: relative;
+  background: $light-gray;
+  height: calc(100vh - 80px);
+  img {
+    height: 35%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+  }
+}
+
+.gif-container {
+  border-radius: 15px;
+  width: 650px;
+  height: 350px;
+  background: white;
+  box-shadow: 0 0 30px darken($light-gray, 30%);
+  z-index: 500;
+}
+
+.step-text {
+  width: 550px;
+  z-index: 500;
+  background: $light-gray;
+  h3 {
+    color: $blue;
+    font-size: 2em;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  p {
+    letter-spacing: 1px;
+    line-height: 30px;
+    color: darken($light-gray, 50%);
+  }
+}

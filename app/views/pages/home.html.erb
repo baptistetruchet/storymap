@@ -1,3 +1,61 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to "Create your storymap", new_story_path, class: "btn btn-warning" %>
+<%= render 'shared/navbar' %>
+
+<div id="home-container">
+
+  <div id="home-head">
+    <div class="head-text-container">
+      <div class="head-text">
+        <h1>Using Maps</h1>
+        <h3>to Make Your Story Visual</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+      </div>
+      <div class="head-link">
+        <%= link_to "Start building your StoryMap", new_story_path, class: "btn-lg btn-storymap btn-storymap-green text-center" %>
+        <%= link_to "Browse stories", root_path, class: "btn-lg btn-storymap btn-storymap-blue text-center" %>
+      </div>
+    </div>
+    <div class="head-picture">
+      <%= image_tag "pic-head.svg", height: 450 %>
+    </div>
+  </div>
+
+  <div id="wrapper-blue">
+    <div class="container-media">
+      <div class="media-top"></div>
+      <div class="media-bottom"></div>
+    </div>
+    <%= image_tag "wave.svg", id: "wave" %>
+  </div>
+
+  <div class="steps">
+    <h2 class="text-center">How to build your StoryMap</h2>
+    <div class="step">
+      <%= image_tag "step_1.svg" %>
+      <div class="step-text">
+        <h3>1. Create your voice assistant</h3>
+        <p>Create your voice assistant for free, then pick a name and language.</p>
+      </div>
+      <div class="gif-container"></div>
+    </div>
+    <div class="step">
+      <%= image_tag "step_2.svg" %>
+      <div class="gif-container"></div>
+      <div class="step-text">
+        <h3>2. Give it pretrained capabilities</h3>
+        <p>Make your assistant understand what you say by choosing from our community-created intents.</p>
+      </div>
+    </div>
+    <div class="step">
+      <%= image_tag "step_3.svg" %>
+      <div class="step-text">
+        <h3>3. Or generate data to create your own</h3>
+        <p>Create and share your own intents simply by giving a few examples. Snips will automatically infer what you want, and generate hundreds or even thousands of additional examples to train your assistant!</p>
+      </div>
+      <div class="gif-container"></div>
+    </div>
+    <div id="last" class="step">
+      <%= image_tag "step_4.svg" %>
+    </div>
+  </div>
+
+</div>
