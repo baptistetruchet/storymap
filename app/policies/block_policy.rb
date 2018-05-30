@@ -5,6 +5,10 @@ class BlockPolicy < ApplicationPolicy
     end
   end
 
+  def update_position?
+    record.story.user == user
+  end
+
   def create?
     true
   end
