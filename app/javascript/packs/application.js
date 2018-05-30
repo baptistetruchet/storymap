@@ -17,4 +17,3 @@ const timeline = document.getElementById('timeline');
 if (timeline) {
   flow();
 }
-
