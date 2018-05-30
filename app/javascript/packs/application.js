@@ -1,7 +1,12 @@
+import "popper.js";
 import "bootstrap";
 
+import { drag } from '../components/drag.js';
 import { rolling } from '../components/sidebar';
 import { flow } from '../components/timeline';
+
+const blocksList = document.getElementById('blocks-list');
+if (blocksList) {drag()}
 
 const sidebar = document.getElementById('wrapper-blocks');
 if (sidebar) {
