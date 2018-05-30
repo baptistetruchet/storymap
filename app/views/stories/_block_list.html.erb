@@ -1,4 +1,4 @@
-<div id="block-<%=block.id%>"><strong><%= block.title %></strong>
+<strong><%= block.title %></strong>
   <%= link_to edit_block_path(block) do %>
     <i class="far fa-edit" aria-hidden="true"></i>
   <% end %>
@@ -7,4 +7,4 @@
   data: { confirm: "Are you sure?"} do %>
     <i class="fa fa-trash-alt" aria-hidden="true"></i>
   <% end %>
-</div>
+

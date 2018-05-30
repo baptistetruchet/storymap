@@ -10,16 +10,18 @@
     <% end %></h4><hr>
 
     <div class="full-list">
-      <div id="blocks-list">
+      <ul id="blocks-list">
         <% @blocks.each do |block| %>
-          <%= render 'block_list', block: block %>
-          <% if block.events %>
-            <%= render 'event_list', block: block %>
-          <% end %>
+          <li id="block-<%=block.id%>">
+            <%= render 'block_list', block: block %>
+            <% if block.events %>
+              <%= render 'event_list', block: block %>
+            <% end %>
+          </li>
         <% end %>
-      </div>
+      </ul>
       <%= button_to "Add a block", new_story_block_path(@story),
-          :class => "btn btn-primary", :method => :get %>
+          :class => "btn btn-primary center-block", :method => :get %>
         <hr>
     </div>
   </div>
