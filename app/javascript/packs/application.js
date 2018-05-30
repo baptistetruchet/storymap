@@ -1,4 +1,5 @@
 import "bootstrap";
+
 import { rolling } from '../components/sidebar';
 import { flow } from '../components/timeline';
 
@@ -11,3 +12,4 @@ const timeline = document.getElementById('timeline');
 if (timeline) {
   flow();
 }
+
