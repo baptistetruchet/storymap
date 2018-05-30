@@ -1,11 +1,17 @@
-<div id="timeline">
-  <div class="event opacity-none"></div>
-  <div class="interval"></div>
-  <div class="event"></div>
-  <div class="interval"></div>
-  <div class="event"></div>
-  <div class="interval"></div>
-  <div class="event"></div>
-</div>
+<% counter = 0 %>
+<% @story.blocks.each do |block| %>
+  <div id="timeline" block-id=<%= counter %>
+    <% unless counter == 0 %>
+    class="hidden-timeline"
+    <% end %>
+    >
+    <div class="event opacity-none"></div>
+    <% block.events.each do |event| %>
+      <div class="interval"></div>
+      <div class="event"></div>
+    <% end %>
+  </div>
+  <% counter += 1 %>
+<% end %>
 
 
