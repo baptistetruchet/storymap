@@ -13,7 +13,7 @@
   padding: 10px 22px;
   border-radius: 30px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: transform 300ms cubic-bezier(.694,0,.335,1),-webkit-transform 300ms cubic-bezier(.694,0,.335,1);
   &:hover {
     transform: scale(1.04);
     text-decoration: none;
