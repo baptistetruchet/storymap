@@ -8,8 +8,6 @@ import { flow } from '../components/timeline';
 const blocksList = document.getElementById('blocks-list');
 if (blocksList) {drag()}
 
-$(window, document, undefined).ready(function() {
-
 const sidebar = document.getElementById('wrapper-blocks');
 if (sidebar) {
   rolling();
