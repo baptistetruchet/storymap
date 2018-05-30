@@ -2,26 +2,8 @@ import GMaps from 'gmaps/gmaps.js';
 
 const styles = [
     {
-        "featureType": "all",
-        "elementType": "all",
-        "stylers": [
-            {
-                "saturation": "32"
-            },
-            {
-                "lightness": "-3"
-            },
-            {
-                "visibility": "on"
-            },
-            {
-                "weight": "1.18"
-            }
-        ]
-    },
-    {
         "featureType": "administrative",
-        "elementType": "labels",
+        "elementType": "all",
         "stylers": [
             {
                 "visibility": "off"
@@ -30,7 +12,7 @@ const styles = [
     },
     {
         "featureType": "administrative.country",
-        "elementType": "labels",
+        "elementType": "geometry",
         "stylers": [
             {
                 "visibility": "on"
@@ -38,29 +20,38 @@ const styles = [
         ]
     },
     {
-        "featureType": "administrative.locality",
-        "elementType": "geometry",
+        "featureType": "administrative.country",
+        "elementType": "labels",
         "stylers": [
             {
-                "visibility": "off"
+                "visibility": "simplified"
             }
         ]
     },
     {
-        "featureType": "administrative.locality",
-        "elementType": "labels",
+        "featureType": "administrative.country",
+        "elementType": "labels.text",
         "stylers": [
             {
-                "visibility": "off"
+                "hue": "#ff0000"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.country",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "hue": "#ff0000"
             }
         ]
     },
     {
         "featureType": "landscape",
-        "elementType": "labels",
+        "elementType": "all",
         "stylers": [
             {
-                "visibility": "off"
+                "visibility": "on"
             }
         ]
     },
@@ -69,16 +60,22 @@ const styles = [
         "elementType": "all",
         "stylers": [
             {
-                "saturation": "-70"
-            },
-            {
-                "lightness": "14"
+                "visibility": "on"
             }
         ]
     },
     {
         "featureType": "poi",
-        "elementType": "labels",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry",
         "stylers": [
             {
                 "visibility": "off"
@@ -97,6 +94,15 @@ const styles = [
     {
         "featureType": "road",
         "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "all",
         "stylers": [
             {
                 "visibility": "off"
@@ -105,7 +111,7 @@ const styles = [
     },
     {
         "featureType": "road.highway",
-        "elementType": "labels",
+        "elementType": "geometry",
         "stylers": [
             {
                 "visibility": "off"
@@ -113,11 +119,29 @@ const styles = [
         ]
     },
     {
+        "featureType": "road.local",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
         "featureType": "transit",
-        "elementType": "labels",
+        "elementType": "all",
         "stylers": [
             {
                 "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit.line",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#3f518c"
             }
         ]
     },
@@ -126,22 +150,13 @@ const styles = [
         "elementType": "all",
         "stylers": [
             {
-                "saturation": "100"
+                "visibility": "simplified"
             },
             {
-                "lightness": "-14"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "off"
+                "color": "#84afa3"
             },
             {
-                "lightness": "12"
+                "lightness": 52
             }
         ]
     }

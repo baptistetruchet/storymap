@@ -4,13 +4,13 @@
   opacity: 0.9;
   border-radius: 10px;
   top: 50px;
-  bottom: 0px;
   left: 10px;
   z-index: 97;
   background-color: white;
-  width: 330px;
+  max-width: 330px;
   padding: 10px;
   overflow-y: scroll;
+  max-height: 623px;
 }
 
 .edit-page {
@@ -26,6 +26,32 @@
 
 .events-list {
   padding-left: 25px;
+}
+
+.edit-title {
+  color: $success-green;
+}
+
+.add-event-link {
+  color: $success-green;
+}
+
+.btn-block {
+  margin-bottom: 2px;
+}
+.edit-block {
+  color: white;
+}
+
+.trash-block {
+  color: white;
+}
+
+.edit-event {
+  color: $gray;
+}
+.trash-event {
+  color: $gray;
 }
 
 #blocks-list {
