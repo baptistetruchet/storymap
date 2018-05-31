@@ -4,7 +4,7 @@
     <div id="wrapper-blocks">
       <% counter = 0 %>
       <% @story.blocks.each do |block| %>
-        <div class="block" data-index=<%= counter %>>
+        <div class="block" id="<%= block.id %>"data-index=<%= counter %>>
           <%= block.title %>
         </div>
         <% counter += 1 %>

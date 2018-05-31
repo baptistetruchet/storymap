@@ -55,11 +55,16 @@ class StoriesController < ApplicationController
   end
 
   def set_markers
-    @markers = []
+    @all_markers = []
+    @markers = {}
     @story.blocks.each do |block|
+      blockhash = {}
       block.events.each do |event|
-        @markers << { lat: event.latitude, lng: event.longitude }
+        @all_markers << { eventid: event.id, blockid: event.block.id, lat: event.latitude, lng: event.longitude }
+        latlong = { lat: event.latitude, lng: event.longitude, title: event.title }
+        blockhash[event.id] = latlong
       end
+      @markers[block.id] = blockhash
     end
   end
 end
