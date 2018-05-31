@@ -1,17 +1,19 @@
-<ul>
-  <% block.events.each do |event| %>
-    <li id="event-<%=event.id%>"><%= event.title %>
-        <%= link_to edit_event_path(event) do %>
-          <i class="far fa-edit" aria-hidden="true"></i>
-        <% end %>
-        <%= link_to event_path(event),
-        method: :delete,
-        data: { confirm: "Are you sure?"} do %>
-          <i class="fa fa-trash-alt" aria-hidden="true"></i>
-        <% end %>
-    </li>
-  <% end %>
-  <%= link_to new_block_event_path(block) do %>
-   <li><strong>+</strong> Add Event</li><hr>
-  <% end %>
-</ul>
+<div class="collapse" id="collapse-<%=block.id%>">
+    <ul class="events-list">
+      <% block.events.each do |event| %>
+        <li id="event-<%=event.id%>"><%= event.title %>
+            <%= link_to edit_event_path(event) do %>
+              <i class="far fa-edit edit-event" aria-hidden="true"></i>
+            <% end %>
+            <%= link_to event_path(event),
+            method: :delete,
+            data: { confirm: "Are you sure?"} do %>
+              <i class="fa fa-trash-alt trash-event" aria-hidden="true"></i>
+            <% end %>
+        </li>
+      <% end %>
+      <%= link_to new_block_event_path(block) do %>
+       <p class="add-event-link"><strong>+</strong> Add Event</p><hr>
+      <% end %>
+    </ul>
+</div>

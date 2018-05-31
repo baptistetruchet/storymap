@@ -6,13 +6,13 @@
   <div class="story-edit-div">
     <h4 class="text-center"><%= @story.title %>
     <%= link_to edit_story_details_path(@story) do %>
-      <i class="fas fa-edit" style="font-size:1em;"aria-hidden="true"></i>
+      <i class="fas fa-edit edit-title" style="font-size:1em;"aria-hidden="true"></i>
     <% end %></h4><hr>
 
     <div class="full-list">
       <ul id="blocks-list">
         <% @blocks.sort_by{|b| b.position}.each do |block| %>
-          <li id="block-<%=block.id%>">
+          <li class="block-item"id="block-<%=block.id%>">
             <%= render 'block_list', block: block %>
             <% if block.events %>
               <%= render 'event_list', block: block %>
@@ -21,7 +21,7 @@
         <% end %>
       </ul>
       <%= button_to "Add a block", new_story_block_path(@story),
-          :class => "btn btn-primary center-block", :method => :get %>
+          :class => "btn btn-success center-block", :method => :get %>
         <hr>
     </div>
   </div>
