@@ -31,11 +31,24 @@ class StoriesController < ApplicationController
   end
 
   def edit_story_details
+    respond_to do |format|
+      format.html
+      format.js # <-- will render `app/views/stories/edit_story_details.js.erb` by default
+    end
   end
 
   def update
-    @story.update(story_params)
-    redirect_to edit_story_path(@story)
+    if @story.update(story_params)
+      respond_to do |format|
+        format.html { redirect_to edit_story_path(@story) }
+        format.js  # <-- will render `app/views/stories/update.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render :edit_story_details }
+        format.js  # <-- idem
+      end
+    end
   end
 
   def destroy

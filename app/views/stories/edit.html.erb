@@ -4,10 +4,9 @@
     data-markers="<%= @markers.to_json %>" >
   </div>
   <div class="story-edit-div">
-    <h4 class="text-center"><%= @story.title %>
-    <%= link_to edit_story_details_path(@story) do %>
-      <i class="fas fa-edit edit-title" style="font-size:1em;"aria-hidden="true"></i>
-    <% end %></h4><hr>
+    <%= link_to edit_story_details_path(@story), remote: true do %>
+      <h4 id="story-title" class="text-center"><%= @story.title %></h4>
+    <% end %><hr>
 
     <div class="full-list">
       <ul id="blocks-list">
@@ -26,3 +25,18 @@
     </div>
   </div>
 </div>
+
+
+
+<% @things.each do |thing| %>
+
+  render block
+
+<% end %>
+
+render bloc
+==>>>
+
+<% event.each do |thing| %>
+  render event
+<% end %>

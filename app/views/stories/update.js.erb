@@ -1,0 +1,19 @@
+<% if @story.errors.any? %>
+
+  document.querySelector('#myoverlay').remove();
+  function openForm(form) {
+    let body = document.querySelector('body');
+    body.insertAdjacentHTML('beforeend', form);
+  };
+
+  openForm('<%= j render "shared/edit_story_form", story: @story %>');
+  document.querySelector('.closebtn').addEventListener('click', function(e) {
+    document.querySelector('#myoverlay').remove();
+  })
+
+<% else %>
+
+  document.querySelector('#myoverlay').remove();
+  document.querySelector('#story-title').innerText = "<%= @story.title %>";
+
+<% end %>

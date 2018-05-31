@@ -20,16 +20,33 @@ class EventsController < ApplicationController
 
   def edit
     authorize @event
+    respond_to do |format|
+      format.html
+      format.js # <-- will render `app/views/events/edit.js.erb` by default
+    end
   end
 
   def update
-    @event.update(event_params)
-    redirect_to edit_story_path(@event.block.story)
+    if @event.update(event_params)
+      respond_to do |format|
+        format.html { redirect_to edit_story_path(@event.block.story) }
+        format.js  # <-- will render `app/views/events/update.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render :edit }
+        format.js  # <-- idem
+      end
+    end
   end
 
   def destroy
     @event.destroy
-    redirect_to edit_story_path(@event.block.story)
+
+    respond_to do |format|
+      format.html { edit_story_path(@event.block.story) }
+      format.js # <-- will render `app/views/events/destroy.js.erb` by default
+    end
   end
 
   private

@@ -22,11 +22,24 @@ class BlocksController < ApplicationController
 
   def edit
     authorize @block
+    respond_to do |format|
+      format.html
+      format.js # <-- will render `app/views/blocks/edit.js.erb` by default
+    end
   end
 
   def update
-    @block.update(block_params)
-    redirect_to edit_story_path(@block.story)
+    if @block.update(block_params)
+      respond_to do |format|
+        format.html { redirect_to edit_story_path(@block.story) }
+        format.js  # <-- will render `app/views/blocks/update.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render :edit }
+        format.js  # <-- idem
+      end
+    end
   end
 
   def update_position
@@ -70,7 +83,11 @@ class BlocksController < ApplicationController
       block.position -= 1 if block.position > position
       block.save
     end
-    redirect_to edit_story_path(@block.story)
+
+    respond_to do |format|
+      format.html { redirect_to edit_story_path(@block.story) }
+      format.js # <-- will render `app/views/blocks/destroy.js.erb` by default
+    end
   end
 
   private
