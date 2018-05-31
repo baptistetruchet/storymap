@@ -5,16 +5,28 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
     authorize @event
+
+    respond_to do |format|
+      format.html
+      format.js # <-- will render `app/views/events/new.js.erb` by default
+    end
   end
 
   def create
     @event = Event.new(event_params)
     @event.block = @block
     authorize @event
-   if @event.save
-      redirect_to edit_story_path(@event.block.story)
+
+    if @event.save
+      respond_to do |format|
+        format.html { redirect_to edit_story_path(@event.block.story) }
+        format.js  # <-- will render `app/views/events/create.js.erb`
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+        format.js  # <-- idem
+      end
     end
   end
 

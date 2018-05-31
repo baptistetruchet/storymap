@@ -11,32 +11,11 @@
     <div class="full-list">
       <ul id="blocks-list">
         <% @blocks.sort_by{|b| b.position}.each do |block| %>
-          <li class="block-item"id="block-<%=block.id%>">
-            <%= render 'block_list', block: block %>
-            <% if block.events %>
-              <%= render 'event_list', block: block %>
-            <% end %>
-          </li>
+          <%= render 'block', block: block %>
         <% end %>
       </ul>
-      <%= button_to "Add a block", new_story_block_path(@story),
-          :class => "btn btn-success center-block", :method => :get %>
-        <hr>
+      <%= link_to "Add a block", new_story_block_path(@story), remote: true, class: 'btn-storymap btn-storymap-blue text-center'  %>
+      <hr>
     </div>
   </div>
 </div>
-
-
-
-<% @things.each do |thing| %>
-
-  render block
-
-<% end %>
-
-render bloc
-==>>>
-
-<% event.each do |thing| %>
-  render event
-<% end %>

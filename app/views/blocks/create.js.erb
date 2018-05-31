@@ -1,0 +1,18 @@
+document.querySelector('#myoverlay').remove();
+<% if @block.errors.any? %>
+  function openForm(formHTML) {
+    let body = document.querySelector('body');
+    body.insertAdjacentHTML('beforeend', formHTML);
+  }
+
+  openForm('<%= j render "shared/edit_block_form", story: @story, block: @block %>');
+
+  document.querySelector('.closebtn').addEventListener('click', function(){
+    document.querySelector('#myoverlay').remove();
+  });
+<% else %>
+
+  let blocksList = document.getElementById('blocks-list');
+  blocksList.insertAdjacentHTML('beforeend', '<%= j render "stories/block", block: @block %>');
+
+<% end %>

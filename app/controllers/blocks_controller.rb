@@ -6,6 +6,11 @@ class BlocksController < ApplicationController
   def new
     @block = Block.new
     authorize @block
+
+    respond_to do |format|
+      format.html
+      format.js # <-- will render `app/views/blocks/new.js.erb` by default
+    end
   end
 
   def create
@@ -13,10 +18,17 @@ class BlocksController < ApplicationController
     authorize @block
     @block.story = @story
     @block.position = @story.blocks.length + 1
-   if @block.save!
-      redirect_to edit_story_path(@story)
+
+    if @block.save!
+      respond_to do |format|
+        format.html { redirect_to edit_story_path(@story) }
+        format.js  # <-- will render `app/views/blocks/create.js.erb`
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+        format.js  # <-- idem
+      end
     end
   end
 
