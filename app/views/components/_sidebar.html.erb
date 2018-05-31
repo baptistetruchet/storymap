@@ -3,7 +3,7 @@
     <div class="active-block-indicator"></div>
     <div id="wrapper-blocks">
       <% counter = 0 %>
-      <% @story.blocks.each do |block| %>
+      <% @story.blocks.sort_by{|b| b.position}.each do |block| %>
         <div class="block" id="<%= block.id %>"data-index=<%= counter %>>
           <%= block.title %>
         </div>

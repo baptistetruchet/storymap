@@ -22,7 +22,7 @@ function scrollTo(target) {
   let position = Array.from(target.parentNode.children).indexOf(target);
   let wrapper = document.getElementById('wrapper-blocks');
   wrapper.style.transform = `translate3d(0px, -${position * 44.5}px, 0px)`;
-  setTimelineVisibility(position);
+  setTimelineVisibility(position + 1);
 }
 
 function addListener(event) {
