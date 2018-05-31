@@ -1,13 +1,13 @@
-<% counter = 0 %>
-<% @story.blocks.each do |block| %>
-  <div id="timeline" block-id=<%= counter %>
-    <% unless counter == 0 %>
+
+<% @story.blocks.sort_by{|b| b.position}.each do |block| %>
+  <div id="timeline" block-title="<%= block.title %>" block-id=<%= block.position %>
+    <% unless block.position == 1 %>
     class="hidden-timeline"
     <% end %>>
     <div class="event start opacity-none"></div>
-    <% block.events.each do |event| %>
+    <% block.events.sort_by{|e| e.date}.each do |event| %>
       <div class="interval"></div>
-      <div class="event">
+      <div class="event" evt-id="<%= event.id %>" block-id="<%= event.block.id %>">
         <div class="event-title"><%= event.title %></div>
       </div>
     <% end %>
@@ -16,7 +16,6 @@
     <div class="event-title">next block</div>
   </div>
   </div>
-  <% counter += 1 %>
 <% end %>
 
 

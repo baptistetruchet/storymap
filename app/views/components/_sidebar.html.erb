@@ -1,14 +1,12 @@
-<div id="wrapper-map">
-  <div id="sidebar">
-    <div class="active-block-indicator"></div>
-    <div id="wrapper-blocks">
-      <% counter = 0 %>
-      <% @story.blocks.each do |block| %>
-        <div class="block" data-index=<%= counter %>>
-          <%= block.title %>
-        </div>
-        <% counter += 1 %>
-      <% end %>
-    </div>
+<div id="sidebar">
+  <div class="active-block-indicator"></div>
+  <div id="wrapper-blocks">
+    <% counter = 0 %>
+    <% @story.blocks.sort_by{|b| b.position}.each do |block| %>
+      <div class="block" id="<%= block.id %>"data-index=<%= counter %>>
+        <%= block.title %>
+      </div>
+      <% counter += 1 %>
+    <% end %>
   </div>
 </div>

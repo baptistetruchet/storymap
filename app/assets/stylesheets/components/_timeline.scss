@@ -14,7 +14,7 @@
   width: 10px;
   height: 10px;
   border-radius: 100%;
-  border: 1px solid white;
+  border: 1px solid black;
   opacity: 0.4;
   transition: opacity 200ms linear 0ms;
   &.is-active {
@@ -39,7 +39,7 @@
 
 .interval {
   height: 1px;
-  background-color: white;
+  background-color: black;
   width: 80px;
   opacity: 0.4;
   transition: transform 300ms linear 0ms, background-color 300ms linear 0ms, opacity 300ms linear 0ms;
@@ -59,7 +59,7 @@
 .event-title {
   position: absolute;
   bottom: 30px;
-  color: white;
+  color: black;
   font-weight: 300;
   font-size: 15px;
   width: 400px;

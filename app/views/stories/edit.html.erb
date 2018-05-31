@@ -1,7 +1,7 @@
 <div class="edit-page">
   <div
     id="map"
-    data-markers="<%= @markers.to_json %>" >
+    data-markers="<%= @all_markers.to_json %>" >
   </div>
   <div class="story-edit-div">
     <%= link_to edit_story_details_path(@story), remote: true do %>
