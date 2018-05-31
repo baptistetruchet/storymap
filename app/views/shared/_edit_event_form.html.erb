@@ -1,10 +1,17 @@
-<div class="form-container">
-  <%= simple_form_for [@block, @event] do |f| %>
-    <%= f.input :title, label: false, placeholder: "TITLE" %>
-    <%= f.input :content, label: false, placeholder: "CONTENT" %>
-    <%= f.input :date, label: false, placeholder: "DATE" %>
-    <%= f.input :photo_url, label: false, placeholder: "URL PHOTO" %>
-    <%= f.input :address, label: false, placeholder: "ADDRESS" %>
-    <%= f.submit "UPDATE" ,class: "mysubmit" %>
-  <% end %>
+<% block = @block if @block %>
+<% event = @event if @event %>
+
+
+<div id="myoverlay" class="overlay">
+  <span class="closebtn" title="Close Overlay"><i class="fas fa-times"></i></span>
+  <div class="overlay-content">
+    <%= simple_form_for [block, event], remote: true do |f| %>
+      <%= f.input :title, label: false, placeholder: "TITLE", input_html: { class: 'myclass' } %>
+      <%= f.input :content, label: false, placeholder: "CONTENT", input_html: { class: 'myclass' } %>
+      <%= f.input :date, label: false, placeholder: "DATE", input_html: { class: 'myclass' } %>
+      <%= f.input :photo_url, label: false, placeholder: "URL PHOTO", input_html: { class: 'myclass' } %>
+      <%= f.input :address, label: false, placeholder: "ADDRESS", input_html: { class: 'myclass' } %>
+      <%= f.submit "UPDATE", class: "btn-lg btn-storymap btn-storymap-blue text-center" %>
+    <% end %>
+  </div>
 </div>

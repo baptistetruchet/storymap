@@ -1,7 +1,6 @@
 import Sortable from "sortablejs";
 
 function drag() {
-  console.log('I am a drag function')
   var el = document.getElementById('blocks-list');
   var sortable = Sortable.create(el, {
     onEnd: function (/**Event*/evt) {
@@ -13,8 +12,7 @@ function drag() {
       evt.from;  // previous list
       evt.oldIndex;  // element's old index within old parent
       evt.newIndex;
-      const url = `/blocks/${blockId}/update_position`
-      console.log(url);
+      const url = `/blocks/${blockId}/update_position`;
       const token = document.querySelector('meta[name="csrf-token"]').content;
       fetch(url, {
         method: "PATCH",
@@ -32,4 +30,4 @@ function drag() {
   });
 }
 
-export { drag }
+export { drag };

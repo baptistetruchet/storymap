@@ -1,0 +1,19 @@
+document.querySelector('#myoverlay').remove();
+<% if @event.errors.any? %>
+  function openForm(formHTML) {
+    let body = document.querySelector('body');
+    body.insertAdjacentHTML('beforeend', formHTML);
+  }
+
+  openForm('<%= j render "shared/edit_event_form", block: @block, event: @event %>');
+
+  document.querySelector('.closebtn').addEventListener('click', function(){
+    document.querySelector('#myoverlay').remove();
+  });
+
+<% else %>
+
+  let eventsList = document.querySelector('#block-<%= @block.id %> .events-list');
+  eventsList.insertAdjacentHTML('beforeend', '<%= j render "stories/event", event: @event %>');
+
+<% end %>

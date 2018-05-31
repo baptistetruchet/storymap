@@ -6,6 +6,11 @@ class BlocksController < ApplicationController
   def new
     @block = Block.new
     authorize @block
+
+    respond_to do |format|
+      format.html
+      format.js # <-- will render `app/views/blocks/new.js.erb` by default
+    end
   end
 
   def create
@@ -13,20 +18,40 @@ class BlocksController < ApplicationController
     authorize @block
     @block.story = @story
     @block.position = @story.blocks.length + 1
-   if @block.save!
-      redirect_to edit_story_path(@story)
+
+    if @block.save!
+      respond_to do |format|
+        format.html { redirect_to edit_story_path(@story) }
+        format.js  # <-- will render `app/views/blocks/create.js.erb`
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+        format.js  # <-- idem
+      end
     end
   end
 
   def edit
     authorize @block
+    respond_to do |format|
+      format.html
+      format.js # <-- will render `app/views/blocks/edit.js.erb` by default
+    end
   end
 
   def update
-    @block.update(block_params)
-    redirect_to edit_story_path(@block.story)
+    if @block.update(block_params)
+      respond_to do |format|
+        format.html { redirect_to edit_story_path(@block.story) }
+        format.js  # <-- will render `app/views/blocks/update.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render :edit }
+        format.js  # <-- idem
+      end
+    end
   end
 
   def update_position
@@ -70,7 +95,11 @@ class BlocksController < ApplicationController
       block.position -= 1 if block.position > position
       block.save
     end
-    redirect_to edit_story_path(@block.story)
+
+    respond_to do |format|
+      format.html { redirect_to edit_story_path(@block.story) }
+      format.js # <-- will render `app/views/blocks/destroy.js.erb` by default
+    end
   end
 
   private
