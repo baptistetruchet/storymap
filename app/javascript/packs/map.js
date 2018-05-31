@@ -31,8 +31,6 @@ if (mapElement) {
       let clickedEvt = markers.filter(mark => mark.eventid === parseInt(evt.getAttribute("evt-id"), 10));
       map.setCenter((clickedEvt[0].lat), (clickedEvt[0].lng - 3));
       map.setZoom(7);
-
-      // console.log(evt.getAttribute("evt-id"));
     });
   });
 
