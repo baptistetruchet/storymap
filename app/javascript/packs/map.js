@@ -36,13 +36,13 @@ if (mapElement) {
     });
   });
 
-  // if (markers.length === 0) {
-  //   map.setZoom(3);
-  // } else if (markers.length === 1) {
-  //   map.setCenter((markers[0]), (markers[0].lng - 30);
-  //   map.setZoom(3);
-  // } else {
-  //   map.fitLatLngBounds(markers);
-  // }
+  if (markers.length === 0) {
+    map.setZoom(3);
+  } else if (markers.length === 1) {
+    map.setCenter((markers[0]), (markers[0].lng));
+    map.setZoom(3);
+  } else {
+    map.fitLatLngBounds(markers);
+  }
 }
 
