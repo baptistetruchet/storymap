@@ -1,0 +1,38 @@
+<li class="block-item" id="block-<%=block.id%>">
+
+  <button class="btn btn-success btn-block" type="button" data-toggle="collapse" data-target="#collapse-<%=block.id%>" aria-expanded="false" aria-controls="collapseExample">
+    <strong><%= block.title %></strong>
+    <%= link_to edit_block_path(block), remote: true do %>
+      <i class="far fa-edit edit-block" aria-hidden="true"></i>
+    <% end %>
+    <%= link_to block_path(block),
+    method: :delete,
+    data: { confirm: "Are you sure?"},
+    remote: true do %>
+      <i class="fa fa-trash-alt trash-block" aria-hidden="true"></i>
+    <% end %>
+  </button>
+
+  <% if block.events %>
+    <div class="collapse" id="collapse-<%=block.id%>">
+      <ul class="events-list">
+        <% block.events.each do |event| %>
+          <%= render 'event', event: event %>
+        <% end %>
+      </ul>
+      <%= link_to new_block_event_path(block), remote: true do %>
+       <p class="add-event-link"><strong>+</strong> Add Event</p><hr>
+      <% end %>
+    </div>
+  <% end %>
+
+</li>
+
+
+
+
+
+
+
+
+

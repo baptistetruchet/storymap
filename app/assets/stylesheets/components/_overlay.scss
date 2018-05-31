@@ -1,0 +1,68 @@
+/*The overlay effect with black background */
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  overflow-y: scroll;
+  background: #ff003d; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, rgba($green, 0.93) 0%, rgba($blue, 0.93) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, rgba($green, 0.93) 0%,rgba($blue, 0.93) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, rgba($green, 0.9) 0%,rgba($blue, 0.9) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6ff003d', endColorstr='#e68f00b3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+/* The content */
+.overlay-content {
+  position: relative;
+  font-weight: bold;
+  top: 18%;
+  width: 80%;
+  text-align: left;
+  margin-top: 30px;
+  margin: auto;
+}
+.overlay-content p{
+  color: white;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 4px;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 0.6; /* Firefox */
+}
+/* Close button */
+.overlay .closebtn {
+  position: absolute;
+  top: 100px;
+  right: 130px;
+  font-size: 50px;
+  cursor: pointer;
+  color: white;
+}
+.overlay .closebtn:hover {
+  color: #ccc;
+}
+/* Style the search field */
+.overlay input[type=text] {
+  color: white;
+  font-size: 65px;
+  border: 1px solid white;
+  float: left;
+  width: 90%;
+  height: 120px;
+  background: none;
+}
+
+.overlay textarea {
+  color: white;
+  font-size: 30px;
+  border: 1px solid white;
+  float: left;
+  width: 90%;
+  height: 250px;
+  background: none;
+}

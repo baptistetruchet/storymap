@@ -1,166 +1,5 @@
 import GMaps from 'gmaps/gmaps.js';
-
-const styles = [
-    {
-        "featureType": "administrative",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.country",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "on"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.country",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.country",
-        "elementType": "labels.text",
-        "stylers": [
-            {
-                "hue": "#ff0000"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.country",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "hue": "#ff0000"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "on"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape.man_made",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "on"
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "road.local",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "on"
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "transit.line",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#3f518c"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            },
-            {
-                "color": "#84afa3"
-            },
-            {
-                "lightness": 52
-            }
-        ]
-    }
-];
+import { styles } from '../components/style';
 
 const mapElement = document.getElementById('map');
 if (mapElement) {
@@ -172,11 +11,34 @@ if (mapElement) {
   map.setStyle('map_style');
   const markers = JSON.parse(mapElement.dataset.markers);
   map.addMarkers(markers);
+
+  let blocks = document.querySelectorAll('.block');
+  blocks.forEach((block) => {
+    block.addEventListener("click", (event) => {
+      map.removeMarkers();
+      let selectedMar = markers.filter(mark => mark.blockid === parseInt(block.id, 10));
+      map.addMarkers(selectedMar);
+      map.fitLatLngBounds(selectedMar);
+    });
+  });
+
+  let events = document.querySelectorAll('.event');
+  events.forEach((evt) => {
+    evt.addEventListener("click", (event) => {
+      map.removeMarkers();
+      let selectedMar = markers.filter(mark => mark.blockid === parseInt(evt.getAttribute("block-id"), 10));
+      map.addMarkers(selectedMar);
+      let clickedEvt = markers.filter(mark => mark.eventid === parseInt(evt.getAttribute("evt-id"), 10));
+      map.setCenter((clickedEvt[0].lat), (clickedEvt[0].lng - 3));
+      map.setZoom(7);
+    });
+  });
+
   if (markers.length === 0) {
     map.setZoom(3);
   } else if (markers.length === 1) {
-    map.setCenter(markers[0].lat, markers[0].lng);
-    map.setZoom(10);
+    map.setCenter((markers[0]), (markers[0].lng));
+    map.setZoom(3);
   } else {
     map.fitLatLngBounds(markers);
   }

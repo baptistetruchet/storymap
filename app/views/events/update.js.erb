@@ -1,0 +1,15 @@
+document.querySelector('#myoverlay').remove();
+<% if @event.errors.any? %>
+  function openForm(formHTML) {
+    let body = document.querySelector('body');
+    body.insertAdjacentHTML('beforeend', formHTML);
+  }
+
+  openForm('<%= j render "shared/edit_event_form", block: @block, event: @event %>');
+
+  document.querySelector('.closebtn').addEventListener('click', function(){
+    document.querySelector('#myoverlay').remove();
+  });
+<% else %>
+  document.querySelector('#event-<%= @event.id %> span').innerText = '<%= @event.title %>';
+<% end %>

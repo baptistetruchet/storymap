@@ -1,5 +1,11 @@
-<%= simple_form_for(@story) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.submit class: "btn btn-warning" %>
-<% end %>
+<div id="myoverlay" class="overlay">
+  <span class="closebtn" title="Close Overlay"><i class="fas fa-times"></i></span>
+  <div class="overlay-content">
+    <% story = @story if @story %>
+    <%= simple_form_for story, remote: true do |f| %>
+      <%= f.input :title, label: false, input_html: { class: 'myclass' } %>
+      <%= f.input :description, label: false, input_html: { class: 'myclass' } %>
+      <%= f.submit class: "btn-lg btn-storymap btn-storymap-blue text-center" %>
+    <% end %>
+  </div>
+</div>
