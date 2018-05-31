@@ -27,7 +27,29 @@ function flow() {
   });
 }
 
-export { flow };
+function nextBlock() {
+  let timelines = document.querySelectorAll('#timeline');
+  let last_pins = document.querySelectorAll('.end');
+  last_pins.forEach((last_pin) => {
+    timelines.forEach((timeline) => {
+      if (timeline.className != "hidden-timeline") {
+        last_pin.addEventListener("click", (event) => {
+          let blocks = document.querySelectorAll('.block');
+          var selected_block = undefined;
+          blocks.forEach((block) => {
+            if (parseInt(block.dataset.index) === 1) {
+              selected_block = block;
+            }
+          });
+          console.log(selected_block);
+          selected_block.click();
+        });
+      }
+    });
+  });
+}
+
+export { flow, nextBlock };
 
 
 

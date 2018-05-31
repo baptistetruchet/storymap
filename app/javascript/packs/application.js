@@ -3,7 +3,7 @@ import "bootstrap";
 
 import { drag } from '../components/drag.js';
 import { rolling } from '../components/sidebar';
-import { flow } from '../components/timeline';
+import { flow, nextBlock } from '../components/timeline';
 
 const blocksList = document.getElementById('blocks-list');
 if (blocksList) {drag()}
@@ -16,5 +16,5 @@ if (sidebar) {
 const timeline = document.getElementById('timeline');
 if (timeline) {
   flow();
+  nextBlock();
 }
-

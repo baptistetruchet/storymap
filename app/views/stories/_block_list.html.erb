@@ -1,10 +1,12 @@
-<strong><%= block.title %></strong>
+<button class="btn btn-success btn-block" type="button" data-toggle="collapse" data-target="#collapse-<%=block.id%>" aria-expanded="false" aria-controls="collapseExample">
+  <strong><%= block.title %></strong>
   <%= link_to edit_block_path(block) do %>
-    <i class="far fa-edit" aria-hidden="true"></i>
+    <i class="far fa-edit edit-block" aria-hidden="true"></i>
   <% end %>
   <%= link_to block_path(block),
   method: :delete,
   data: { confirm: "Are you sure?"} do %>
-    <i class="fa fa-trash-alt" aria-hidden="true"></i>
-  <% end %>
+    <i class="fa fa-trash-alt trash-block" aria-hidden="true"></i>
+  <% end %></button>
+
 
