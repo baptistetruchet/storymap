@@ -1,0 +1,20 @@
+<div class="card">
+  <i class="far fa-heart"></i>
+  <%= image_tag story_picture(story) %>
+  <div class="card-content">
+    <div class="title">
+      <h2><%= story.title %></h2>
+    </div>
+    <div class="separator">
+    </div>
+    <div class="description">
+      <p><%= story.description %></p>
+    </div>
+    <div class="buttons">
+      <%= link_to "Show", story_path(story), class: "btn-lg btn-storymap btn-storymap-green text-center" %>
+      <%= link_to "Edit", edit_story_path(story), class: "btn-lg btn-storymap btn-storymap-blue text-center" %>
+    </div>
+  </div>
+</div>
+
+

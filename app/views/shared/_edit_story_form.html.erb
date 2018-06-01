@@ -5,6 +5,7 @@
     <%= simple_form_for story, remote: true do |f| %>
       <%= f.input :title, label: false, input_html: { class: 'myclass' } %>
       <%= f.input :description, label: false, input_html: { class: 'myclass' } %>
+      <%= f.input :photo_url, label: false, input_html: { class: 'myclass' } %>
       <%= f.submit class: "btn-lg btn-storymap btn-storymap-blue text-center" %>
     <% end %>
   </div>
