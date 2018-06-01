@@ -11,7 +11,9 @@ if (mapElement) {
   map.setStyle('map_style');
   const markers = JSON.parse(mapElement.dataset.markers);
   map.addMarkers(markers);
-  map.setZoom(4);
+  // seting up the very first zoom on the map
+  map.fitLatLngBounds(markers)
+  // map.setZoom(2);
   let blocks = document.querySelectorAll('.block');
   blocks.forEach((block) => {
     block.addEventListener("click", (event) => {
