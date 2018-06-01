@@ -4,7 +4,7 @@
     <% unless block.position == 1 %>
     class="hidden-timeline"
     <% end %>>
-    <div class="event start opacity-none"></div>
+    <div class="event-start opacity-none"></div>
     <% block.events.sort_by{|e| e.date}.each do |event| %>
       <div class="interval"></div>
       <div class="event" evt-id="<%= event.id %>" block-id="<%= event.block.id %>">
@@ -15,7 +15,7 @@
 
     <% end %>
   <div class="interval"></div>
-  <div class="event end">
+  <div class="event-end">
     <div class="event-title">next block</div>
   </div>
   </div>

@@ -53,6 +53,11 @@ function rolling() {
   setup();
 }
 
+window.onload = function clickOnFirstBlock() {
+  let first_block = document.querySelector('.block');
+  first_block.click();
+};
+
 export { rolling };
 
 

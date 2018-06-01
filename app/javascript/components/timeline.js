@@ -29,7 +29,7 @@ function flow() {
 
 function nextBlock() {
   let timelines = document.querySelectorAll('#timeline');
-  let last_pins = document.querySelectorAll('.end');
+  let last_pins = document.querySelectorAll('.event-end');
   last_pins.forEach((last_pin) => {
     timelines.forEach((timeline) => {
       if (timeline.className != "hidden-timeline") {

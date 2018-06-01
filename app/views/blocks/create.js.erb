@@ -1,7 +1,7 @@
 document.querySelector('#myoverlay').remove();
 <% if @block.errors.any? %>
   function openForm(formHTML) {
-    let body = document.querySelector('body');
+    const body = document.querySelector('body');
     body.insertAdjacentHTML('beforeend', formHTML);
   }
 
@@ -12,7 +12,10 @@ document.querySelector('#myoverlay').remove();
   });
 <% else %>
 
-  let blocksList = document.getElementById('blocks-list');
-  blocksList.insertAdjacentHTML('beforeend', '<%= j render "stories/block", block: @block %>');
+  function addBlock() {
+    const blocks = document.getElementById('blocks-list');
+    blocks.insertAdjacentHTML('beforeend', '<%= j render "stories/block", block: @block %>');
+  }
+  addBlock();
 
 <% end %>
