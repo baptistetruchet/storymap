@@ -3,7 +3,7 @@ import { styles } from '../components/style';
 
 const mapElement = document.getElementById('map');
 if (mapElement) {
-  const map = new GMaps({ el: '#map', lat: 42, lng: 0 });
+  const map = new GMaps({ el: '#map', lat: 42, lng: 0, disableDefaultUI: true });
   map.addStyle({
     styles: styles,
     mapTypeId: 'map_style'
