@@ -34,7 +34,7 @@ class EventsController < ApplicationController
     authorize @event
     respond_to do |format|
       format.html
-      format.js # <-- will render `app/views/events/edit.js.erb` by default
+      format.js { render :new } # <-- will render `app/views/events/edit.js.erb` by default
     end
   end
 

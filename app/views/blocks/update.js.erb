@@ -1,7 +1,7 @@
 document.querySelector('#myoverlay').remove();
 <% if @block.errors.any? %>
   function openForm(formHTML) {
-    let body = document.querySelector('body');
+    const body = document.querySelector('body');
     body.insertAdjacentHTML('beforeend', formHTML);
   }
 
