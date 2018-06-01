@@ -5,4 +5,11 @@
 
 <%= render 'components/sidebar' %>
 <%= render 'components/timeline' %>
+<% @story.blocks.each do |block| %>
+  <% block.events.each do |event| %>
+    <%= render 'components/infobulle', event: event %>
+  <% end %>
+<% end %>
+
+
 
