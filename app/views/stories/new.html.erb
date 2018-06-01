@@ -5,6 +5,7 @@
     <%= simple_form_for @story do |f| %>
       <%= f.input :title, label: false, placeholder: "TITLE" %>
       <%= f.input :description, label: false, placeholder: "DESCRIPTION" %>
+      <%= f.input :photo_url, label: false, placeholder: "PHOTO URL" %>
       <%= f.submit "CREATE", class: "mysubmit" %>
     <% end %>
   </div>
