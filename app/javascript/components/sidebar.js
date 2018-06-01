@@ -1,3 +1,8 @@
+function hideAllInfobulles() {
+  let infobulle = document.querySelector('.show-infobulle');
+  if (infobulle) {infobulle.classList.remove("show-infobulle")};
+}
+
 function setTimelineVisibility(position) {
   let timelines = document.querySelectorAll('#timeline');
   timelines.forEach((timeline) => {
@@ -26,6 +31,7 @@ function scrollTo(target) {
 }
 
 function addListener(event) {
+  hideAllInfobulles();
   setDataAttribute(event.currentTarget);
   setOpacity();
   scrollTo(event.currentTarget);

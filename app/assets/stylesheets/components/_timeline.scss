@@ -103,4 +103,5 @@
   width: 400px;
   visibility: hidden;
   transition: visibility 200ms linear 0ms;
+  z-index: 2000 !important;
 }

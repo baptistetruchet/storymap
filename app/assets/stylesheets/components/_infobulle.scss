@@ -1,0 +1,28 @@
+.infobulle {
+  position: absolute;
+  margin: 20px;
+  opacity: 0.9;
+  border-radius: 10px;
+  top: 50px;
+  left: 180px;
+  z-index: 97;
+  background-color: white;
+  width: 500px;
+  padding: 10px;
+  // overflow-y: scroll;
+  max-height: 623px;
+  visibility: hidden;
+}
+
+.image-infobulle {
+  max-width: 300px;
+  max-height: 200px;
+}
+
+.show-infobulle {
+  visibility: visible;
+}
+
+// .show-page {
+//   position: relative;
+// }
