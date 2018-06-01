@@ -1,16 +1,16 @@
 <li class="block-item" id="block-<%=block.id%>">
 
   <button class="btn btn-success btn-block" type="button" data-toggle="collapse" data-target="#collapse-<%=block.id%>" aria-expanded="false" aria-controls="collapseExample">
-    <strong><%= block.title %></strong>
     <%= link_to edit_block_path(block), remote: true do %>
-      <i class="far fa-edit edit-block" aria-hidden="true"></i>
+      <i class="fas fa-pencil-alt edit-block" aria-hidden="true"></i>
     <% end %>
+    <strong><%= block.title %></strong>
     <%= link_to block_path(block),
-    method: :delete,
-    data: { confirm: "Are you sure?"},
-    remote: true do %>
-      <i class="fa fa-trash-alt trash-block" aria-hidden="true"></i>
-    <% end %>
+     method: :delete,
+     data: { confirm: "Are you sure?"},
+     remote: true do %>
+       <div class="fa fa-trash-alt trash-block" aria-hidden="true"></div>
+     <% end %>
   </button>
 
   <% if block.events %>

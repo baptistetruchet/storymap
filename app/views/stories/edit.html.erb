@@ -14,8 +14,9 @@
           <%= render 'block', block: block %>
         <% end %>
       </ul>
-      <%= link_to "Add a block", new_story_block_path(@story), remote: true, class: 'btn-storymap btn-storymap-blue text-center'  %>
+      <%= link_to "Add a block", new_story_block_path(@story), remote: true, class: 'btn-storymap btn-storymap-green text-center'  %>
       <hr>
+      <%= link_to "Show storymap", story_path(@story), class: 'btn-storymap btn-storymap-blue text-center'  %>
     </div>
   </div>
 </div>
