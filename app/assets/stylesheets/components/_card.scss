@@ -5,17 +5,18 @@
   display: flex;
   align-items: center;
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   box-shadow: 0 0 20px darken($light-gray, 20%);
   i {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 15px;
+    left: 15px;
     color: white;
   }
   img {
     height: 100%;
     width: 250px;
+    padding: 10px;
   }
 }
 
@@ -23,11 +24,25 @@
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 20px;
+  padding: 10px;
+  div {
+    padding: 10px;
+  }
   .description {
     flex-grow: 1;
     margin-left: 10px;
-    margin: 0 0 -28px;
+    margin-right: 10px;
+    p {
+      margin: 0 auto;
+    }
+  }
+  .title {
+    width: 150px;
+    h2 {
+      font-size: 30px;
+      font-weight: 500;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -37,6 +52,7 @@
   width: 2px;
   margin-left: 10px;
   margin-right: 10px;
+  padding: 0 !important;
 }
 
 .buttons{
