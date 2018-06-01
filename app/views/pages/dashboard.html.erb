@@ -1,23 +1,26 @@
-<div class="container">
+<%= render 'shared/navbar' %>
+<div id="home-container">
   <div class="container">
-    <h1>My Dashboard</h1>
-    <h2>My Published StoryMaps</h2>
-    <div class="row">
-      <% current_user.stories.where(published: true).each do |story| %>
-        <div class="col-xs-12 col-sm-6 col-md-4 ">
-          <%= render partial: "shared/card_dashboard", locals: { story: story } %>
-        </div>
-      <% end %>
+    <div class="container">
+      <h1>My Dashboard</h1>
+      <h2>My Published StoryMaps</h2>
+      <div class="row">
+        <% current_user.stories.where(published: true).each do |story| %>
+          <div class="col-xs-12">
+            <%= render partial: "shared/card", locals: { story: story } %>
+          </div>
+        <% end %>
+      </div>
     </div>
-  </div>
-  <div class="container">
-    <h2>My Drafts</h2>
-    <div class="row">
-      <% current_user.stories.where(published: false).each do |story| %>
-        <div class="col-xs-12 col-sm-6 col-md-4 ">
-          <%= render partial: "shared/card_dashboard", locals: { story: story } %>
-        </div>
-      <% end %>
+    <div class="container">
+      <h2>My Drafts</h2>
+      <div class="row">
+        <% current_user.stories.where(published: false).each do |story| %>
+          <div class="col-xs-12">
+            <%= render partial: "shared/card", locals: { story: story } %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

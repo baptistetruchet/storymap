@@ -1,6 +1,7 @@
 #home-container {
   margin: 80px 25px 25px 25px;
   background: white;
+  min-height: calc(100vh - 80px - 25px);
 }
 
 #home-head {
