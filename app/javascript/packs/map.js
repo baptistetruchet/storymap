@@ -11,7 +11,9 @@ if (mapElement) {
   map.setStyle('map_style');
   const markers = JSON.parse(mapElement.dataset.markers);
   map.addMarkers(markers);
-  map.setZoom(4);
+  // seting up the very first zoom on the map
+  // map.fitLatLngBounds(markers)
+  map.setZoom(2);
   let blocks = document.querySelectorAll('.block');
   blocks.forEach((block) => {
     block.addEventListener("click", (event) => {
@@ -31,12 +33,12 @@ if (mapElement) {
       map.addMarkers(selectedMar);
       let clickedEvt = markers.filter(mark => mark.eventid === parseInt(evt.getAttribute("evt-id"), 10));
       let clickedEvtDecal = clickedEvt
-      console.log('lng right:');
-      console.log(map.getBounds().b.f);
-      console.log('lng left:');
-      console.log(map.getBounds().b.b);
+      // console.log('lng right:');
+      // console.log(map.getBounds().b.f);
+      // console.log('lng left:');
+      // console.log(map.getBounds().b.b);
       let totalLng = Math.abs(map.getBounds().b.f - map.getBounds().b.b);
-      console.log(totalLng);
+      // console.log(totalLng);
       clickedEvtDecal[0].lng = clickedEvt[0].lng - (totalLng/4)
       map.panTo(clickedEvtDecal[0]);
       clickedEvtDecal[0].lng = clickedEvt[0].lng + (totalLng/4)
