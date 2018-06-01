@@ -5,7 +5,7 @@ import { drag } from '../components/drag.js';
 import { rolling } from '../components/sidebar';
 import { flow, nextBlock } from '../components/timeline';
 
-const blocksList = document.getElementById('blocks-list');
+let blocksList = document.getElementById('blocks-list');
 if (blocksList) {drag()}
 
 const sidebar = document.getElementById('wrapper-blocks');
