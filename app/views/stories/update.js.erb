@@ -1,8 +1,8 @@
+document.querySelector('#myoverlay').remove();
 <% if @story.errors.any? %>
 
-  document.querySelector('#myoverlay').remove();
   function openForm(form) {
-    let body = document.querySelector('body');
+    const body = document.querySelector('body');
     body.insertAdjacentHTML('beforeend', form);
   };
 
@@ -13,7 +13,6 @@
 
 <% else %>
 
-  document.querySelector('#myoverlay').remove();
   document.querySelector('#story-title').innerText = "<%= @story.title %>";
 
 <% end %>
