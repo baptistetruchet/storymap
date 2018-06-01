@@ -4,9 +4,9 @@
   left: 0px;
   bottom: 0px;
   padding: 20px;
-  background-color: none;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 90%);;
   min-width: 140px;
-  border-right: solid 1px rgba(255, 255, 255, 0.4);
+  // border-right: solid 1px rgba(255, 255, 255, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,21 +17,20 @@
   top: 50vh;
   left: 0px;
   width: 10px;
-  height: 1px;
-  background-color: black;
+  height: 3px;
+  background-color: $green;
 }
 
 .block {
   margin-top: 20px;
   margin-bottom: 20px;
-  color: black;
-  font-weight: 100;
+  color: #3b3b3b;
+  font-weight: 600;
   transition: transform 300ms cubic-bezier(.694,0,.335,1),-webkit-transform 300ms cubic-bezier(.694,0,.335,1);
   &:hover {
     cursor: pointer;
   }
 }
-
 
 #wrapper-blocks {
   height: 400px;
