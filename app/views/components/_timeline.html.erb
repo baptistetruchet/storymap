@@ -9,7 +9,7 @@
       <div class="interval"></div>
       <div class="event" evt-id="<%= event.id %>" block-id="<%= event.block.id %>">
         <div class="event-title">
-          <div>
+          <div id="pic-timeline-<%= event.id %>">
             <%= image_tag(event.photo_url, width: "260") %>
           </div>
           <strong><%= event.date.year %></strong> | <%= event.title %>
