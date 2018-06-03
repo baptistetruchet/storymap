@@ -59,10 +59,13 @@ function rolling() {
   setup();
 }
 
-window.onload = function clickOnFirstBlock() {
-  let first_block = document.querySelector('.block');
-  first_block.click();
-};
+const sidebar = document.getElementById('wrapper-blocks');
+if (sidebar) {
+  window.onload = function clickOnFirstBlock() {
+    let first_block = document.querySelector('.block');
+    first_block.click();
+  };
+}
 
 export { rolling };
 
