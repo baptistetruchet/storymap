@@ -35,18 +35,14 @@ if (mapElement) {
       map.removeMarkers();
       let selectedMar = markers.filter(mark => mark.blockid === parseInt(evt.getAttribute("block-id"), 10));
       // selectedMar[0].icon = 'https://cdn2.iconfinder.com/data/icons/metro-uinvert-dock/256/Google_Maps.png'
-      map.addMarkers(selectedMar);
       let clickedEvt = markers.filter(mark => mark.eventid === parseInt(evt.getAttribute("evt-id"), 10));
-      let clickedEvtDecal = clickedEvt
       selectedMar.forEach(function(mark) {
-        if (mark != clickedEvt) mark.opacity = 0.5;
+        mark.opacity = 0.4;
       });
-      // console.log('lng right:');
-      // console.log(map.getBounds().b.f);
-      // console.log('lng left:');
-      // console.log(map.getBounds().b.b);
+      clickedEvt[0].opacity = 1;
+      map.addMarkers(selectedMar);
       let totalLng = Math.abs(map.getBounds().b.f - map.getBounds().b.b);
-      // console.log(totalLng);
+      let clickedEvtDecal = clickedEvt
       clickedEvtDecal[0].lng = clickedEvt[0].lng - (totalLng/4)
       map.panTo(clickedEvtDecal[0]);
       clickedEvtDecal[0].lng = clickedEvt[0].lng + (totalLng/4)
