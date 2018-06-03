@@ -1,6 +1,19 @@
+function autocomplete() {
+  var eventAddress = document.getElementById('event_address');
+  if (eventAddress) {
+    var autocomplete = new google.maps.places.Autocomplete(eventAddress, { types: [ 'geocode' ] });
+    google.maps.event.addDomListener(eventAddress, 'keydown', function(e) {
+      if (e.key === "Enter") {
+        e.preventDefault(); // Do not submit the form on Enter.
+      }
+    });
+  }
+}
+
 function openForm(formHTML) {
   const body = document.querySelector('body');
   body.insertAdjacentHTML('beforeend', formHTML);
+  autocomplete();
 }
 
 openForm('<%= j render "shared/edit_event_form", block: @block, event: @event %>');
