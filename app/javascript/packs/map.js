@@ -21,6 +21,9 @@ if (mapElement) {
     block.addEventListener("click", (event) => {
       map.removeMarkers();
       let selectedMar = markers.filter(mark => mark.blockid === parseInt(block.id, 10));
+      selectedMar.forEach(function(mark) {
+        mark.opacity = 1;
+      });
       map.addMarkers(selectedMar);
       map.fitLatLngBounds(selectedMar);
     });
@@ -35,6 +38,9 @@ if (mapElement) {
       map.addMarkers(selectedMar);
       let clickedEvt = markers.filter(mark => mark.eventid === parseInt(evt.getAttribute("evt-id"), 10));
       let clickedEvtDecal = clickedEvt
+      selectedMar.forEach(function(mark) {
+        if (mark != clickedEvt) mark.opacity = 0.5;
+      });
       // console.log('lng right:');
       // console.log(map.getBounds().b.f);
       // console.log('lng left:');
