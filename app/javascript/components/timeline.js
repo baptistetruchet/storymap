@@ -21,11 +21,20 @@ function setInfobulleVisibility(eventid) {
   infobulle.classList.add("show-infobulle");
 }
 
+function removePicTimeline(eventid) {
+    let picInfobulle = document.getElementById(`pic-timeline-${eventid}`);
+    picInfobulle.style.opacity = 0;
+    setTimeout(function(){
+      picInfobulle.style.opacity = 1;
+     }, 8000);
+}
+
 function flow() {
   let hist_events = document.querySelectorAll('.event');
   hist_events.forEach((hist_event) => {
     hist_event.addEventListener("click", (event) => {
       setInfobulleVisibility(hist_event.getAttribute('evt-id'));
+      removePicTimeline(hist_event.getAttribute('evt-id'));
       let previousSiblings = getPreviousSiblings(hist_event, false)
         previousSiblings.forEach((previousSibling) => {
           if (previousSibling.tagName === 'DIV') previousSibling.classList.add("opacity-none");
