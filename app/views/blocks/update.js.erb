@@ -11,5 +11,5 @@ document.querySelector('#myoverlay').remove();
     document.querySelector('#myoverlay').remove();
   });
 <% else %>
-  document.querySelector('#block-<%= @block.id %> strong').innerHTML = '<%= @block.title %>';
+  document.querySelector('#block-<%= @block.id %> span span').innerHTML = '<%= @block.title %>';
 <% end %>
