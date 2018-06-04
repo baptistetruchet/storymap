@@ -4,6 +4,8 @@ class StoriesController < ApplicationController
   before_action :set_markers, only: [:show, :edit]
 
   def index
+    raise
+    @stories= policy_scope(Story)
   end
 
   def show
