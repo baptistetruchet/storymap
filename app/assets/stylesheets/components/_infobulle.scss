@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Merriweather:400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Merriweather:300,400,700');
 
 .infobulle {
   position: absolute;
@@ -16,6 +16,7 @@
   padding: 20px;
   p {
     font-family: 'Merriweather', sans-serif;
+    font-weight: 300;
     margin-top: 30px;
     margin-bottom: 30px;
     padding: 0px 20px;
@@ -39,12 +40,17 @@
   }
 }
 
-
-
-
 .image-infobulle {
   max-width: 100%;
   max-height: 100%;
+  padding-top: 20px;
+}
+
+.separator-line {
+  margin: 0 auto;
+  height: 1.4px;
+  background-color: rgba(0,0,0,0.3);
+  width: 650px;
 }
 
 .show-infobulle {
