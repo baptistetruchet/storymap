@@ -2,6 +2,5 @@
     <h1><%= event.title %></h1>
     <h2><strong><%= event.date.strftime("%B %d, %Y") %></strong> | <%= event.address %></h2>
     <div><p><%= event.content %></p></div>
-    <hr>
     <div class="text-center"><%= image_tag(event.photo_url, class: 'image-infobulle') %></div>
   </div>
