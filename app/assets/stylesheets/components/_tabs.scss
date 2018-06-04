@@ -8,7 +8,7 @@
  */
 
 body {
-  font: 12px/20px 'Lucida Grande', Verdana, sans-serif;
+  font: 14px/20px 'Lucida Grande', Verdana, sans-serif;
   color: #404040;
   background: #eee;
 }
@@ -36,6 +36,21 @@ body {
   margin-top: 115px;
 }
 
+.active {
+  .tab-link {
+    background-color: white !important;
+    padding: 10px;
+  }
+}
+
+// .active {
+//   .tab-link:hover {
+//     color: black !important;
+//   }
+// }
+
+
+
 .nav-tabs {
   position: absolute;
   top: 0;
@@ -44,7 +59,7 @@ body {
   padding: 9px 12px 0;
   text-align: left;
   direction: rtl;
-  background: #f5f5f5;
+  background: #F5F5F5;
   border-bottom: 1px solid #ddd;
   border-radius: 3px 3px 0 0;
 }
@@ -57,14 +72,13 @@ body {
   line-height: 36px;
   font-weight: normal;
   color: #999;
-  background: #fcfcfc;
-  border: solid #ddd;
-  border-width: 1px 1px 0;
+  background: #F5F5F5;;
+  // border: solid #ddd;
+  // border-width: 1px 1px 0;
   border-radius: 5px 5px 0 0;
   padding-bottom: 0;
   bottom: auto;
 }
-
 
 .tab-link {
   display: block;
@@ -74,6 +88,16 @@ body {
   text-align: center;
   text-decoration: none;
   border-radius: 4px 4px 0 0;
+  border: none;
+  border-radius: 3px;
+  color: gray;
+  &:hover {
+    color: black;
+  }
+}
+
+.nav-tabs > li > a {
+  border: none;
 }
 
 .tab-content {
@@ -96,6 +120,12 @@ body {
 .tab-content:target ~ .tab-content {
   display: none;
 }
+
+.dashboard-container {
+  margin-top: 15px;
+  margin-bottom: 45px;
+}
+
 
 // .widget-list-link {
 //   display: block;
