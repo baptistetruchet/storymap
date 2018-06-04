@@ -32,9 +32,9 @@ ActiveRecord::Schema.define(version: 2018_06_04_085934) do
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo_url"
     t.float "latitude"
     t.float "longitude"
-    t.string "photo_url"
     t.string "icon"
     t.index ["block_id"], name: "index_events_on_block_id"
   end
