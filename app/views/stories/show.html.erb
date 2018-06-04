@@ -1,9 +1,11 @@
+<%= render 'components/burger' %>
+
 <div
   id="map"
   data-markers="<%= @all_markers.to_json %>" >
 </div>
 
-<%= link_to "Home", root_path, class:'btn-storymap btn-storymap-green text-center zindex-top' %>
+<%#= link_to "Home", root_path, class:'btn-storymap btn-storymap-green text-center zindex-top' %>
 <%= render 'components/sidebar' %>
 <%= render 'components/timeline' %>
 <% @story.blocks.each do |block| %>
