@@ -1,5 +1,7 @@
 <%= render 'shared/navbar' %>
 
+<h1>Brow</h1>
+
 <div class="container" style="margin-top: 150px;">
   <div class="row">
     <div class="col-xs-12">
@@ -10,6 +12,7 @@
           <div class="card-content">
             <div class="title">
               <h2><%= story.title %></h2>
+              <span>by <%= story.user.username %></span>
             </div>
             <div class="separator">
             </div>

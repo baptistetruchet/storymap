@@ -7,3 +7,5 @@ class Block < ApplicationRecord
     too_long: "Sorry, your title needs to have a maximum of %{count} characters" }
   validates :position, presence: true, numericality: { :greater_than_or_equal_to => 1 }
 end
+
+
