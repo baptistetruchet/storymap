@@ -1,26 +1,44 @@
 <%= render 'shared/navbar' %>
-<div id="home-container">
-  <div class="container">
-    <div class="container">
-      <h1>My Dashboard</h1>
-      <h2>My Published StoryMaps</h2>
-      <div class="row">
-        <% current_user.stories.where(published: true).each do |story| %>
-          <div class="col-xs-12">
-            <%= render partial: "shared/card", locals: { story: story } %>
+
+<div class="home-container">
+
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active nav-tab"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" class="tab-link">My Published StoryMaps</a></li>
+    <li role="presentation" class="nav-tab"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" class="tab-link">My Drafts</a></li>
+  </ul>
+
+  <div class="container dashboard-container">
+  <!-- Tab panes -->
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="home">
+        <div class="container widget">
+          <div class="row">
+            <% current_user.stories.where(published: true).each do |story| %>
+              <div class="col-xs-12">
+                <%= render partial: "shared/card", locals: { story: story } %>
+              </div>
+            <% end %>
           </div>
-        <% end %>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="profile">
+        <div class="container">
+          <div class="row">
+            <% current_user.stories.where(published: false).each do |story| %>
+              <div class="col-xs-12">
+                <%= render partial: "shared/card", locals: { story: story } %>
+              </div>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="container">
-      <h2>My Drafts</h2>
-      <div class="row">
-        <% current_user.stories.where(published: false).each do |story| %>
-          <div class="col-xs-12">
-            <%= render partial: "shared/card", locals: { story: story } %>
-          </div>
-        <% end %>
-      </div>
-    </div>
+
   </div>
+
 </div>
+
+
+<br>
+<br>
+<br>
