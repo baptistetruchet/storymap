@@ -13,7 +13,7 @@ if (mapElement) {
   map.setStyle('map_style');
   const markers = JSON.parse(mapElement.dataset.markers);
 
-  map.addMarkers(markers);
+  // map.addMarkers(markers);
   // seting up the very first zoom on the map
   // map.fitLatLngBounds(markers)
   map.setZoom(2);
@@ -22,14 +22,14 @@ if (mapElement) {
     block.addEventListener("click", (event) => {
       map.removeMarkers();
       if (parseInt(block.id, 10) == 0) {
-        map.addMarkers(markers);
+        addMarkersMaps(markers);
         map.fitLatLngBounds(markers);
       } else {
       let selectedMar = markers.filter(mark => mark.blockid === parseInt(block.id, 10));
       selectedMar.forEach(function(mark) {
         mark.opacity = 1;
       });
-      map.addMarkers(selectedMar);
+      addMarkersMaps(selectedMar);
       map.fitLatLngBounds(selectedMar);
       }
     });
@@ -46,7 +46,7 @@ if (mapElement) {
         mark.opacity = 0.4;
       });
       clickedEvt[0].opacity = 1;
-      map.addMarkers(selectedMar);
+      addMarkersMaps(selectedMar);
       let totalLng = Math.abs(map.getBounds().b.f - map.getBounds().b.b);
       let clickedEvtDecal = clickedEvt
       clickedEvtDecal[0].lng = clickedEvt[0].lng - (totalLng/4)
@@ -64,6 +64,17 @@ if (mapElement) {
   // } else {
   //   map.fitLatLngBounds(markers);
   // }
+  function addMarkersMaps(markers) {
+    markers.forEach((marker) => {
+      const mapMarker = map.createMarker(marker);
+      mapMarker.addListener('click', function() {
+        $(`[evt-id=${marker.eventid}]`).click();
+          });
+      map.addMarker(mapMarker);
+    });
+  }
 }
+
+
 
 autocomplete();
