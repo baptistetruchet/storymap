@@ -12,16 +12,16 @@ if (mapElement) {
   });
   map.setStyle('map_style');
   const markers = JSON.parse(mapElement.dataset.markers);
-
-  // map.addMarkers(markers);
-  // seting up the very first zoom on the map
-  // map.fitLatLngBounds(markers)
+  addMarkersMaps(markers);
   map.setZoom(2);
   let blocks = document.querySelectorAll('.block');
   blocks.forEach((block) => {
     block.addEventListener("click", (event) => {
       map.removeMarkers();
       if (parseInt(block.id, 10) == 0) {
+        markers.forEach(function(mark) {
+          mark.opacity = 1;
+        });
         addMarkersMaps(markers);
         map.fitLatLngBounds(markers);
       } else {
@@ -40,7 +40,6 @@ if (mapElement) {
     evt.addEventListener("click", (event) => {
       map.removeMarkers();
       let selectedMar = markers.filter(mark => mark.blockid === parseInt(evt.getAttribute("block-id"), 10));
-      // selectedMar[0].icon = 'https://cdn2.iconfinder.com/data/icons/metro-uinvert-dock/256/Google_Maps.png'
       let clickedEvt = markers.filter(mark => mark.eventid === parseInt(evt.getAttribute("evt-id"), 10));
       selectedMar.forEach(function(mark) {
         mark.opacity = 0.4;
@@ -58,18 +57,13 @@ if (mapElement) {
   if (markers.length === 0) {
     map.setZoom(3);
   }
-  // } else if (markers.length === 1) {
-  //   map.setCenter((markers[0]), (markers[0].lng));
-  //   map.setZoom(3);
-  // } else {
-  //   map.fitLatLngBounds(markers);
-  // }
+
   function addMarkersMaps(markers) {
     markers.forEach((marker) => {
       const mapMarker = map.createMarker(marker);
       mapMarker.addListener('click', function() {
         $(`[evt-id=${marker.eventid}]`).click();
-          });
+      });
       map.addMarker(mapMarker);
     });
   }
