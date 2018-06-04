@@ -73,7 +73,8 @@ class StoriesController < ApplicationController
     @story.blocks.each do |block|
       blockhash = {}
       block.events.each do |event|
-        @all_markers << { icon: ActionController::Base.helpers.asset_path('pin_blue.png'), eventid: event.id, blockid: event.block.id, lat: event.latitude, lng: event.longitude }
+        event.icon = "pin_blue" if event.icon == nil
+        @all_markers << { icon: ActionController::Base.helpers.asset_path("#{event.icon}.png"), eventid: event.id, blockid: event.block.id, lat: event.latitude, lng: event.longitude }
         latlong = { lat: event.latitude, lng: event.longitude, title: event.title }
         blockhash[event.id] = latlong
       end

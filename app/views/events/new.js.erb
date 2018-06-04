@@ -21,3 +21,24 @@ openForm('<%= j render "shared/edit_event_form", block: @block, event: @event %>
 document.querySelector('.closebtn').addEventListener('click', function(){
   document.querySelector('#myoverlay').remove();
 });
+
+function unselectpins () {
+  let selectedpin = document.querySelector('.selected-pin');
+  if (selectedpin) {selectedpin.classList.remove("selected-pin")};
+
+}
+
+function pin_select() {
+  console.log("I exist");
+  var form_event_pin = document.getElementById('event_icon');
+  var pins = document.querySelectorAll('.pin_option');
+  console.log(pins);
+  pins.forEach((pin) => {
+    pin.addEventListener("click", (event) => {
+      unselectpins();
+      pin.classList.add("selected-pin");
+      form_event_pin.value = pin.id;
+    });
+  });
+}
+pin_select();
