@@ -7,24 +7,8 @@
  * PSD by Aaron Sananes: https://goo.gl/AlBLzO
  */
 
-body {
-  font: 14px/20px 'Lucida Grande', Verdana, sans-serif;
-  color: #404040;
-  background: #eee;
-}
 
-// .home-container {
-//   position: relative;
-//   margin: 20px auto 10px;
-//   width: 1295px;
-//   background: white;
-//   border: 1px solid #ccc;
-//   border-radius: 4px;
-//   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.07);
-//   box-shadow: 0 0 8px rgba(0, 0, 0, 0.07);
-// }
-
-.home-container {
+.large-dashboard-container {
   position: relative;
   margin: 20px auto 10px;
   width: 1391px;
@@ -39,17 +23,9 @@ body {
 .active {
   .tab-link {
     background-color: white !important;
-    padding: 10px;
+    color: #9d9d9d !important;
   }
 }
-
-// .active {
-//   .tab-link:hover {
-//     color: black !important;
-//   }
-// }
-
-
 
 .nav-tabs {
   position: absolute;
@@ -62,6 +38,7 @@ body {
   background: #F5F5F5;
   border-bottom: 1px solid #ddd;
   border-radius: 3px 3px 0 0;
+  padding-top: 15px;
 }
 
 .nav-tab {
@@ -90,11 +67,15 @@ body {
   border-radius: 4px 4px 0 0;
   border: none;
   border-radius: 3px;
-  color: gray;
-  &:hover {
-    color: black;
-  }
+  color: $blue;
+  font-weight: bold;
+  border-radius: 4px;
+  padding-top: 10px;
+  // &:hover {
+  //   color: black;
+  // }
 }
+
 
 .nav-tabs > li > a {
   border: none;
@@ -127,34 +108,3 @@ body {
 }
 
 
-// .widget-list-link {
-//   display: block;
-//   line-height: 18px;
-//   padding: 10px 12px;
-//   font-weight: bold;
-//   color: #555;
-//   text-decoration: none;
-//   cursor: pointer;
-// }
-
-// .widget-list-link:hover {
-//   background: #f7f7f7;
-// }
-
-// li:last-child > .widget-list-link {
-//   border-radius: 0 0 3px 3px;
-// }
-
-// .widget-list-link > img {
-//   float: left;
-//   width: 32px;
-//   height: 32px;
-//   margin: 2px 12px 0 0;
-// }
-
-// .widget-list-link > span {
-//   display: block;
-//   font-size: 11px;
-//   font-weight: normal;
-//   color: #999;
-// }
