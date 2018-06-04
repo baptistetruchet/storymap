@@ -1,4 +1,3 @@
-
 <% @story.blocks.sort_by{|b| b.position}.each do |block| %>
   <div id="timeline" block-title="<%= block.title %>" block-id=<%= block.position %>
     <% unless block.position == 1 %>

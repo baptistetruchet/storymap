@@ -8,11 +8,11 @@
   top: 0;
   left: 0;
   overflow-y: scroll;
-  background: #ff003d; /* Old browsers */
-  background: -moz-linear-gradient(-45deg, rgba($green, 0.93) 0%, rgba($blue, 0.93) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, rgba($green, 0.93) 0%,rgba($blue, 0.93) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, rgba($green, 0.9) 0%,rgba($blue, 0.9) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6ff003d', endColorstr='#e68f00b3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background: rgba(black, 0.8); /* Old browsers */
+  // background: -moz-linear-gradient(-45deg, rgba($green, 0.93) 0%, rgba($blue, 0.93) 100%); /* FF3.6-15 */
+  // background: -webkit-linear-gradient(-45deg, rgba($green, 0.93) 0%,rgba($blue, 0.93) 100%); /* Chrome10-25,Safari5.1-6 */
+  // background: linear-gradient(135deg, rgba($green, 0.9) 0%,rgba($blue, 0.9) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6ff003d', endColorstr='#e68f00b3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 /* The content */
 .overlay-content {
