@@ -12,6 +12,7 @@ if (mapElement) {
   });
   map.setStyle('map_style');
   const markers = JSON.parse(mapElement.dataset.markers);
+
   map.addMarkers(markers);
   // seting up the very first zoom on the map
   // map.fitLatLngBounds(markers)
@@ -20,12 +21,17 @@ if (mapElement) {
   blocks.forEach((block) => {
     block.addEventListener("click", (event) => {
       map.removeMarkers();
+      if (parseInt(block.id, 10) == 0) {
+        map.addMarkers(markers);
+        map.fitLatLngBounds(markers);
+      } else {
       let selectedMar = markers.filter(mark => mark.blockid === parseInt(block.id, 10));
       selectedMar.forEach(function(mark) {
         mark.opacity = 1;
       });
       map.addMarkers(selectedMar);
       map.fitLatLngBounds(selectedMar);
+      }
     });
   });
 
