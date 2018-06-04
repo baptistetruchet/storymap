@@ -23,14 +23,24 @@ if (mapElement) {
           mark.opacity = 1;
         });
         addMarkersMaps(markers);
-        map.fitLatLngBounds(markers);
+        if (selectedMar.length === 1) {
+          map.fitLatLngBounds(selectedMar);
+          map.setZoom(6);
+        } else {
+          map.fitLatLngBounds(selectedMar);
+        }
       } else {
-      let selectedMar = markers.filter(mark => mark.blockid === parseInt(block.id, 10));
-      selectedMar.forEach(function(mark) {
-        mark.opacity = 1;
-      });
-      addMarkersMaps(selectedMar);
-      map.fitLatLngBounds(selectedMar);
+        let selectedMar = markers.filter(mark => mark.blockid === parseInt(block.id, 10));
+        selectedMar.forEach(function(mark) {
+          mark.opacity = 1;
+        });
+        addMarkersMaps(selectedMar);
+        if (selectedMar.length === 1) {
+          map.fitLatLngBounds(selectedMar);
+          map.setZoom(6);
+        } else {
+          map.fitLatLngBounds(selectedMar);
+        }
       }
     });
   });
