@@ -1,22 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Merriweather:400,700');
+
 .infobulle {
   position: absolute;
   margin: 20px;
-  opacity: 0.9;
-  border-radius: 10px;
+  border-radius: 5px;
   top: 50px;
   left: 180px;
   z-index: 97;
   background-color: white;
-  width: 500px;
+  width: 750px;
   padding: 10px;
   max-height: 75vh;
   visibility: hidden;
   overflow-y: scroll;
+  padding: 20px;
+  p {
+    font-family: 'Merriweather', sans-serif;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 0px 20px;
+    font-size: 16px;
+    line-height: 170%;
+  }
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #484848 ;
+  }
 }
 
+
+
+
 .image-infobulle {
-  max-width: 300px;
-  max-height: 200px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .show-infobulle {
