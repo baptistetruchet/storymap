@@ -1,0 +1,36 @@
+<%= render 'shared/navbar' %>
+
+<h1  style="margin-top: 110px; text-align: center;">Browse through Storymaps</h1>
+
+
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <% @stories.each do |story| %>
+          <div class="card">
+            <i class="far fa-heart"></i>
+            <%= image_tag story_picture(story) %>
+            <div class="card-content">
+              <div class="title">
+                <h2><%= story.title %></h2>
+                <span>by <%= story.user.username %></span>
+              </div>
+              <div class="separator">
+              </div>
+              <div class="description">
+                <p><%= story.description %></p>
+              </div>
+              <div class="buttons">
+                <%= link_to "Show", story_path(story), class: "btn-lg btn-storymap btn-storymap-green text-center" %>
+                <% if story.user == current_user %>
+                  <%= link_to "Edit", edit_story_path(story), class: "btn-lg btn-storymap btn-storymap-blue text-center" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

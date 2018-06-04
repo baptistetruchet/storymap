@@ -6,8 +6,8 @@
 
   <div id="navbar-storymap-right">
     <div id="wrap">
-      <form action="" autocomplete="off">
-      <input id="search" name="search" type="text" placeholder="What're we looking for ?"><input id="search_submit" value="Rechercher" type="submit">
+      <form action="<%= stories_path %>" autocomplete="off">
+      <input id="search" name="search" type="text" placeholder="Browse through storymaps..."><input id="search_submit" value="Rechercher" type="submit">
       </form>
     </div>
     <%= link_to "DashBoard", dashboard_path, class: 'navbar-storymap-link' %>

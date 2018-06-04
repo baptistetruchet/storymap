@@ -14,7 +14,7 @@
         <div class="container widget">
           <div class="row">
             <% current_user.stories.where(published: true).each do |story| %>
-              <div class="col-xs-12">
+              <div class="col-xs-12" style="background:white; margin-top: 28px;">
                 <%= render partial: "shared/card", locals: { story: story } %>
               </div>
             <% end %>

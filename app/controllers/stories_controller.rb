@@ -4,6 +4,12 @@ class StoriesController < ApplicationController
   before_action :set_markers, only: [:show, :edit]
 
   def index
+    @stories = policy_scope(Story)
+
+    if params[:search].present?
+      @stories = @stories.global_search(params[:search])
+    end
+
   end
 
   def show
