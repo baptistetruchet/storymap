@@ -27,7 +27,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
     font-weight: 700;
-    margin-top: 10px;
+    margin-top: -15px;
     margin-bottom: 20px;
   }
   h2 {
@@ -38,6 +38,14 @@
     margin-bottom: 15px;
     color: #484848 ;
   }
+}
+
+.close-infobulle.fa-times {
+  position: relative;
+  left: 703px;
+  top: -12px;
+  color: #484848 ;
+  cursor: pointer;
 }
 
 .image-infobulle {

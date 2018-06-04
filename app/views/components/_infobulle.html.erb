@@ -1,5 +1,8 @@
   <div id="infobulle-<%= event.id %>" class="infobulle">
-    <h1><%= event.title %></h1>
+    <div class="title-close">
+      <i class="fas fa-times close-infobulle"></i>
+      <h1><%= event.title %></h1>
+    </div>
     <h2><strong><%= event.date.strftime("%B %d, %Y") %></strong> | <%= event.address %></h2>
     <div><p><%= event.content %></p></div>
     <% unless event.photo_url.blank? %>
