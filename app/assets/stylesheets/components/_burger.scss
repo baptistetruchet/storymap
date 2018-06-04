@@ -9,6 +9,11 @@
   justify-content: flex-end;
 }
 
+.burger-fixed-top {
+  @extend .navbar-fixed-top;
+  left: auto;
+}
+
 
 /* Right section */
 .burger-right {
