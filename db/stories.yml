@@ -79,10 +79,77 @@ stories:
             address: 'Paris, France'
       - attributes:
           position: 3
-          title: 'Mannerism'
+          title: 'Baroque'
+        events:
+          - title: 'Establishment of the Dutch East India Company'
+            content: |
+              'In 1602, the Dutch East India Company (a chartered company) was
+              established in order to seek benefits from the Malukan spice trade,
+              s also to secure their trade in the Indian Ocean.
+              The company lasted well with immense prosperity through the 17th century,
+              before it met its end in 1799. The last crowned head of the Tudor Dynasty,
+              Elizabeth I, daughter of King Henry VIII and his second wife, Anne Boleyn,
+              was born on 7 September 1533.Elizabeth I died in 1603.'
+            date: '1602-03-20'
+            photo_url: 'http://www.around-amsterdam.com/images/dutch-east-india-company.jpg'
+            address: 'Amsterdam, Netherlands'
+          - title: 'Establishment of the Jamestown Settlement'
+            content: |
+              'Situated on the North American mainland, the Jamestown settlement was the first
+              flourishing English settlement that had been established by the London Company,
+              called the Virginia company. There were in all about 100 odd members who led the voyage.
+              The settlement was founded by the banks of the James river.'
+            date: '1607-01-01'
+            photo_url: 'https://cdn.history.com/sites/2/2013/11/jamestown-colony-AB.jpeg'
+            address: '2110 Jamestown Rd, Williamsburg, VA 23185, USA'
+          - title: 'David with the Head of Goliath'
+            content: |
+              'David with the Head of Goliath is a painting by the Italian Baroque artist Caravaggio.
+              It is housed in the Galleria Borghese, Rome. The painting, which was in the collection
+              of Cardinal Scipione Borghese in 1650, has been dated as early as 1605
+              and as late as 1609–1610, with more recent scholars tending towards the former.'
+            date: '1610-01-01'
+            photo_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/David_with_the_Head_of_Goliath-Caravaggio_%281610%29.jpg/1280px-David_with_the_Head_of_Goliath-Caravaggio_%281610%29.jpg'
+            address: 'Rome, Italia'
+          - title: 'Rubens paints "Old woman and boy with candles"'
+            content: |
+              'An old woman gazes ahead, shielding her eyes from the candlelight, while the boy
+              behind her holds his candle, ready to be lit. The panel is painted in the style of
+              Caravaggio, whose work Rubens had seen in Italy. This style is characterised by its
+              exciting effects of light and unpolished naturalism.
+              Rubens did not make this painting to be sold; instead he retained possession of it.
+              He probably used it as study material for the pupils in his studio.'
+            date: '1616-01-01'
+            photo_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Peter_Paul_Rubens_-_Night_Scene_-_WGA20423.jpg/266px-Peter_Paul_Rubens_-_Night_Scene_-_WGA20423.jpg'
+            address: 'Antwerp, Belgium'
+          - title: 'Bernini carves the "Ecstasy of Saint Teresa"'
+            content: |
+              'The Ecstasy of Saint Teresa (alternatively Saint Teresa in Ecstasy or
+              Transverberation of Saint Teresa; in Italian: L'Estasi di Santa Teresa or
+              Santa Teresa in estasi) is the central sculptural group in white marble set in an
+              elevated aedicule in the Cornaro Chapel, Santa Maria della Vittoria, Rome.
+              It was designed and completed by Gian Lorenzo Bernini, the leading sculptor of his
+              day, who also designed the setting of the Chapel in marble, stucco and paint.
+              It is generally considered to be one of the sculptural masterpieces of the High Roman Baroque. It pictures Teresa of Ávila.'
+            date: '1647-01-01'
+            photo_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Ecstasy_of_Saint_Teresa_September_2015-2a.jpg/1024px-Ecstasy_of_Saint_Teresa_September_2015-2a.jpg'
+            address: 'Santa Maria della Vittoria, Rome, Italia'
       - attributes:
           position: 4
-          title: 'Baroque'
-      - attributes:
-          position: 5
           title: 'Romantism'
+        events:
+          - title: 'Painting by Paul Delaroche'
+            content:  |
+              'Paul Delaroche, Jeanne d'Arc malade est interrogée dans sa prison par le cardinal de Winchester, 1824'
+            date: '1824-01-01'
+            photo_url: 'https://i.pinimg.com/originals/2f/74/bd/2f74bdf49b79c57b39a85cd9c8162cf6.jpg'
+            address: 'Paris, France'
+          - title: 'Hernani by Victor Hugo'
+            content: |
+              'Hernani is a drama by the French romantic author Victor Hugo. The title originates from Hernani,
+              a Spanish town in The Southern Basque Country, where Hugo’s mother and her three children stopped on their
+              way to General Hugo’s place of residence.The play opened in Paris on 25 February 1830. Today, it is more remembered
+              for the demonstrations which accompanied the première and for being the inspiration of Verdi's opera Ernani than it is for its own merits.'
+            date: '1830-01-01'
+            photo_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Victor_Hugo-Hernani%281%29.jpg/1200px-Victor_Hugo-Hernani%281%29.jpg'
+            address: 'Bayonne, Spain'

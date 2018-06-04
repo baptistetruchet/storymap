@@ -6,4 +6,11 @@
 <%= link_to "Home", root_path, class:'btn-storymap btn-storymap-green text-center zindex-top' %>
 <%= render 'components/sidebar' %>
 <%= render 'components/timeline' %>
+<% @story.blocks.each do |block| %>
+  <% block.events.each do |event| %>
+    <%= render 'components/infobulle', event: event %>
+  <% end %>
+<% end %>
+
+
 

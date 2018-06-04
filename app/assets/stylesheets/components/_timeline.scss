@@ -14,7 +14,7 @@
   width: 10px;
   height: 10px;
   border-radius: 100%;
-  border: 1px solid black;
+  border: 3px solid #00D86E;
   opacity: 0.4;
   transition: opacity 200ms linear 0ms;
   &.is-active {
@@ -42,7 +42,7 @@
   width: 13px;
   height: 13px;
   border-radius: 100%;
-  border: 1px solid black;
+  border: 3px solid #3b3b3b;
   opacity: 0.4;
   transition: opacity 200ms linear 0ms;
   &.is-active {
@@ -61,7 +61,7 @@
   width: 13px;
   height: 13px;
   border-radius: 100%;
-  border: 1px solid black;
+  border: 3px solid #3b3b3b;
   opacity: 0.4;
   transition: opacity 200ms linear 0ms;
   &.is-active {
@@ -77,7 +77,7 @@
 
 .interval {
   height: 1px;
-  background-color: black;
+  background-color: #00D86E;
   width: 80px;
   opacity: 0.4;
   transition: transform 300ms linear 0ms, background-color 300ms linear 0ms, opacity 300ms linear 0ms;
@@ -103,4 +103,5 @@
   width: 400px;
   visibility: hidden;
   transition: visibility 200ms linear 0ms;
+  z-index: 2000 !important;
 }

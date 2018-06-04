@@ -10,10 +10,31 @@ function getNextSiblings(el, filter) {
   return siblings;
 }
 
+function hideAllInfobulles() {
+  let infobulle = document.querySelector('.show-infobulle');
+  if (infobulle) {infobulle.classList.remove("show-infobulle")};
+}
+
+function setInfobulleVisibility(eventid) {
+  hideAllInfobulles()
+  let infobulle = document.getElementById(`infobulle-${eventid}`);
+  infobulle.classList.add("show-infobulle");
+}
+
+function removePicTimeline(eventid) {
+    let picInfobulle = document.getElementById(`pic-timeline-${eventid}`);
+    picInfobulle.style.opacity = 0;
+    setTimeout(function(){
+      picInfobulle.style.opacity = 1;
+     }, 8000);
+}
+
 function flow() {
   let hist_events = document.querySelectorAll('.event');
   hist_events.forEach((hist_event) => {
     hist_event.addEventListener("click", (event) => {
+      setInfobulleVisibility(hist_event.getAttribute('evt-id'));
+      removePicTimeline(hist_event.getAttribute('evt-id'));
       let previousSiblings = getPreviousSiblings(hist_event, false)
         previousSiblings.forEach((previousSibling) => {
           if (previousSibling.tagName === 'DIV') previousSibling.classList.add("opacity-none");
@@ -34,6 +55,7 @@ function nextBlock() {
     timelines.forEach((timeline) => {
       if (timeline.className != "hidden-timeline") {
         last_pin.addEventListener("click", (event) => {
+          hideAllInfobulles();
           let blocks = document.querySelectorAll('.block');
           var selected_block = undefined;
           blocks.forEach((block) => {
@@ -49,7 +71,7 @@ function nextBlock() {
   });
 }
 
-export { flow, nextBlock };
+export { flow, nextBlock, hideAllInfobulles };
 
 
 
