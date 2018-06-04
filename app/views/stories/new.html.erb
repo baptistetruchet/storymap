@@ -1,13 +1,17 @@
-<div class="container">
-  <h1>CREATE STORY</h1>
+<%= render 'shared/navbar' %>
 
-  <div class="form-container">
-    <%= simple_form_for @story do |f| %>
-      <%= f.input :title, label: false, placeholder: "TITLE" %>
-      <%= f.input :description, label: false, placeholder: "DESCRIPTION" %>
-      <%= f.input :photo_url, label: false, placeholder: "PHOTO URL" %>
-      <%= f.submit "CREATE", class: "mysubmit" %>
-    <% end %>
+<div class="wrapper-new">
+  <div class="container">
+    <h1>CREATE STORY</h1>
+
+    <div class="form-container">
+      <%= simple_form_for @story do |f| %>
+        <%= f.input :title, label: false, placeholder: "TITLE", input_html: { class: 'myclass '} %>
+        <%= f.input :description, label: false, placeholder: "DESCRIPTION", input_html: { class: 'myclass'} %>
+        <%= f.input :photo_url, label: false, placeholder: "PHOTO URL", input_html: { class: 'myclass'} %>
+        <%= f.submit "CREATE", class: "btn-lg btn-storymap btn-storymap-blue text-center" %>
+      <% end %>
+    </div>
   </div>
 </div>
 
