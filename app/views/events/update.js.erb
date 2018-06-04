@@ -12,4 +12,11 @@ document.querySelector('#myoverlay').remove();
   });
 <% else %>
   document.querySelector('#event-<%= @event.id %> span').innerText = '<%= @event.title %>';
+
+  function displayEvent(eventHTML) {
+    const eventDiv = document.getElementById('info-div');
+    eventDiv.innerHTML = eventHTML;
+  }
+
+  displayEvent('<%= j render "show_event", event: @event %>');
 <% end %>

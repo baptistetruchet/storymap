@@ -4,19 +4,33 @@
     data-markers="<%= @all_markers.to_json %>" >
   </div>
   <div class="story-edit-div">
-    <%= link_to edit_story_details_path(@story), remote: true do %>
-      <h4 id="story-title" class="text-center"><%= @story.title %></h4>
-    <% end %><hr>
+    <div class="story-head">
+      <%= image_tag story_picture(@story), id: 'img-story' %>
+      <h4>
+        <%= link_to edit_story_details_path(@story), remote: true do %>
+          <%= @story.title %>
+        <% end %>
+      </h4>
+    </div>
+
+    <div class="story-options">
+      <%= link_to "Show", story_path(@story), class: 'btn-storymap btn-storymap-green text-center' %>
+      <%= link_to "Publish", story_path(@story), class: 'btn-storymap btn-storymap-blue text-center' %>
+    </div>
 
     <div class="full-list">
-      <ul id="blocks-list">
+      <ul id="blocks-list" class="list-unstyled">
         <% @blocks.sort_by{|b| b.position}.each do |block| %>
           <%= render 'block', block: block %>
         <% end %>
       </ul>
-      <%= link_to "Add a block", new_story_block_path(@story), remote: true, class: 'btn-storymap btn-storymap-green text-center'  %>
-      <hr>
-      <%= link_to "Show storymap", story_path(@story), class: 'btn-storymap btn-storymap-blue text-center'  %>
+      <%= link_to new_story_block_path(@story), class: 'link-green', remote: true do %>
+        <i class="fas fa-plus"></i>
+        <span>Add a block</span>
+      <% end %>
     </div>
+  </div>
+  <div id="info-div">
+    <em class="default-msg">Click on an event to see details</em>
   </div>
 </div>

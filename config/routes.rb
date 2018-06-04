@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       patch :update_position
     end
   end
-  resources :events, only: [:edit, :update, :destroy]
+  resources :events, only: [:show, :edit, :update, :destroy]
   get "/dashboard", to: "pages#dashboard"
   get "/edit_story/:id", to: "stories#edit_story_details", as: 'edit_story_details'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

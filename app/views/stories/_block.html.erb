@@ -1,28 +1,39 @@
 <li class="block-item" id="block-<%=block.id%>">
 
-  <button class="btn btn-success btn-block" type="button" data-toggle="collapse" data-target="#collapse-<%=block.id%>" aria-expanded="false" aria-controls="collapseExample">
-    <%= link_to edit_block_path(block), remote: true do %>
+  <button class="btn-unstyled btn-flex" type="button" data-toggle="collapse" data-target="#collapse-<%=block.id%>" aria-expanded="false" aria-controls="collapseExample">
+    <span>
+      <i class="fas fa-ellipsis-v"></i>
+      <span><%= block.title %></span>
+    </span>
+    <i class="fas fa-chevron-down"></i>
+  <!--
+    <%#= link_to edit_block_path(block), remote: true do %>
       <i class="fas fa-pencil-alt edit-block" aria-hidden="true"></i>
-    <% end %>
-    <strong><%= block.title %></strong>
-    <%= link_to block_path(block),
+    <%# end %>
+    <%#= link_to block_path(block),
      method: :delete,
      data: { confirm: "Are you sure?"},
      remote: true do %>
        <div class="fa fa-trash-alt trash-block" aria-hidden="true"></div>
-     <% end %>
+     <%# end %>
+  -->
   </button>
 
   <% if block.events %>
     <div class="collapse" id="collapse-<%=block.id%>">
-      <ul class="events-list">
+      <ul class="events-list list-unstyled">
         <% block.events.each do |event| %>
           <%= render 'event', event: event %>
         <% end %>
       </ul>
-      <%= link_to new_block_event_path(block), remote: true do %>
-       <p class="add-event-link"><strong>+</strong> Add Event</p><hr>
-      <% end %>
+      <div class="add-event-div">
+        <%= link_to new_block_event_path(block), remote: true do %>
+          <i class="fas fa-plus"></i>
+          <span>Add Event</span>
+        <% end %>
+        <%= link_to "Edit", edit_block_path(block), class: 'link-green', remote: true %>
+        <%= link_to "Delete", block_path(block), method: :delete, data: { confirm: "Are you sure?"}, class: 'link-red', remote: true %>
+      </div>
     </div>
   <% end %>
 

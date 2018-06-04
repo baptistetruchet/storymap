@@ -36,3 +36,20 @@
   right: 40px;
 }
 
+.link-green {
+  color: $green;
+  margin-left: 20px;
+  &:hover {
+    color: darken($green, 5%);
+  }
+}
+
+.link-red {
+  color: $red;
+  text-decoration: none;
+  margin-left: 20px;
+  &:hover {
+    color: darken($red, 5%);
+  }
+}
+
