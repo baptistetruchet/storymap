@@ -15,7 +15,17 @@ document.querySelector('#myoverlay').remove();
   function addBlock() {
     const blocks = document.getElementById('blocks-list');
     blocks.insertAdjacentHTML('beforeend', '<%= j render "stories/block", block: @block %>');
+    const lastBtn = Array.from(blocks.querySelectorAll('.btn-flex')).slice(-1)[0];
+    lastBtn.addEventListener('click', (e) => {
+      if (!e.currentTarget.classList.contains('active-block')) {
+        const active = document.querySelector('.active-block');
+        if (active) { active.click(); }
+      }
+      e.currentTarget.classList.toggle('active-block');
+    });
   }
   addBlock();
+
+
 
 <% end %>

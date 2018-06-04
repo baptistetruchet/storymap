@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_block, only: [:create, :new]
-  before_action :set_event, only: [:edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def new
     @event = Event.new
@@ -9,6 +9,12 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html
       format.js # <-- will render `app/views/events/new.js.erb` by default
+    end
+  end
+
+  def show
+    respond_to do |format|
+      format.js
     end
   end
 
