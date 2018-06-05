@@ -17,8 +17,12 @@
           <div class="container widget">
             <div class="row">
               <div class="col-xs-12">
-                <% current_user.stories.where(published: true).each do |story| %>
-                  <%= render partial: "shared/card", locals: { story: story } %>
+                <% if current_user.stories.where(published: true).blank? %>
+                    <h2 id="publish-story-center">Publish your first Storymap in <i>My Drafts</i></h2>
+                <% else %>
+                  <% current_user.stories.where(published: true).each do |story| %>
+                    <%= render partial: "shared/card", locals: { story: story } %>
+                  <% end %>
                 <% end %>
               </div>
             </div>
@@ -28,19 +32,22 @@
           <div class="container">
             <div class="row">
               <div class="col-xs-12">
-                <% current_user.stories.where(published: false).each do |story| %>
-                  <%= render partial: "shared/card", locals: { story: story } %>
+                <% if  current_user.stories.where(published: false).blank? %>
+                  <div id="dashboard-button-create">
+                    <%= link_to "Create new Storymap", new_story_path, class: "btn-lg btn-storymap btn-storymap-green text-center" %>
+                  </div>
+                <% else %>
+                  <% current_user.stories.where(published: false).each do |story| %>
+                    <%= render partial: "shared/card", locals: { story: story } %>
+                  <% end %>
                 <% end %>
               </div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
-
   </div>
-
 </div>
 <br>
 <br>
