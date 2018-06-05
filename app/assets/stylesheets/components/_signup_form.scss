@@ -1,0 +1,33 @@
+.wrapper-signup {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+}
+
+.signup-form {
+  width: 400px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+  padding: 50px 40px;
+  h2 {
+    font-size: 30px;
+    font-weight: 500;
+    font-family: Raleway;
+  }
+  .sign-up-form {
+    margin: 50px 0;
+  }
+  .login {
+    margin-top: 30px;
+  }
+  .form-inputs {
+    font-weight: 100;
+  }
+  p {
+    font-size: 16px;
+  }
+  #user_password {
+    margin-bottom: 14px;
+  }
+}
