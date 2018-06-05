@@ -87,3 +87,5 @@ class EventsController < ApplicationController
     params.require(:event).permit(:title, :content, :date, :address, :photo_url, :icon, event_zones_attributes: [:id, :zone_id, :color, :_destroy])
   end
 end
+
+

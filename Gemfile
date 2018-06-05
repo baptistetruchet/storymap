@@ -14,6 +14,7 @@ gem 'redis'
 gem 'pundit'
 gem 'geocoder'
 gem 'pg_search'
+gem 'gov_uk_date_fields', '~> 2.1.1'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'

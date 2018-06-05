@@ -1,28 +1,31 @@
 <% block = @block if @block %>
 <% event = @event if @event %>
 
-<div id="myoverlay" class="overlay">
-  <span class="closebtn" title="Close Overlay"><i class="fas fa-times"></i></span>
-  <div class="overlay-content">
-    <%= simple_form_for [block, event] do |f| %>
-      <%= f.input :title, label: false, placeholder: "TITLE", input_html: { class: 'myclass' } %>
-      <%= f.input :content, label: false, placeholder: "CONTENT", input_html: { class: 'myclass' } %>
-      <%= f.input :date, label: false, placeholder: "DATE", input_html: { class: 'myclass' } %>
-      <%= f.input :photo_url, label: false, placeholder: "URL PHOTO", input_html: { class: 'myclass' } %>
-      <%= f.input :address, label: false, placeholder: "ADDRESS", input_html: { class: 'myclass' } %>
-      <%= f.input :icon, as: :hidden, label: false, placeholder: "ICON", input_html: { class: 'myclass' } %>
-      <div id="pin_selector">
-        <%= image_tag("pin_blue", id: "pin_blue", class: "pin_option selected-pin") %> <%= image_tag("pin_blue_jeans", id: "pin_blue_jeans", class: "pin_option") %> <%= image_tag("pin_green", id: "pin_green", class: "pin_option") %><%= image_tag("pin_gris", id: "pin_gris", class: "pin_option") %> <%= image_tag("pin_orange", id: "pin_orange", class: "pin_option") %><%= image_tag("pin_red", id: "pin_red", class: "pin_option") %><%= image_tag("pin_yellow", id: "pin_yellow", class: "pin_option") %>
-      </div>
-      <%= f.simple_fields_for :event_zones do |event_zone| %>
-        <%= render 'events/event_zone_fields', f: event_zone %>
-      <% end %>
-      <div class="links">
-        <%= link_to_add_association 'add Zone', f, :event_zones %>
-      </div>
 
-      <%#= f.association :zones, as: :check_boxes %>
-      <%= f.submit class: "btn-lg btn-storymap btn-storymap-blue text-center" %>
-    <% end %>
+<div id="myoverlay" class="overlay">
+  <div class="overlay-container">
+    <span class="closebtn" title="Close Overlay"><i class="fas fa-times"></i></span>
+    <div class="overlay-content">
+      <%= simple_form_for [block, event], remote: true do |f| %>
+        <%= f.input :title, label: false, placeholder: "TITLE", input_html: { class: 'myclass' } %>
+        <%= f.input :content, label: false, placeholder: "CONTENT", input_html: { class: 'myclass' } %>
+        <%= f.input :date, as: :date, html5: true, label: false, placeholder: "DATE", input_html: { class: 'myclass' } %>
+        <%= f.input :photo_url, label: false, placeholder: "URL PHOTO", input_html: { class: 'myclass' } %>
+        <%= f.input :address, label: false, placeholder: "ADDRESS", input_html: { class: 'myclass address-input' } %>
+        <%= f.input :icon, as: :hidden, label: false, placeholder: "ICON", input_html: { class: 'myclass' } %>
+        <div id="pin_selector">
+          <%= image_tag("pin_blue", id: "pin_blue", class: "pin_option selected-pin") %> <%= image_tag("pin_blue_jeans", id: "pin_blue_jeans", class: "pin_option") %> <%= image_tag("pin_green", id: "pin_green", class: "pin_option") %><%= image_tag("pin_gris", id: "pin_gris", class: "pin_option") %> <%= image_tag("pin_orange", id: "pin_orange", class: "pin_option") %><%= image_tag("pin_red", id: "pin_red", class: "pin_option") %><%= image_tag("pin_yellow", id: "pin_yellow", class: "pin_option") %>
+        </div>
+        <%= f.simple_fields_for :event_zones do |event_zone| %>
+          <%= render 'events/event_zone_fields', f: event_zone %>
+        <% end %>
+        <div class="links">
+          <%= link_to_add_association 'add Zone', f, :event_zones %>
+        </div>
+        <div class="text-right">
+          <%= f.submit class: "btn-lg btn-storymap btn-storymap-blue text-center btn-edit-event-form" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
