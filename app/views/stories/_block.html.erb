@@ -4,19 +4,10 @@
     <span>
       <i class="fas fa-ellipsis-v"></i>
       <span><%= block.title %></span>
+      <%= link_to "Edit", edit_block_path(block), class: 'link-green', remote: true %>
+      <%= link_to "Delete", block_path(block), method: :delete, data: { confirm: "Are you sure?"}, class: 'link-red', remote: true %>
     </span>
     <i class="fas fa-chevron-down"></i>
-  <!--
-    <%#= link_to edit_block_path(block), remote: true do %>
-      <i class="fas fa-pencil-alt edit-block" aria-hidden="true"></i>
-    <%# end %>
-    <%#= link_to block_path(block),
-     method: :delete,
-     data: { confirm: "Are you sure?"},
-     remote: true do %>
-       <div class="fa fa-trash-alt trash-block" aria-hidden="true"></div>
-     <%# end %>
-  -->
   </button>
 
   <% if block.events %>
@@ -31,8 +22,6 @@
           <i class="fas fa-plus"></i>
           <span>Add Event</span>
         <% end %>
-        <%= link_to "Edit", edit_block_path(block), class: 'link-green', remote: true %>
-        <%= link_to "Delete", block_path(block), method: :delete, data: { confirm: "Are you sure?"}, class: 'link-red', remote: true %>
       </div>
     </div>
   <% end %>
