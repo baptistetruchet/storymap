@@ -5,6 +5,9 @@
   margin-bottom: 50px;
   margin-top: 50px;
   box-shadow: none;
+  &:focus {
+    box-shadow: none;
+  }
 }
 
 
