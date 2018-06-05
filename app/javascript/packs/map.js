@@ -58,7 +58,10 @@ if (mapElement) {
   if (markers.length === 0) {
     map.setZoom(3);
   }
-  addZone("Cuba", "red");
+  addZone("Germany", "red");
+  addZone("Poland", "blue");
+
+
   function addZone(country, color) {
     var coord = (countries[country].type == "Polygon") ? [countries[country].coordinates] : countries[country].coordinates;
     coord.forEach(function(array1) {
@@ -68,7 +71,7 @@ if (mapElement) {
       });
       map.drawPolygon({
           paths: myCoordinates, // pre-defined polygon shape
-          strokeColor: 'red',
+          strokeColor: color,
           strokeOpacity: 1,
           strokeWeight: 3,
           fillColor: color,

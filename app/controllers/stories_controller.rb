@@ -73,6 +73,18 @@ class StoriesController < ApplicationController
     authorize @story
   end
 
+  def set_zones
+    @all_zones = []
+    @zones = {}
+    @story.blocks.each do |block|
+      zonehash = {}
+      block.events.each do |event|
+
+      end
+      @zones[block.id] = zonehash
+    end
+  end
+
   def set_markers
     @all_markers = []
     @markers = {}

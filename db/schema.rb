@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_04_154911) do
+ActiveRecord::Schema.define(version: 2018_06_05_134436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 2018_06_04_154911) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["story_id"], name: "index_blocks_on_story_id"
+  end
+
+  create_table "event_zones", force: :cascade do |t|
+    t.bigint "event_id"
+    t.bigint "zone_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "color"
+    t.index ["event_id"], name: "index_event_zones_on_event_id"
+    t.index ["zone_id"], name: "index_event_zones_on_zone_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -69,18 +79,14 @@ ActiveRecord::Schema.define(version: 2018_06_04_154911) do
   end
 
   create_table "zones", force: :cascade do |t|
-    t.string "title"
-    t.bigint "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "coordinates"
-    t.string "color"
     t.string "country"
-    t.index ["event_id"], name: "index_zones_on_event_id"
   end
 
   add_foreign_key "blocks", "stories"
+  add_foreign_key "event_zones", "events"
+  add_foreign_key "event_zones", "zones"
   add_foreign_key "events", "blocks"
   add_foreign_key "stories", "users"
-  add_foreign_key "zones", "events"
 end
