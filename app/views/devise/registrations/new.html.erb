@@ -7,13 +7,13 @@
       <% end %>
     </div>
     <h2>Create your account</h2>
-    <div class="sign-up-form">
+    <div class="form">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
         <div class="form-inputs text-left">
-          <%= f.input :email, required: true, autofocus: false, label: false, placeholder: "Email",input_html: { class: 'myclass '}%>
+          <%= f.input :email, required: true, autofocus: false, label: false, placeholder: "Email", input_html: { class: 'myclass '} %>
           <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), label: false, placeholder: "Password",input_html: { class: 'myclass '} %>
-          <%= f.input :password_confirmation, required: true, label: false, placeholder: "Password confirmation",input_html: { class: 'myclass '} %>
+          <%= f.input :password_confirmation, required: true, label: false, placeholder: "Password confirmation", input_html: { class: 'myclass '} %>
         </div>
         <div class="form-actions">
           <%= f.button :submit, "Sign up", class: "btn btn-success"%>
