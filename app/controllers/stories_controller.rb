@@ -2,6 +2,7 @@ class StoriesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_story, only: [:show, :edit, :edit_story_details, :update, :destroy]
   before_action :set_markers, only: [:show, :edit]
+  before_action :set_zones, only: [:show, :edit]
 
   def index
     @stories = policy_scope(Story)
@@ -75,13 +76,12 @@ class StoriesController < ApplicationController
 
   def set_zones
     @all_zones = []
-    @zones = {}
     @story.blocks.each do |block|
-      zonehash = {}
       block.events.each do |event|
-
+        event.event_zones.each do |evzone|
+          @all_zones.push({evtid: event.id, zonecolor: evzone.color, zone: evzone.zone.country})
+        end
       end
-      @zones[block.id] = zonehash
     end
   end
 

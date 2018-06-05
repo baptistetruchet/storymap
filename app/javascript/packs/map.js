@@ -13,6 +13,8 @@ if (mapElement) {
   });
   map.setStyle('map_style');
   const markers = JSON.parse(mapElement.dataset.markers);
+  const zones = JSON.parse(mapElement.dataset.zones);
+  console.log(zones);
   addMarkersMaps(markers);
   map.setZoom(2);
   let blocks = document.querySelectorAll('.block');
@@ -40,6 +42,8 @@ if (mapElement) {
   events.forEach((evt) => {
     evt.addEventListener("click", (event) => {
       map.removeMarkers();
+      const eventZones = zones.filter(zone => zone.evtid === parseInt(evt.getAttribute("evt-id"), 10));
+      eventZones.forEach((zone) => {addZone(zone.zone, zone.zonecolor);});
       let selectedMar = markers.filter(mark => mark.blockid === parseInt(evt.getAttribute("block-id"), 10));
       let clickedEvt = markers.filter(mark => mark.eventid === parseInt(evt.getAttribute("evt-id"), 10));
       selectedMar.forEach(function(mark) {
@@ -58,9 +62,6 @@ if (mapElement) {
   if (markers.length === 0) {
     map.setZoom(3);
   }
-  addZone("Germany", "red");
-  addZone("Poland", "blue");
-
 
   function addZone(country, color) {
     var coord = (countries[country].type == "Polygon") ? [countries[country].coordinates] : countries[country].coordinates;
