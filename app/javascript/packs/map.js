@@ -1,6 +1,7 @@
 import GMaps from 'gmaps/gmaps.js';
 import { styles } from '../components/style';
 import { autocomplete } from '../components/autocomplete';
+import { countries } from '../components/countries';
 
 
 const mapElement = document.getElementById('map');
@@ -57,6 +58,25 @@ if (mapElement) {
   if (markers.length === 0) {
     map.setZoom(3);
   }
+  addZone("Cuba", "red");
+  function addZone(country, color) {
+    var coord = (countries[country].type == "Polygon") ? [countries[country].coordinates] : countries[country].coordinates;
+    coord.forEach(function(array1) {
+      var myCoordinates = [];
+      array1[0].forEach(function(ll) {
+        myCoordinates.push(new google.maps.LatLng(ll[1],ll[0]));
+      });
+      map.drawPolygon({
+          paths: myCoordinates, // pre-defined polygon shape
+          strokeColor: 'red',
+          strokeOpacity: 1,
+          strokeWeight: 3,
+          fillColor: color,
+          fillOpacity: 0.6
+        });
+    });
+  }
+
 
   function addMarkersMaps(markers) {
     markers.forEach((marker) => {
