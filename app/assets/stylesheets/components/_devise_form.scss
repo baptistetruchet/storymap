@@ -1,10 +1,10 @@
-.wrapper-signup {
+.wrapper-devise {
   display: flex;
   height: 100vh;
   align-items: center;
 }
 
-.signup-form {
+.devise-form {
   width: 400px;
   background: white;
   border-radius: 8px;
@@ -29,5 +29,9 @@
   }
   #user_password {
     margin-bottom: 14px;
+  }
+  .form-check-label {
+    margin-left: 15px;
+    font-size: 16px;
   }
 }
