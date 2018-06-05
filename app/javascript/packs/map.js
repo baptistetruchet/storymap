@@ -1,6 +1,7 @@
 import GMaps from 'gmaps/gmaps.js';
 import { styles } from '../components/style';
 import { autocomplete } from '../components/autocomplete';
+import { countries } from '../components/countries';
 
 
 const mapElement = document.getElementById('map');
@@ -12,6 +13,8 @@ if (mapElement) {
   });
   map.setStyle('map_style');
   const markers = JSON.parse(mapElement.dataset.markers);
+  const zones = JSON.parse(mapElement.dataset.zones);
+  console.log(zones);
   addMarkersMaps(markers);
   map.setZoom(2);
   let blocks = document.querySelectorAll('.block');
@@ -49,6 +52,8 @@ if (mapElement) {
   events.forEach((evt) => {
     evt.addEventListener("click", (event) => {
       map.removeMarkers();
+      const eventZones = zones.filter(zone => zone.evtid === parseInt(evt.getAttribute("evt-id"), 10));
+      eventZones.forEach((zone) => {addZone(zone.zone, zone.zonecolor);});
       let selectedMar = markers.filter(mark => mark.blockid === parseInt(evt.getAttribute("block-id"), 10));
       let clickedEvt = markers.filter(mark => mark.eventid === parseInt(evt.getAttribute("evt-id"), 10));
       selectedMar.forEach(function(mark) {
@@ -67,6 +72,25 @@ if (mapElement) {
   if (markers.length === 0) {
     map.setZoom(3);
   }
+
+  function addZone(country, color) {
+    var coord = (countries[country].type == "Polygon") ? [countries[country].coordinates] : countries[country].coordinates;
+    coord.forEach(function(array1) {
+      var myCoordinates = [];
+      array1[0].forEach(function(ll) {
+        myCoordinates.push(new google.maps.LatLng(ll[1],ll[0]));
+      });
+      map.drawPolygon({
+          paths: myCoordinates, // pre-defined polygon shape
+          strokeColor: color,
+          strokeOpacity: 1,
+          strokeWeight: 3,
+          fillColor: color,
+          fillOpacity: 0.6
+        });
+    });
+  }
+
 
   function addMarkersMaps(markers) {
     markers.forEach((marker) => {

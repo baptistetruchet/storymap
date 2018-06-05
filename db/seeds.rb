@@ -9,6 +9,8 @@
 require "open-uri"
 require "yaml"
 
+
+
 puts "Cleaning database..."
 User.destroy_all
 
@@ -23,9 +25,17 @@ end
 puts "#{User.count} users have been created"
 
 # Stories
-puts 'Creating stories...'
+puts 'Creating zones...'
 file = "db/stories.yml"
+countries_file = "db/countries.yml"
+
 stories = YAML.load(open(file).read)
+countries = YAML.load(open(countries_file).read)
+
+countries["countries"].each do |country|
+  Zone.create(country: country)
+end
+puts 'Creating story...'
 
 stories["stories"].each do |story|
 
