@@ -82,3 +82,5 @@ class EventsController < ApplicationController
     params.require(:event).permit(:title, :content, :date, :address, :photo_url, :icon)
   end
 end
+
+
