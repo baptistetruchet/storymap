@@ -1,0 +1,5 @@
+meta_product_name: "StoryMap"
+meta_title: "StoryMap - Tell a story through time & space"
+meta_description: "Create dynamic illustrations using a map plus a timeline simultaneously and supercharge your storytelling "
+meta_image: "cover.png"  # should exist in `app/assets/images/`
+twitter_account: "@storymap"  # required for Twitter Cards
