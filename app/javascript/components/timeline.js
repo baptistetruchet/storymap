@@ -70,4 +70,29 @@ function nextBlock() {
   });
 }
 
-export { flow, nextBlock, hideAllInfobulles };
+
+function navigateBlocks(event) {
+
+  if(event.key === "ArrowUp"){
+    if(document.querySelector('.block[data-index = "-1"]')){
+      let previous_block = document.querySelector('.block[data-index = "-1"]');
+      previous_block.click();
+    }
+  }
+
+  if(event.key === "ArrowDown"){
+    if(document.querySelector('.block[data-index = "1"]')){
+      let next_block = document.querySelector('.block[data-index = "1"]');
+      next_block.click();
+    }
+  }
+}
+
+function initNavigation() {
+  window.addEventListener("keyup", navigateBlocks);
+}
+
+
+export { flow, nextBlock, hideAllInfobulles, navigateBlocks, initNavigation };
+
+
