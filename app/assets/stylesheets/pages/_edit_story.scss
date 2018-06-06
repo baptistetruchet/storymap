@@ -22,11 +22,10 @@
 }
 
 #img-story {
-  width: 90px;
-  height: 90px;
+  width: 120px;
   padding: 3px;
   box-shadow: 0 0 5px $darken-blue;
-  border-radius: 50%;
+  border-radius: 15px;
 }
 
 #info-div {
@@ -162,10 +161,14 @@
 .story-options {
   display: flex;
   justify-content: center;
-  margin: 30px auto;
+  margin: 10px 0 20px 0;
 }
 
 .event-buttons {
-  padding: 10px;
+  padding: 0;
   font-size: 24px;
+  margin-bottom: 13px;
+  .btn-storymap {
+    margin-left: 0;
+  }
 }
