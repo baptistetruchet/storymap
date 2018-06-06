@@ -24,3 +24,8 @@ if (editDiv) { edit(); }
 import { closeInfobulle } from '../components/infobulle';
 const infobulle = document.querySelector('.infobulle');
 if (infobulle) { closeInfobulle(); }
+
+import { initializemapzone } from '../components/mapzone';
+const mapcanvas = document.querySelector('#map-canvas');
+if (mapcanvas) { initializemapzone(); }
+

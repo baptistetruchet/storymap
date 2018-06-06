@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     resources :eventzones, only: [:create, :new, :update]
   end
   resources :eventzones, only: [:show, :destroy]
+  resources :zones, only: [:create, :new]
+
   get "/dashboard", to: "pages#dashboard"
   get "/edit_story/:id", to: "stories#edit_story_details", as: 'edit_story_details'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
