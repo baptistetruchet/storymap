@@ -13,13 +13,14 @@ if (mapElement) {
   map.setStyle('map_style');
   const markers = JSON.parse(mapElement.dataset.markers);
   const zones = JSON.parse(mapElement.dataset.zones);
-  console.log(zones);
+  var zones_drawn = [];
   addMarkersMaps(markers);
   map.setZoom(2);
   let blocks = document.querySelectorAll('.block');
   blocks.forEach((block) => {
     block.addEventListener("click", (event) => {
       map.removeMarkers();
+      zones_drawn.forEach((drawing) => {drawing.setMap(null);})
       if (parseInt(block.id, 10) == 0) {
         markers.forEach(function(mark) {
           mark.opacity = 1;
@@ -51,6 +52,7 @@ if (mapElement) {
   events.forEach((evt) => {
     evt.addEventListener("click", (event) => {
       map.removeMarkers();
+      zones_drawn.forEach((drawing) => {drawing.setMap(null);})
       const eventZones = zones.filter(zone => zone.evtid === parseInt(evt.getAttribute("evt-id"), 10));
       eventZones.forEach((zone) => {addZone(zone.zone, zone.zonecolor, zone.zonecoord);});
       let selectedMar = markers.filter(mark => mark.blockid === parseInt(evt.getAttribute("block-id"), 10));
@@ -72,6 +74,7 @@ if (mapElement) {
     map.setZoom(3);
   }
 
+
   function addZone(country, color, coordins) {
     var coords= JSON.parse(coordins);
     console.log(coords);
@@ -82,14 +85,14 @@ if (mapElement) {
       array1[0].forEach(function(ll) {
         myCoordinates.push(new google.maps.LatLng(ll[1],ll[0]));
       });
-      map.drawPolygon({
+      zones_drawn.push(map.drawPolygon({
           paths: myCoordinates, // pre-defined polygon shape
           strokeColor: color,
           strokeOpacity: 1,
           strokeWeight: 3,
           fillColor: color,
           fillOpacity: 0.6
-        });
+        }));
     });
   }
 
