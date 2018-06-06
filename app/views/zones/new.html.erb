@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Create a custom zone</h1>
+  <!-- <button id="clipboard-btn" onclick="copyToClipboard(document.getElementById('info').innerHTML)">Copy to Clipboard </button> -->
+  <!-- <textarea  id="info" cols="30" rows="10"></textarea> -->
+  <%= simple_form_for @zone do |f| %>
+    <%= f.input :country, as: :string, :label => "Custom Zone title" %>
+    <%= f.input :coordinates, as: :hidden %>
+  <div id="map-canvas"></div>
+  <div class="lngLat"></div>
+    <%= f.submit class: "btn btn-warning" %>
+  <% end %>
+</div>
