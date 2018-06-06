@@ -1,7 +1,11 @@
+<% content_for :meta_title, "Edit - #{@story.title} | #{DEFAULT_META["meta_product_name"]}" %>
+
+
 <div class="edit-page">
   <div
     id="map"
-    data-markers="<%= @all_markers.to_json %>" >
+    data-markers="<%= @all_markers.to_json %>"
+    data-zones="<%= @all_zones.to_json %>">
   </div>
   <div class="story-edit-div">
     <div class="story-head">

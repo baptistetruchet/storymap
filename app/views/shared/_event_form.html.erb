@@ -1,7 +1,7 @@
 <%= simple_form_for [@block, @event] do |f| %>
   <%= f.input :title, input_html: { class: 'myclass' } %>
   <%= f.input :content, input_html: { class: 'myclass' } %>
-  <%= f.input :date, input_html: { class: 'myclass' } %>
+  <%= f.input :date, as: :string, input_html: { class: 'myclass' } %>
   <%= f.input :address, input_html: { class: 'myclass' } %>
   <%= f.input :photo_url, input_html: { class: 'myclass' } %>
   <%= f.submit class: "btn btn-warning" %>

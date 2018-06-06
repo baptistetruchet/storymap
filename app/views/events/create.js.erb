@@ -18,5 +18,6 @@ document.querySelector('#myoverlay').remove();
     eventsList.insertAdjacentHTML('beforeend', '<%= j render "stories/event", event: @event %>');
   }
   addEvent();
+  location.reload();
 
 <% end %>

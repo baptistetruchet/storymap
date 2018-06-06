@@ -45,6 +45,11 @@ class EventsController < ApplicationController
   end
 
   def update
+    if params[:event][:zone_ids]
+      params[:event][:zone_ids].compact.each do |id|
+        EventZone.create(zone_id: id, event_id: @event.id)
+      end
+    end
     if @event.update(event_params)
       respond_to do |format|
         format.html { redirect_to edit_story_path(@event.block.story) }
@@ -79,6 +84,8 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :content, :date, :address, :photo_url, :icon)
+    params.require(:event).permit(:title, :content, :date, :address, :photo_url, :icon, event_zones_attributes: [:id, :zone_id, :color, :_destroy])
   end
 end
+
+

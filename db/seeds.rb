@@ -9,12 +9,14 @@
 require "open-uri"
 require "yaml"
 
+
+
 puts "Cleaning database..."
 User.destroy_all
-
+Zone.destroy_all
 # Users
 puts 'Creating users...'
-file = "db/users.yml"
+file = Rails.root.join("db/users.yml")
 users = YAML.load(open(file).read)
 
 users["users"].each do |user|
@@ -23,10 +25,22 @@ end
 puts "#{User.count} users have been created"
 
 # Stories
-puts 'Creating stories...'
-file = "db/stories.yml"
-stories = YAML.load(open(file).read)
+puts 'Creating zones...'
 
+require 'csv'
+
+csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
+filepath    = Rails.root.join('db/clean_countries.csv')
+
+CSV.foreach(filepath, csv_options) do |row|
+    Zone.create(country: row['admin'], coordinates: row['json_4326'])
+end
+
+puts 'Creating story...'
+
+file = Rails.root.join("db/stories.yml")
+
+stories = YAML.load(open(file).read)
 stories["stories"].each do |story|
 
   s = Story.new(story['attributes'])
