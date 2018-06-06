@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Merriweather:300,400,700');
-
 .infobulle {
   position: absolute;
   margin: 20px;
   border-radius: 5px;
   top: 50px;
-  left: 180px;
+  left: 200px;
   z-index: 97;
   background-color: white;
   width: 750px;
@@ -51,8 +49,8 @@
 
 .image-infobulle-thumbnail {
   margin-top: 35px;
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 120px;
+  max-height: 170px;
 }
 
 .image-infobulle {
