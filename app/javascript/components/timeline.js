@@ -93,6 +93,6 @@ function initNavigation() {
 }
 
 
-export { flow, nextBlock, hideAllInfobulles, navigateBlocks, initNavigation };
+export { flow, nextBlock, hideAllInfobulles, initNavigation };
 
 
