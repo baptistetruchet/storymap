@@ -1,7 +1,6 @@
 import GMaps from 'gmaps/gmaps.js';
 import { styles } from '../components/style';
 import { autocomplete } from '../components/autocomplete';
-import { countries } from '../components/countries';
 
 
 const mapElement = document.getElementById('map');
@@ -75,9 +74,7 @@ if (mapElement) {
 
   function addZone(country, color, coordins) {
     var coords= JSON.parse(coordins);
-    console.log(coords);
     var coord = (coords.type == "Polygon") ? [coords.coordinates] : coords.coordinates;
-    console.log(coord);
     coord.forEach(function(array1) {
       var myCoordinates = [];
       array1[0].forEach(function(ll) {
