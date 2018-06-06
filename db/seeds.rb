@@ -13,7 +13,7 @@ require "yaml"
 
 puts "Cleaning database..."
 User.destroy_all
-
+Zone.destroy_all
 # Users
 puts 'Creating users...'
 file = "db/users.yml"
@@ -26,17 +26,21 @@ puts "#{User.count} users have been created"
 
 # Stories
 puts 'Creating zones...'
-file = "db/stories.yml"
-countries_file = "db/countries.yml"
 
-stories = YAML.load(open(file).read)
-countries = YAML.load(open(countries_file).read)
+require 'csv'
 
-countries["countries"].each do |country|
-  Zone.create(country: country)
+csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
+filepath    = 'db/clean_countries.csv'
+
+CSV.foreach(filepath, csv_options) do |row|
+    Zone.create(country: row['admin'], coordinates: row['json_4326'])
 end
+
 puts 'Creating story...'
 
+file = "db/stories.yml"
+
+stories = YAML.load(open(file).read)
 stories["stories"].each do |story|
 
   s = Story.new(story['attributes'])

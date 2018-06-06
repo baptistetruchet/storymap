@@ -79,7 +79,7 @@ class StoriesController < ApplicationController
     @story.blocks.each do |block|
       block.events.each do |event|
         event.event_zones.each do |evzone|
-          @all_zones.push({evtid: event.id, zonecolor: evzone.color, zone: evzone.zone.country})
+          @all_zones.push({evtid: event.id, zonecolor: evzone.color, zone: evzone.zone.country, zonecoord: evzone.zone.coordinates})
         end
       end
     end

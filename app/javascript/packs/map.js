@@ -53,7 +53,7 @@ if (mapElement) {
     evt.addEventListener("click", (event) => {
       map.removeMarkers();
       const eventZones = zones.filter(zone => zone.evtid === parseInt(evt.getAttribute("evt-id"), 10));
-      eventZones.forEach((zone) => {addZone(zone.zone, zone.zonecolor);});
+      eventZones.forEach((zone) => {addZone(zone.zone, zone.zonecolor, zone.zonecoord);});
       let selectedMar = markers.filter(mark => mark.blockid === parseInt(evt.getAttribute("block-id"), 10));
       let clickedEvt = markers.filter(mark => mark.eventid === parseInt(evt.getAttribute("evt-id"), 10));
       selectedMar.forEach(function(mark) {
@@ -73,8 +73,11 @@ if (mapElement) {
     map.setZoom(3);
   }
 
-  function addZone(country, color) {
-    var coord = (countries[country].type == "Polygon") ? [countries[country].coordinates] : countries[country].coordinates;
+  function addZone(country, color, coordins) {
+    var coords= JSON.parse(coordins);
+    console.log(coords);
+    var coord = (coords.type == "Polygon") ? [coords.coordinates] : coords.coordinates;
+    console.log(coord);
     coord.forEach(function(array1) {
       var myCoordinates = [];
       array1[0].forEach(function(ll) {
