@@ -29,7 +29,24 @@ function removePicTimeline(eventid) {
      }, 8000);
 }
 
+function getCurrentTimeline() {
+  return Array.from(document.querySelectorAll('#timeline')).filter((timeline)=> !timeline.classList.contains('hidden-timeline'))[0];
+}
+
+function blockAllEvents() {
+  document.querySelectorAll('.event-start').forEach(start => {
+    start.addEventListener('click', () => {
+      const current_block = document.querySelector('.block[data-index = "0"]');
+      current_block.click();
+      getCurrentTimeline().querySelectorAll('.event, .interval').forEach((el) => {
+        el.classList.remove("opacity-none");
+      })
+    })
+  })
+}
+
 function flow() {
+  blockAllEvents();
   let hist_events = document.querySelectorAll('.event');
   hist_events.forEach((hist_event) => {
     hist_event.addEventListener("click", (event) => {
@@ -75,15 +92,19 @@ function navigateBlocks(event) {
 
   if(event.key === "ArrowUp"){
     if(document.querySelector('.block[data-index = "-1"]')){
-      let previous_block = document.querySelector('.block[data-index = "-1"]');
-      previous_block.click();
+      const previous_block = document.querySelector('.block[data-index = "-1"]');
+      if (previous_block) {
+        previous_block.click();
+      }
     }
   }
 
   if(event.key === "ArrowDown"){
     if(document.querySelector('.block[data-index = "1"]')){
-      let next_block = document.querySelector('.block[data-index = "1"]');
-      next_block.click();
+      const next_block = document.querySelector('.block[data-index = "1"]');
+      if (next_block) {
+        next_block.click();
+      }
     }
   }
 }
@@ -92,7 +113,38 @@ function initNavigation() {
   window.addEventListener("keyup", navigateBlocks);
 }
 
+function getCurrentEvent(){
+  const current_timeline = getCurrentTimeline();
+  if (current_timeline) {
+    // return current_event
+    return Array.from(current_timeline.querySelectorAll('.opacity-none')).slice(-1)[0];
+  } else {
+    return null;
+    // if on overwiew
+  }
+}
 
-export { flow, nextBlock, hideAllInfobulles, initNavigation };
+function navigateEvents(event) {
+  // current event has the highest id with opacity none
+  const current_event = getCurrentEvent();
+  if (current_event) {
 
+    if (event.key === "ArrowLeft") {
+      if (current_event.previousElementSibling) {
+        const previous_event = current_event.previousElementSibling.previousElementSibling;
+        previous_event.click();
+      }
+    }
 
+    if (event.key === "ArrowRight") {
+      const next_event = current_event.nextElementSibling.nextElementSibling;
+      next_event.click();
+    }
+  }
+}
+
+function initNavigationEvents() {
+  window.addEventListener("keyup", navigateEvents);
+}
+
+export { flow, nextBlock, hideAllInfobulles, initNavigation, initNavigationEvents };
