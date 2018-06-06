@@ -1,5 +1,7 @@
 <div class="nested-fields">
-  <%= f.association :zone, collection: Zone.order(:country), label_method: :country, value_method: :id %>
-  <%= f.input :color, as: :select, collection: [:red, :green, :blue] %>
-  <%= link_to_remove_association "remove Zone", f %>
+  <div class="create-zone">
+    <%= f.input :color, input_html: {type: :color, class: 'colorpicker'} %>
+    <%= f.association :zone, collection: Zone.order(:country), label_method: :country, value_method: :id %>
+    <%= link_to_remove_association button_tag('x', type: "button", class: "close"), f %>
+  </div>
 </div>
