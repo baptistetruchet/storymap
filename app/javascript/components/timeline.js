@@ -63,7 +63,6 @@ function nextBlock() {
               selected_block = block;
             }
           });
-          console.log(selected_block);
           selected_block.click();
         });
       }
@@ -72,10 +71,3 @@ function nextBlock() {
 }
 
 export { flow, nextBlock, hideAllInfobulles };
-
-
-
-
-      // let timeline = Array.from(hist_event.parentNode.children);
-      // let position = timeline.indexOf(hist_event);
-      // console.log(position);
