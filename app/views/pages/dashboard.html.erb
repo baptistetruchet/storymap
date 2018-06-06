@@ -1,13 +1,13 @@
 <% content_for :meta_title, "Dashboard | #{DEFAULT_META["meta_product_name"]}" %>
 
 <%= render 'shared/navbar' %>
-
 <div class="wrapper-dashboard">
   <div class="large-dashboard-container">
 
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation" class="active nav-tab"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" class="tab-link">My Published StoryMaps</a></li>
       <li role="presentation" class="nav-tab"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" class="tab-link">My Drafts</a></li>
+      <li role="presentation" class="nav-tab"><a href="#new-zone" aria-controls="new-zone" role="tab" data-toggle="tab" class="tab-link">My Zones</a></li>
     </ul>
 
     <div class="container dashboard-container">
@@ -41,6 +41,17 @@
                     <%= render partial: "shared/card", locals: { story: story } %>
                   <% end %>
                 <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="new-zone">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12">
+                <div id="dashboard-button-create">
+                  <%= link_to "Create a custom zone", new_zone_path, class: "btn-lg btn-storymap btn-storymap-green text-center" %>
+                </div>
               </div>
             </div>
           </div>
