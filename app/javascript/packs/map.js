@@ -77,9 +77,7 @@ if (mapElement) {
 
   function addZone(country, color, coordins) {
     var coords= JSON.parse(coordins);
-    console.log(coords);
     var coord = (coords.type == "Polygon") ? [coords.coordinates] : coords.coordinates;
-    console.log(coord);
     coord.forEach(function(array1) {
       var myCoordinates = [];
       array1[0].forEach(function(ll) {
