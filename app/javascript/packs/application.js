@@ -17,9 +17,9 @@ if (timeline) {
   nextBlock();
 }
 
-import { edit } from '../components/edit';
-const editDiv = document.querySelector('.story-edit-div');
-if (editDiv) { edit(); }
+import { toggleBlock } from '../components/toggle_block';
+const editPage = document.querySelector('.story-edit-div');
+if (editPage) { toggleBlock(); }
 
 import { closeInfobulle } from '../components/infobulle';
 const infobulle = document.querySelector('.infobulle');

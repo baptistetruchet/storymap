@@ -56,6 +56,9 @@
   color: darken($light-gray, 60%);
   height: 40px;
   padding: 5px 20px;
+  a {
+    display: none;
+  }
   > span {
     display: flex;
     align-items: center;
@@ -77,6 +80,9 @@
 
 .active-block {
   color: black;
+  a {
+    display: block;
+  }
   > i:before {
     content: "\f077" !important;
   }
