@@ -22,6 +22,7 @@
 }
 
 .block {
+  font-family: Montserrat;
   margin-top: 20px;
   margin-bottom: 20px;
   color: #3b3b3b;
@@ -36,6 +37,6 @@
   height: 400px;
   max-height: 400px;
   position: relative;
-  top: 171px;
+  top: 169px;
   transition: transform 300ms cubic-bezier(.694,0,.335,1),-webkit-transform 300ms cubic-bezier(.694,0,.335,1);
 }

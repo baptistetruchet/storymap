@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Merriweather:300,400,700');
-
 .infobulle {
   position: absolute;
   margin: 20px;
   border-radius: 5px;
   top: 50px;
-  left: 180px;
+  left: 200px;
   z-index: 97;
   background-color: white;
   width: 750px;
@@ -19,9 +17,10 @@
     font-weight: 300;
     margin-top: 30px;
     margin-bottom: 30px;
-    padding: 0px 20px;
+    padding: 0 20px 0 40px;
     font-size: 16px;
     line-height: 170%;
+    white-space: pre-wrap;
   }
   h1 {
     font-family: 'Montserrat', sans-serif;
@@ -48,10 +47,15 @@
   cursor: pointer;
 }
 
+.image-infobulle-thumbnail {
+  margin-top: 35px;
+  max-width: 120px;
+  max-height: 170px;
+}
+
 .image-infobulle {
-  max-width: 100%;
-  max-height: 100%;
-  padding-top: 20px;
+  max-width: 95vw;
+  max-height: 95vh;
 }
 
 .separator-line {
@@ -65,6 +69,40 @@
   visibility: visible;
 }
 
-// .show-page {
-//   position: relative;
-// }
+.event-content-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+    pointer-events:none; /* This makes sure that we can still click outside of the modal to close it */
+}
+.vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+    pointer-events:none;
+}
+.modal-content {
+    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+    width:inherit;
+    max-width:inherit; /* For Bootstrap 4 - to avoid the modal window stretching full width */
+    height:inherit;
+    /* To center horizontally */
+    margin: 0 auto;
+    pointer-events: all;
+}
+
+.modal-dialog {
+  display: flex;
+  justify-content: center;
+}
+
+.modal {
+  z-index: 100001 !important;
+}
+
+
