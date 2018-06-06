@@ -1,4 +1,6 @@
 function displayEvent(eventHTML) {
+  const actual = document.querySelector('#info-div');
+  if (actual) { actual.remove(); }
   const editPage = document.querySelector('.edit-page');
   editPage.insertAdjacentHTML('beforeend', eventHTML);
 }
