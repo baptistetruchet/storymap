@@ -6,7 +6,7 @@
         <%= link_to "Edit", edit_event_path(event), class: 'btn-storymap btn-storymap-green text-center', remote: true %>
         <%= link_to "Delete",
           event_path(event),
-          class: 'btn-storymap btn-storymap-red text-center',
+          class: 'link-red',
           method: :delete,
           data: { confirm: "Are you sure?"},
           remote: true %>

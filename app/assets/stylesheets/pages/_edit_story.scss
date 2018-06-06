@@ -23,8 +23,7 @@
 
 #img-story {
   width: 120px;
-  padding: 3px;
-  box-shadow: 0 0 5px $darken-blue;
+  box-shadow: 0 0 3px black;
   border-radius: 15px;
 }
 
@@ -176,5 +175,9 @@
   margin-bottom: 13px;
   .btn-storymap {
     margin-left: 0;
+  }
+  .link-red {
+    font-size: 18px;
+    margin-left: 0px;
   }
 }
