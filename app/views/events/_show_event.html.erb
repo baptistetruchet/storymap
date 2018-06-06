@@ -1,19 +1,19 @@
-<div class="show-event-div">
-  <%= image_tag event.photo_url, class: 'event-img' %>
-  <div class="show-event-info">
-    <div id="title"><%= event.title %></div>
-    <div id="infos"><strong><%= event.date.strftime("%B %d, %Y") %></strong> | <%= event.address %></div>
-    <div id="event-description"><%= event.content %></div>
-    <div class="event-buttons">
-      <%= link_to edit_event_path(event), remote: true do %>
-        <i class="far fa-edit edit-event" aria-hidden="true"></i>
-      <% end %>
-      <%= link_to event_path(event),
-      method: :delete,
-      data: { confirm: "Are you sure?"},
-      remote: true do %>
-        <i class="fa fa-trash-alt trash-event" aria-hidden="true"></i>
-      <% end %>
+<div id="info-div">
+  <div class="show-event-div">
+    <%= image_tag event.photo_url, class: 'event-img' %>
+    <div class="show-event-info">
+      <div class="event-buttons">
+        <%= link_to "Edit", edit_event_path(event), class: 'btn-storymap btn-storymap-green text-center', remote: true %>
+        <%= link_to "Delete",
+          event_path(event),
+          class: 'link-red',
+          method: :delete,
+          data: { confirm: "Are you sure?"},
+          remote: true %>
+      </div>
+      <div id="title"><%= event.title %></div>
+      <div id="infos"><strong><%= event.date.strftime("%B %d, %Y") %></strong> | <%= event.address %></div>
+      <div id="event-description"><%= event.content %></div>
     </div>
   </div>
 </div>

@@ -22,11 +22,9 @@
 }
 
 #img-story {
-  width: 90px;
-  height: 90px;
-  padding: 3px;
-  box-shadow: 0 0 5px $darken-blue;
-  border-radius: 50%;
+  width: 120px;
+  box-shadow: 0 0 3px black;
+  border-radius: 15px;
 }
 
 #info-div {
@@ -56,6 +54,9 @@
   color: darken($light-gray, 60%);
   height: 40px;
   padding: 5px 20px;
+  a {
+    display: none;
+  }
   > span {
     display: flex;
     align-items: center;
@@ -77,6 +78,9 @@
 
 .active-block {
   color: black;
+  a {
+    display: block;
+  }
   > i:before {
     content: "\f077" !important;
   }
@@ -162,10 +166,18 @@
 .story-options {
   display: flex;
   justify-content: center;
-  margin: 30px auto;
+  margin: 10px 0 20px 0;
 }
 
 .event-buttons {
-  padding: 10px;
+  padding: 0;
   font-size: 24px;
+  margin-bottom: 13px;
+  .btn-storymap {
+    margin-left: 0;
+  }
+  .link-red {
+    font-size: 18px;
+    margin-left: 0px;
+  }
 }

@@ -63,14 +63,12 @@ function nextBlock() {
               selected_block = block;
             }
           });
-          console.log(selected_block);
           selected_block.click();
         });
       }
     });
   });
 }
-
 
 
 function navigateBlocks(event) {
@@ -98,6 +96,3 @@ function initNavigation() {
 export { flow, nextBlock, hideAllInfobulles, navigateBlocks, initNavigation };
 
 
-      // let timeline = Array.from(hist_event.parentNode.children);
-      // let position = timeline.indexOf(hist_event);
-      // console.log(position);

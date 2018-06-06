@@ -1,8 +1,2 @@
 document.getElementById('event-<%= @event.id %>').remove();
-
-function displayEvent(eventHTML) {
-  const eventDiv = document.getElementById('info-div');
-  eventDiv.innerHTML = eventHTML;
-}
-
-displayEvent('<em class="default-msg">Click on an event to see details</em>');
+document.getElementById('info-div').remove();

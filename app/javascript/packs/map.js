@@ -26,12 +26,7 @@ if (mapElement) {
           mark.opacity = 1;
         });
         addMarkersMaps(markers);
-        if (selectedMar.length === 1) {
-          map.fitLatLngBounds(selectedMar);
-          map.setZoom(6);
-        } else {
-          map.fitLatLngBounds(selectedMar);
-        }
+        map.fitLatLngBounds(markers);
       } else {
         let selectedMar = markers.filter(mark => mark.blockid === parseInt(block.id, 10));
         selectedMar.forEach(function(mark) {
@@ -77,8 +72,8 @@ if (mapElement) {
 
   function addZone(country, color, coordins) {
     var coords= JSON.parse(coordins);
-    console.log(coords);
     var coord = (coords.type == "Polygon") ? [coords.coordinates] : coords.coordinates;
+    console.log("array of coord:");
     console.log(coord);
     coord.forEach(function(array1) {
       var myCoordinates = [];

@@ -16,7 +16,7 @@ User.destroy_all
 Zone.destroy_all
 # Users
 puts 'Creating users...'
-file = "db/users.yml"
+file = Rails.root.join("db/users.yml")
 users = YAML.load(open(file).read)
 
 users["users"].each do |user|
@@ -30,7 +30,7 @@ puts 'Creating zones...'
 require 'csv'
 
 csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
-filepath    = 'db/clean_countries.csv'
+filepath    = Rails.root.join('db/clean_countries.csv')
 
 CSV.foreach(filepath, csv_options) do |row|
     Zone.create(country: row['admin'], coordinates: row['json_4326'])
@@ -38,7 +38,7 @@ end
 
 puts 'Creating story...'
 
-file = "db/stories.yml"
+file = Rails.root.join("db/stories.yml")
 
 stories = YAML.load(open(file).read)
 stories["stories"].each do |story|
