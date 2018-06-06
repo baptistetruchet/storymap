@@ -26,12 +26,7 @@ if (mapElement) {
           mark.opacity = 1;
         });
         addMarkersMaps(markers);
-        if (selectedMar.length === 1) {
-          map.fitLatLngBounds(selectedMar);
-          map.setZoom(6);
-        } else {
-          map.fitLatLngBounds(selectedMar);
-        }
+        map.fitLatLngBounds(markers);
       } else {
         let selectedMar = markers.filter(mark => mark.blockid === parseInt(block.id, 10));
         selectedMar.forEach(function(mark) {
