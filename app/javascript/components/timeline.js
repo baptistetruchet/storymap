@@ -79,18 +79,12 @@ function navigateBlocks(event) {
     if(document.querySelector('.block[data-index = "-1"]')){
       let previous_block = document.querySelector('.block[data-index = "-1"]');
       previous_block.click();
-    } else if(document.querySelector('.block[data-index = "-2"]')){
-      let previous_block = document.querySelector('.block[data-index = "-2"]');
-      previous_block.click();
     }
   }
 
   if(event.key === "ArrowDown"){
     if(document.querySelector('.block[data-index = "1"]')){
       let next_block = document.querySelector('.block[data-index = "1"]');
-      next_block.click();
-    } else if(document.querySelector('.block[data-index = "2"]')){
-      let next_block = document.querySelector('.block[data-index = "2"]');
       next_block.click();
     }
   }
@@ -101,7 +95,7 @@ function initNavigation() {
 }
 
 
-export { flow, nextBlock, hideAllInfobulles, navigateBlocks, initNavigation};
+export { flow, nextBlock, hideAllInfobulles, navigateBlocks, initNavigation };
 
 
       // let timeline = Array.from(hist_event.parentNode.children);
