@@ -1,7 +1,6 @@
 import GMaps from 'gmaps/gmaps.js';
 import { styles } from '../components/style';
 import { autocomplete } from '../components/autocomplete';
-import { countries } from '../components/countries';
 
 
 const mapElement = document.getElementById('map');
