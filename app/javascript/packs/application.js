@@ -10,12 +10,13 @@ import { rolling } from '../components/sidebar';
 const sidebar = document.getElementById('wrapper-blocks');
 if (sidebar) { rolling(); }
 
-import { flow, nextBlock, initNavigation } from '../components/timeline';
+import { flow, nextBlock, initNavigation, initNavigationEvents } from '../components/timeline';
 const timeline = document.getElementById('timeline');
 if (timeline) {
   flow();
   nextBlock();
   initNavigation();
+  initNavigationEvents();
 }
 
 import { toggleBlock } from '../components/toggle_block';
