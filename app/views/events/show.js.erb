@@ -1,6 +1,6 @@
 function displayEvent(eventHTML) {
-  const eventDiv = document.getElementById('info-div');
-  eventDiv.innerHTML = eventHTML;
+  const editPage = document.querySelector('.edit-page');
+  editPage.insertAdjacentHTML('beforeend', eventHTML);
 }
 
 displayEvent('<%= j render "show_event", event: @event %>');

@@ -17,13 +17,13 @@ if (timeline) {
   nextBlock();
 }
 
-import { edit } from '../components/edit';
-const editDiv = document.querySelector('.story-edit-div');
-if (editDiv) { edit(); }
+import { toggleBlock } from '../components/toggle_block';
+const editPage = document.querySelector('.story-edit-div');
+if (editPage) { toggleBlock(); }
 
-import { closeInfobulle } from '../components/infobulle';
+import { closeInfobulle, showImage } from '../components/infobulle';
 const infobulle = document.querySelector('.infobulle');
-if (infobulle) { closeInfobulle(); }
+if (infobulle) { closeInfobulle(); showImage(); }
 
 import { initializemapzone } from '../components/mapzone';
 const mapcanvas = document.querySelector('#map-canvas');
