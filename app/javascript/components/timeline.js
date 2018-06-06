@@ -113,8 +113,6 @@ function initNavigation() {
   window.addEventListener("keyup", navigateBlocks);
 }
 
-
-
 function getCurrentEvent(){
   const current_timeline = getCurrentTimeline();
   if (current_timeline) {
@@ -145,12 +143,8 @@ function navigateEvents(event) {
   }
 }
 
-
-
 function initNavigationEvents() {
   window.addEventListener("keyup", navigateEvents);
 }
 
 export { flow, nextBlock, hideAllInfobulles, initNavigation, initNavigationEvents };
-
-
