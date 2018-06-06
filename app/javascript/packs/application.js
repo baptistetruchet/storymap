@@ -21,6 +21,6 @@ import { edit } from '../components/edit';
 const editDiv = document.querySelector('.story-edit-div');
 if (editDiv) { edit(); }
 
-import { closeInfobulle } from '../components/infobulle';
+import { closeInfobulle, showImage } from '../components/infobulle';
 const infobulle = document.querySelector('.infobulle');
-if (infobulle) { closeInfobulle(); }
+if (infobulle) { closeInfobulle(); showImage(); }

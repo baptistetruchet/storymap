@@ -5,9 +5,18 @@
     </div>
     <h2><strong><%= event.date.strftime("%B %d, %Y") %></strong> | <%= event.address %></h2>
     <div class="event-content-container">
-      <div><%= image_tag(event.photo_url, class: 'image-infobulle') %></div>
+      <div data-toggle="modal" data-target="#<%= event.id %>"><%= image_tag(event.photo_url, class: 'image-infobulle-thumbnail') %></div>
       <p class="event-description"><%= event.content %></p>
     </div>
     <%# unless event.photo_url.blank? %>
     <%# end %>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="<%= event.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="vertical-alignment-helper">
+      <div class="modal-dialog vertical-align-center" role="document">
+        <%= image_tag(event.photo_url, class: 'image-infobulle') %>
+      </div>
+    </div>
   </div>
