@@ -11,13 +11,24 @@
   border-right: 1px solid darken($light-gray, 30%);
 }
 
+.story-edit-container-head {
+  background-size: cover !important;
+  background-position: center;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+}
+
 .story-head {
   padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  h4 {
-    margin-left: 20px;
+  a {
+    text-decoration: none;
+    color: white;
+    font-family: montserrat;
+    font-weight: 700;
+    font-size: 30px;
   }
 }
 
@@ -145,8 +156,6 @@
   height: 100%;
   img {
     margin-right: 20px;
-    box-shadow: 0 0 2px black;
-    border-radius: 15px;
   }
 }
 
@@ -154,10 +163,12 @@
   max-height: 100%;
   overflow-y: scroll;
   #title {
+    font-family: montserrat;
     font-size: 24px;
     font-weight: 500;
   }
   #event-description{
+    font-family: montserrat;
     font-weight: 100;
     margin-top: 10px;
     font-size: 16px;
@@ -182,3 +193,5 @@
     margin-left: 0px;
   }
 }
+
+
