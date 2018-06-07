@@ -21,6 +21,14 @@ class StoryPolicy < ApplicationPolicy
     record.user == user
   end
 
+  def publish?
+    update?
+  end
+
+  def unpublish?
+    update?
+  end
+
   def destroy?
     record.user == user
   end

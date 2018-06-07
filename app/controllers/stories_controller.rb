@@ -1,6 +1,6 @@
 class StoriesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_story, only: [:show, :edit, :edit_story_details, :update, :destroy, :publish]
+  before_action :set_story, only: [:show, :edit, :edit_story_details, :update, :destroy, :publish, :unpublish]
   before_action :set_markers, only: [:show, :edit]
   before_action :set_zones, only: [:show, :edit]
 
@@ -65,6 +65,12 @@ class StoriesController < ApplicationController
 
   def publish
     @story.published = true
+    @story.save
+    redirect_to edit_story_path(@story)
+  end
+
+  def unpublish
+    @story.published = false
     @story.save
     redirect_to edit_story_path(@story)
   end
