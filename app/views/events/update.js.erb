@@ -17,6 +17,6 @@ document.querySelector('#myoverlay').remove();
     const eventDiv = document.getElementById('info-div');
     eventDiv.innerHTML = eventHTML;
   }
-
+  location.reload();
   displayEvent('<%= j render "show_event", event: @event %>');
 <% end %>
