@@ -259,4 +259,48 @@ stories:
             photo_url: 'https://media.gettyimages.com/photos/germany-free-state-prussia-berlin-anticomintern-pact-italian-foreign-picture-id548790407?k=6&m=548790407&s=612x612&w=0&h=9lsXGcjkENKOsmQdmCi--jIxXiyDxEnJGjtpsnevBGU='
             address: 'Berlin, Germany'
             icon: 'pin_red'
+      - attributes:
+          position: 4
+          title: '1942'
+        events:
+          - title: 'Declaration by United Nations'
+            content: |
+              The Declaration by United Nations, on 1 January 1942, was the basis of the modern UN. The term "United Nations" became synonymous during the war with the Allies and was considered to be the formal name that they were fighting under. The text of the declaration affirmed the signatories' perspective "that complete victory over their enemies is essential to defend life, liberty, independence and religious freedom, and to preserve human rights and justice in their own lands as well as in other lands, and that they are now engaged in a common struggle against savage and brutal forces seeking to subjugate the world".
+              The original signatories were China, Soviet Union, United Kingdom and United States.
+              By the end of the war, 21 other states had acceded to the declaration, including the Philippines, France, every Latin American state except Argentina, and the various independent states of the Middle East and Africa.
+            date: '1942-01-01'
+            photo_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Naciones_Unidas_3.jpg/180px-Naciones_Unidas_3.jpg'
+            address: 'Washington, D.C.'
+            icon: 'pin_blue'
+          - title: 'Fall of Singapore'
+            content: |
+              The Battle of Singapore, also known as the Fall of Singapore, was fought in the South-East Asian theatre of World War II when the Empire of Japan invaded the British stronghold of Singapore—nicknamed the "Gibraltar of the East".
+              Singapore was the major British military base in South-East Asia and was the keystone of British imperial interwar defence planning for South-East Asia as well as the South-West Pacific. The fighting in Singapore lasted from 8 to 15 February 1942 although this was preceded by two months of British resistance as Japanese forces advanced down the Malaya peninsula.
+
+              The battle resulted in the Japanese capture of Singapore and the largest surrender of British-led military personnel in history.[6] About 80,000 British, Indian and Australian troops became prisoners of war, joining 50,000 taken by the Japanese in the earlier Malayan Campaign. The British prime minister, Winston Churchill, called it the "worst disaster" in British military history.
+            date: '1942-02-15'
+            photo_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Surrender_Singapore.jpg/300px-Surrender_Singapore.jpg'
+            address: 'Singapore, Singapour'
+            icon: 'pin_red'
+          - title: 'Battle of Midway'
+            content: |
+              The Battle of Midway was a decisive naval battle in the Pacific Theater of World War II which occurred between 4 and 7 June 1942, only six months after Japan's attack on Pearl Harbor and one month after the Battle of the Coral Sea.
+              The United States Navy defeated an attacking fleet of the Imperial Japanese Navy near Midway Atoll, inflicting devastating damage on the Japanese fleet that proved irreparable.
+              Military historian John Keegan called it "the most stunning and decisive blow in the history of naval warfare."
+            date: '1942-06-04'
+            photo_url: 'http://nationalinterest.org/files/styles/main_image_on_posts/public/main_images/23876676272_39224239bb_b.jpg?itok=SifZkJXQ'
+            address: 'Midway Atoll'
+            icon: 'pin_blue'
+          - title: 'Mass murder of Jewish people at Auschwitz begins.'
+            content: |
+              In 1942 the already-existing concentration and labour camps in the Generalgouvernment were transformed into extermination camps, the task of which was to murder the greatest number of victims in as effective a way as possible.
+              Killing by gas, which had already been used in the euthanasia programme, was now considered by the Nazi planners to be the most suitable way of carrying out the murder of millions of people.
+
+              From the start of 1942 on, extermination centres were gradually created, equipped with permanent gas chambers. Some of the staff who had gained experience in the euthanasia programme was now transferred to the camps designated for the mass murder of Jews, where they set up the gas chambers.
+              In February they were installed in Bełżec, in May in Sobibor, in July in Treblinka and in Majdanek they were in operation from September 1942. These gas chambers were usually disguised as showers, and used exhaust fumes to kill. The whole operation was named Operation Reinhard, after Reinhard Heydrich, who had been assassinated by Czechoslovak parachutists in Prague on the 27th of May 1942.
+              It did not end until the close of 1943, when the extermination camps at Bełżec, Sobibor and Treblinka were closed. In all, over 1.7 million Jews were murdered in them while they were in operation.
+            date: '1942-02-01'
+            photo_url: 'https://i.ytimg.com/vi/GiFDXQJgQtk/maxresdefault.jpg'
+            address: 'Oświęcim, Pologne'
+            icon: 'pin_red'
 
