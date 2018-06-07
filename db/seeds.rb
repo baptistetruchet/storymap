@@ -25,7 +25,7 @@ end
 puts "#{User.count} users have been created"
 
 # Stories
-puts 'Creating zones...'
+puts 'Creating country zones...'
 
 require 'csv'
 
@@ -55,9 +55,17 @@ stories["stories"].each do |story|
 
       if block_details.key?('events')
         block_details['events'].each do |event_details|
-          event = Event.new(event_details)
+          event = Event.new(event_details['attributes'])
           event.block = block
           event.save!
+
+          # if event_details.key?('eventzones')
+          #   event_details['eventzones'].each do |eventzone_details|
+          #     eventzone = EventZone.new(eventzone_details['attributes'])
+          #     eventzone.event = event
+          #     eventzone.save!
+          #   end
+          # end
         end
       end
     end
