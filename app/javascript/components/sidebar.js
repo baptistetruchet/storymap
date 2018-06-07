@@ -54,9 +54,17 @@ function setOpacity() {
   });
 }
 
+function closeModal() {
+  let btn_explore = document.querySelector('.btn-explore-modal');
+  btn_explore.addEventListener("click",  (event) => {
+    $('#exampleModal').modal('hide');
+  });
+}
+
 function rolling() {
   setOpacity();
   setup();
+  closeModal();
 }
 
 const sidebar = document.getElementById('wrapper-blocks');
