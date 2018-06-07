@@ -8,6 +8,7 @@ class ZonesController < ApplicationController
     @zone = Zone.new(zone_params)
     authorize @zone
     @zone.save
+    redirect_to dashboard_path
   end
 
   private

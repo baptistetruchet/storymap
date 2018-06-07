@@ -10,10 +10,10 @@
         <%= f.input :coordinates, as: :hidden, input_html: { class: 'myclass-create-story'} %>
       <div id="map-canvas"></div>
       <div class="lngLat"></div>
-      <% end %>
         <div class= "zone-button">
-          <%= link_to "Create Zone", dashboard_path, class: "btn-lg btn-storymap btn-storymap-green text-center zone-button", style: "display: block" %>
+          <%= f.submit class: 'btn-lg btn-storymap btn-storymap-green text-center zone-button', style: 'display: block'%>
         </div>
+      <% end %>
     </div>
   </div>
 </div>
