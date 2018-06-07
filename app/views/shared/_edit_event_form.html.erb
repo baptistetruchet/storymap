@@ -14,7 +14,13 @@
         <%= f.input :address, label: false, placeholder: "ADDRESS", input_html: { class: 'myclass address-input' } %>
         <%= f.input :icon, as: :hidden, label: false, placeholder: "ICON", input_html: { class: 'myclass' } %>
         <div id="pin_selector">
-          <%= image_tag("pin_blue", id: "pin_blue", class: "pin_option selected-pin") %> <%= image_tag("pin_blue_jeans", id: "pin_blue_jeans", class: "pin_option") %> <%= image_tag("pin_green", id: "pin_green", class: "pin_option") %><%= image_tag("pin_gris", id: "pin_gris", class: "pin_option") %> <%= image_tag("pin_orange", id: "pin_orange", class: "pin_option") %><%= image_tag("pin_red", id: "pin_red", class: "pin_option") %><%= image_tag("pin_yellow", id: "pin_yellow", class: "pin_option") %>
+          <%= image_tag("pin_blue.png", id: "pin_blue", class: "pin_option selected-pin") %>
+          <%= image_tag("pin_blue_jeans.png", id: "pin_blue_jeans", class: "pin_option") %>
+          <%= image_tag("pin_green.png", id: "pin_green", class: "pin_option") %>
+          <%= image_tag("pin_gris.png", id: "pin_gris", class: "pin_option") %>
+          <%= image_tag("pin_orange.png", id: "pin_orange", class: "pin_option") %>
+          <%= image_tag("pin_red.png", id: "pin_red", class: "pin_option") %>
+          <%= image_tag("pin_yellow.png", id: "pin_yellow", class: "pin_option") %>
         </div>
         <div class="zone-add-remove">
           <%= f.simple_fields_for :event_zones do |event_zone| %>
