@@ -57,11 +57,12 @@ if (mapElement) {
       });
       clickedEvt[0].opacity = 1;
       addMarkersMaps(selectedMar);
-      let totalLng = Math.abs(map.getBounds().b.f - map.getBounds().b.b);
+      let totalLng = ((map.getBounds().b.f - map.getBounds().b.b) % 360);
+      if (totalLng <= 0) {totalLng += 360};
       let clickedEvtDecal = clickedEvt
-      clickedEvtDecal[0].lng = clickedEvt[0].lng - (totalLng/4)
+      clickedEvtDecal[0].lng = clickedEvt[0].lng - (totalLng/3.5)
       map.panTo(clickedEvtDecal[0]);
-      clickedEvtDecal[0].lng = clickedEvt[0].lng + (totalLng/4)
+      clickedEvtDecal[0].lng = clickedEvt[0].lng + (totalLng/3.5)
     });
   });
 
