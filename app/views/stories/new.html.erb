@@ -11,7 +11,9 @@
         <%= f.input :title, label: false, placeholder: "TITLE", input_html: { class: 'myclass-create-story '} %>
         <%= f.input :description, label: false, placeholder: "DESCRIPTION", input_html: { class: 'myclass-create-story'} %>
         <%= f.input :photo_url, label: false, placeholder: "PHOTO URL", input_html: { class: 'myclass-create-story'} %>
-        <%= f.submit "CREATE", class: "btn-lg btn-storymap btn-storymap-blue text-center" %>
+        <div class="story-button">
+          <%= f.submit "CREATE", class: "btn-lg btn-storymap btn-storymap-blue text-center" %>
+        </div>
       <% end %>
     </div>
   </div>
