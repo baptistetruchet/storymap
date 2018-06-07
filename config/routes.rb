@@ -21,5 +21,6 @@ Rails.application.routes.draw do
 
   get "/dashboard", to: "pages#dashboard"
   get "/edit_story/:id", to: "stories#edit_story_details", as: 'edit_story_details'
+  patch "/stories/:id/publish", to: "stories#publish", as: 'publish_story'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
