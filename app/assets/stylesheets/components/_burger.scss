@@ -7,7 +7,16 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  .story-title {
+    font-family: montserrat;
+    font-size: 1.2em;
+    font-weight: bold;
+    position: relative;
+    bottom: 3px;
+
+  }
 }
+
 
 .burger-fixed-top {
   @extend .navbar-fixed-top;
