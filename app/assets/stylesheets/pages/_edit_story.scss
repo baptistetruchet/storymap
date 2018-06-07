@@ -77,7 +77,7 @@
     > span {
       font-size: 20px;
       margin-left: 10px;
-      font-weight: lighter;
+      font-weight: bolder;
     }
   }
   &:hover {
@@ -99,7 +99,7 @@
 
 .default-msg {
   color: darken($light-gray, 60%);
-  font-weight: lighter;
+  font-weight: bolder;
 }
 
 
@@ -145,6 +145,7 @@
   right: 0;
   bottom: 0;
   z-index: 98;
+  font-weight: bolder;
 }
 
 .event-img {
@@ -193,5 +194,6 @@
     margin-left: 0px;
   }
 }
+
 
 

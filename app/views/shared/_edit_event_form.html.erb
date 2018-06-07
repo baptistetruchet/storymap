@@ -10,7 +10,7 @@
         <%= f.input :title, label: false, placeholder: "TITLE", input_html: { class: 'myclass' } %>
         <%= f.input :content, label: false, placeholder: "CONTENT", input_html: { class: 'myclass' } %>
         <%= f.input :date, as: :date, html5: true, label: false, placeholder: "DATE", input_html: { class: 'myclass' } %>
-        <%= f.input :photo_url, label: false, placeholder: "URL PHOTO", input_html: { class: 'myclass' } %>
+        <%= f.input :photo_url, label: false, placeholder: "PHOTO URL", input_html: { class: 'myclass' } %>
         <%= f.input :address, label: false, placeholder: "ADDRESS", input_html: { class: 'myclass address-input' } %>
         <%= f.input :icon, as: :hidden, label: false, placeholder: "ICON", input_html: { class: 'myclass' } %>
         <div id="pin_selector">
@@ -28,6 +28,7 @@
           <% end %>
           <div class="links">
             <%= link_to_add_association button_tag('Add a new Zone', type: "button", class: "btn-storymap btn-storymap-blue text-center"), f, :event_zones %>
+            <%= link_to "Want to add a custom zone?", new_zone_path %>
           </div>
         </div>
         <div class="text-right">

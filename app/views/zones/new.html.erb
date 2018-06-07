@@ -1,12 +1,19 @@
-<div class="container">
-  <h1>Create a custom zone</h1>
-  <!-- <button id="clipboard-btn" onclick="copyToClipboard(document.getElementById('info').innerHTML)">Copy to Clipboard </button> -->
-  <!-- <textarea  id="info" cols="30" rows="10"></textarea> -->
-  <%= simple_form_for @zone do |f| %>
-    <%= f.input :country, as: :string, :label => "Custom Zone title" %>
-    <%= f.input :coordinates, as: :hidden %>
-  <div id="map-canvas"></div>
-  <div class="lngLat"></div>
-    <%= f.submit class: "btn btn-warning" %>
-  <% end %>
+<%= render 'shared/navbar' %>
+
+<div class="wrapper-new">
+  <div class="container">
+    <h1 class="text-font">Create a custom zone</h1>
+
+    <div class="form-container">
+      <%= simple_form_for @zone do |f| %>
+        <%= f.input :country, as: :string, label: false, placeholder: "CUSTOM ZONE TITLE", input_html: { class: 'myclass-create-story '} %>
+        <%= f.input :coordinates, as: :hidden, input_html: { class: 'myclass-create-story'} %>
+      <div id="map-canvas"></div>
+      <div class="lngLat"></div>
+      <% end %>
+        <div class= "zone-button">
+          <%= link_to "Create Zone", dashboard_path, class: "btn-lg btn-storymap btn-storymap-green text-center zone-button", style: "display: block" %>
+        </div>
+    </div>
+  </div>
 </div>

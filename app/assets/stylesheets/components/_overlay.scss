@@ -52,7 +52,7 @@
 .overlay input[type=text] {
   color: black;
   font-size: 28px;
-  border: 1px solid lightgray;
+  border-bottom: 1px solid black;
   float: left;
   // width: 90%;
   height: 72px;
@@ -64,7 +64,12 @@
   &:focus {
     box-shadow: none;
   }
+  &::placeholder {
+    color: rgb(10, 9, 9);
+    opacity: 1;
+  }
 }
+
 
 .overlay textarea {
   color: black;
@@ -74,10 +79,14 @@
   height: 100px;
   background: none;
   margin-bottom: 40px;
-  border: 1px solid lightgray;
+  border: 1px solid black;
   border-radius: 4px;
   &:focus {
     box-shadow: none;
+  }
+  &::placeholder {
+    color: rgb(10, 9, 9);
+    opacity: 1;
   }
 }
 
@@ -87,6 +96,7 @@
 
 .overlay input[type=url] {
   background: none;
+  border-bottom: 1px solid black;
   color: black;
   font-size: 18px;
   margin-top: 20px;
@@ -95,11 +105,21 @@
   &:focus {
     box-shadow: none;
   }
+  &::placeholder {
+    color: rgb(10, 9, 9);
+    opacity: 1;
+  }
 }
 
 .overlay input[type=date] {
+  border-bottom: 1px solid black;
+  color: black;
   &:focus {
     box-shadow: none;
+  }
+  &::placeholder {
+    color: rgb(10, 9, 9);
+    opacity: 1;
   }
 }
 
@@ -115,7 +135,7 @@
 
 #event_date {
   background: none;
-  color: lightgray;
+  color: black;
   font-size: 20px;
 }
 
