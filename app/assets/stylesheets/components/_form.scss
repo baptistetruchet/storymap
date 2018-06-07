@@ -21,3 +21,32 @@
 .address-input {
   font-size: 35px;
 }
+
+
+.zone-button {
+  margin-top: 50px;
+  margin-left: 808px;
+  width: 300px;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+}
+
+.form-container input {
+  border-bottom: 1px solid black !important;
+  font-weight: bolder;
+  &::placeholder {
+    color: black;
+    opacity: 1;
+    font-weight: bolder;
+  }
+}
+
+.form-container textarea {
+  border-bottom: 1px solid black !important;
+  font-weight: bolder;
+  &::placeholder {
+    color: black;
+    opacity: 1;
+    font-weight: bolder;
+  }
+}
