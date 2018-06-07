@@ -153,24 +153,100 @@ stories:
             date: '1830-01-01'
             photo_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Victor_Hugo-Hernani%281%29.jpg/1200px-Victor_Hugo-Hernani%281%29.jpg'
             address: 'Bayonne, Spain'
-  # - attributes:
-  #     title: 'World War 2'
-  #     published: true
-  #     description: 'Deadliest conflict in the world history'
-  #   blocks:
-  #     - attributes:
-  #         position: 1
-  #         title: '1937'
-  #       events:
-  #         - attributes:
-  #             title: 'Second Sino-Japanese War'
-  #             content: |
-  #               'The Second Sino-Japanese War was a military conflict fought primarily between the Republic of China and the Empire of Japan from July 7, 1937, to September 2, 1945. It began with the Marco Polo Bridge Incident in 1937 in which a dispute between Japanese and Chinese troops escalated into a battle.'
-  #             date: '1937-07-07'
-  #             photo_url: 'https://ne1.wac.edgecastcdn.net/80281E/ll_as_u/thumbs/2017/Jan/24/4a0b9f5cab20_sf_3.jpg'
-  #             address: 'Beijing, China'
-  #             icon: 'pin_blue'
-  #           eventzones:
-  #             - attributes:
-  #                 color: "#5b00ff"
-  #                 zone_id: 193
+  - attributes:
+      title: 'World War 2'
+      published: true
+      description: 'Deadliest conflict in the world history'
+    blocks:
+      - attributes:
+          position: 1
+          title: '1937'
+        events:
+          - title: 'Start of second Sino-Japanese War'
+            content: |
+              'The Second Sino-Japanese War was a military conflict fought primarily between the Republic of China and the Empire of Japan from July 7, 1937, to September 2, 1945. It began with the Marco Polo Bridge Incident in 1937 in which a dispute between Japanese and Chinese troops escalated into a battle.'
+            date: '1937-07-07'
+            photo_url: 'https://ne1.wac.edgecastcdn.net/80281E/ll_as_u/thumbs/2017/Jan/24/4a0b9f5cab20_sf_3.jpg'
+            address: 'Beijing, China'
+            icon: 'pin_blue'
+          - title: 'Japanese troops take Shanghai'
+            content: |
+              'The Battle of Shanghai was the first of the twenty-two major engagements fought between the National Revolutionary Army (NRA) of the Republic of China (ROC) and the Imperial Japanese Army (IJA) of the Empire of Japan during the Second Sino-Japanese War. It was one of the largest and bloodiest battles of the entire war, described as "Stalingrad on the Yangtze".'
+            date: '1937-09-05'
+            photo_url: 'http://warfarehistorynetwork.com/wp-content/uploads/The-Fall-Of-Shanghai-Prelude-To-The-Rape-Of-Nanking-WWII-8.jpg'
+            address: 'Shanghai'
+            icon: 'pin_blue'
+          - title: 'Hitler starts planning expansion of the German Empire'
+            content: |
+              'In the Reich Chancellery, Adolf Hitler holds a secret meeting and states his plans for acquiring "living space" for the German people.'
+            date: '1937-09-05'
+            photo_url: 'http://www.dandebat.dk/images/1174p.jpg'
+            address: 'Berlin, Germany'
+            icon: 'pin_red'
+      - attributes:
+          position: 2
+          title: '1939'
+        events:
+          - title: 'Molotov–Ribbentrop Pact'
+            content: |
+              'Molotov–Ribbentrop Pact signed between Germany and the Soviet Union, a neutrality treaty that also agreed to division of spheres of influence (Finland, Estonia, Latvia, eastern Poland and Bessarabia (today Moldova), north-east province of Romania to the Soviet Union; Lithuania and western Poland to Germany). Its annex reassigns Lithuania to the Soviet Union.'
+            date: '1939-08-23'
+            photo_url: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Bundesarchiv_Bild_183-H27337%2C_Moskau%2C_Stalin_und_Ribbentrop_im_Kreml.jpg'
+            address: 'Moscow, Russia'
+            icon: 'pin_red'
+          - title: 'Official beginning of WWII'
+            content: |
+              'Opening shots of World War II and Invasion of Poland: At 4:45am Central European Time, under cover of darkness, the German WW1-era battleship Schleswig-Holstein quietly slips her moorings at her wharf in Danzig harbor, drifts into the center of the channel, and commences firing on the fortress Westerplatte, a Polish army installation at the northeastern mouth of the port of the internationalized Free City of Danzig. Five minutes previously the bombing of Wieluń in the western part of Poland had begun. Shock-troops of the German Wehrmacht begin crossing the border into Poland. Bombing of Wieluń (two air-raids) follows.'
+            date: '1939-09-01'
+            photo_url: 'https://thegadabouttown.files.wordpress.com/2015/09/september-1-1939-new-york-times-001.jpg?w=810&h=518&crop=1'
+            address: 'Danzig, Poland'
+            icon: 'pin_red'
+          - title: 'The Allies declare War on Nazi Germany'
+            content: |
+              'The United Kingdom, France, New Zealand, Australia and India (by its Viceroy) declare war on Nazi Germany. Prime Minister of Canada Mackenzie King, in English, and Justice Minister Ernest Lapointe, in French, give an international radio address stating the Dominion's intention to declare war also.
+              United States President Franklin D. Roosevelt advocates neutrality in a nationwide radio address.'
+            date: '1939-09-03'
+            photo_url: 'https://i.ytimg.com/vi/yaCOwfA_ti8/hqdefault.jpg'
+            address: 'London, England'
+            icon: 'blue_red'
+          - title: 'Nazi Germany and the Soviet Union agree on a division of Poland.'
+            content: |
+              'Nazi Germany and the Soviet Union agree on a division of Poland after their invasion.'
+            date: '1939-09-28'
+            photo_url: 'https://i.ytimg.com/vi/yaCOwfA_ti8/hqdefault.jpg'
+            address: 'London, England'
+            icon: 'blue_red'
+          - title: 'Einstein–Szilárd letter'
+            content: |
+              'The Einstein–Szilárd letter is delivered to President of the United States Franklin D. Roosevelt advising of the potential use of uranium to construct an atomic bomb, leading to the Manhattan Project.'
+            date: '1939-10-11'
+            photo_url: 'http://blog.nuclearsecrecy.com/wp-content/uploads/2014/02/1946-Einstein-Time-magazine-detail.jpg'
+            address: 'Washington, USA'
+            icon: 'pin_blue'
+      - attributes:
+          position: 3
+          title: '1941'
+        events:
+          - title: 'Revised Anti-Comintern Pact'
+            content: |
+              'Initially signed in 1936 between Germany and Japan, the Anti-Comintern Pact was revised in 1941, after Germany's assault on the Soviet Union that commenced with Operation Barbarossa and on November 25 its renewal for further five years was undertaken. This time the signatories were:
+              - Bulgaria
+              - Croatia
+              - Denmark (occupied by Germany since April 1940)
+              - Finland (co-belligerent against the USSR from 25 June 1941)
+              - Germany
+              - Hungary
+              - Italy
+              - Japan
+              - Manchukuo (Japanese puppet state in NorthEast China and Mongolia)
+              - Reorganized National Government of China  (Japanese puppet state)
+              - Romania
+              - Slovakia
+              - Spain
+              - Turkey
+              - El Savador'
+            date: '1941-09-25'
+            photo_url: 'https://media.gettyimages.com/photos/germany-free-state-prussia-berlin-anticomintern-pact-italian-foreign-picture-id548790407?k=6&m=548790407&s=612x612&w=0&h=9lsXGcjkENKOsmQdmCi--jIxXiyDxEnJGjtpsnevBGU='
+            address: 'Berlin, Germany'
+            icon: 'pin_red'
+
