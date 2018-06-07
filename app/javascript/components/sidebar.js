@@ -63,7 +63,10 @@ const sidebar = document.getElementById('wrapper-blocks');
 if (sidebar) {
   window.onload = function clickOnFirstBlock() {
     let first_block = document.querySelector('.block');
+    let modal_on_load = document.querySelector('.modal-show-onload');
+    console.log(modal_on_load);
     first_block.click();
+    $('#exampleModal').modal('show');
   };
 }
 
