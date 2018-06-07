@@ -151,3 +151,18 @@
     letter-spacing: 1px;
   }
 }
+
+.gif-container {
+  width: 659px;
+  height: 350px;
+  border-radius: 13px;
+  background-size: cover;
+  background-position: center;
+}
+
+.step img {
+  position: absolute;
+  height: 360px;
+  width: 659px;
+  border-radius: 15px;
+}
