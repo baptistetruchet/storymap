@@ -19,7 +19,11 @@
       </div>
       <div class="story-options">
         <%= link_to "Show", story_path(@story), class: 'btn-storymap btn-storymap-green text-center' %>
-        <%= link_to "Publish", story_path(@story), class: 'btn-storymap btn-storymap-blue text-center' %>
+        <% if @story.published? %>
+          <%= link_to "Unpublish", unpublish_story_path(@story), method: :patch, class: 'btn-storymap btn-storymap-red text-center' %>
+        <% else %>
+          <%= link_to "Publish", publish_story_path(@story), method: :patch, class: 'btn-storymap btn-storymap-blue text-center' %>
+        <% end %>
       </div>
     </div>
     <div class="full-list">
