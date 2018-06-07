@@ -3,6 +3,7 @@ stories:
       title: 'Art History'
       published: true
       description: 'Some infos about art history'
+      photo_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Michelangelo_-_Creation_of_Adam.jpg/330px-Michelangelo_-_Creation_of_Adam.jpg'
     blocks:
       - attributes:
           position: 1
@@ -156,6 +157,7 @@ stories:
   - attributes:
       title: 'World War 2'
       published: true
+      photo_url: 'https://qph.fs.quoracdn.net/main-qimg-dd7a1f6d4897fa6fd595879307bcfa8d'
       description: 'Deadliest conflict in the world history'
     blocks:
       - attributes:
@@ -189,39 +191,47 @@ stories:
         events:
           - title: 'Molotov–Ribbentrop Pact'
             content: |
-              'Molotov–Ribbentrop Pact signed between Germany and the Soviet Union, a neutrality treaty that also agreed to division of spheres of influence (Finland, Estonia, Latvia, eastern Poland and Bessarabia (today Moldova), north-east province of Romania to the Soviet Union; Lithuania and western Poland to Germany). Its annex reassigns Lithuania to the Soviet Union.'
+              Molotov–Ribbentrop Pact signed between Germany and the Soviet Union, a neutrality treaty that also agreed to division of spheres of influence (Finland, Estonia, Latvia, eastern Poland and Bessarabia (today Moldova), north-east province of Romania to the Soviet Union; Lithuania and western Poland to Germany). Its annex reassigns Lithuania to the Soviet Union.
             date: '1939-08-23'
             photo_url: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Bundesarchiv_Bild_183-H27337%2C_Moskau%2C_Stalin_und_Ribbentrop_im_Kreml.jpg'
             address: 'Moscow, Russia'
             icon: 'pin_red'
           - title: 'Official beginning of WWII'
             content: |
-              'Opening shots of World War II and Invasion of Poland: At 4:45am Central European Time, under cover of darkness, the German WW1-era battleship Schleswig-Holstein quietly slips her moorings at her wharf in Danzig harbor, drifts into the center of the channel, and commences firing on the fortress Westerplatte, a Polish army installation at the northeastern mouth of the port of the internationalized Free City of Danzig. Five minutes previously the bombing of Wieluń in the western part of Poland had begun. Shock-troops of the German Wehrmacht begin crossing the border into Poland. Bombing of Wieluń (two air-raids) follows.'
+              Opening shots of World War II and Invasion of Poland: At 4:45am Central European Time, under cover of darkness, the German WW1-era battleship Schleswig-Holstein quietly slips her moorings at her wharf in Danzig harbor, drifts into the center of the channel, and commences firing on the fortress Westerplatte, a Polish army installation at the northeastern mouth of the port of the internationalized Free City of Danzig. Five minutes previously the bombing of Wieluń in the western part of Poland had begun. Shock-troops of the German Wehrmacht begin crossing the border into Poland. Bombing of Wieluń (two air-raids) follows.
             date: '1939-09-01'
             photo_url: 'https://thegadabouttown.files.wordpress.com/2015/09/september-1-1939-new-york-times-001.jpg?w=810&h=518&crop=1'
             address: 'Danzig, Poland'
             icon: 'pin_red'
           - title: 'The Allies declare War on Nazi Germany'
             content: |
-              'The United Kingdom, France, New Zealand, Australia and India (by its Viceroy) declare war on Nazi Germany. Prime Minister of Canada Mackenzie King, in English, and Justice Minister Ernest Lapointe, in French, give an international radio address stating the Dominion's intention to declare war also.
-              United States President Franklin D. Roosevelt advocates neutrality in a nationwide radio address.'
+              The United Kingdom, France, New Zealand, Australia and India (by its Viceroy) declare war on Nazi Germany. Prime Minister of Canada Mackenzie King, in English, and Justice Minister Ernest Lapointe, in French, give an international radio address stating the Dominion's intention to declare war also
+              United States President Franklin D. Roosevelt advocates neutrality in a nationwide radio address.
             date: '1939-09-03'
             photo_url: 'https://i.ytimg.com/vi/yaCOwfA_ti8/hqdefault.jpg'
             address: 'London, England'
-            icon: 'blue_red'
+            icon: 'pin_blue'
+          - title: 'URSS and Mongolia win the Battles of Khalkhyn Gol '
+            content: |
+              The Battles of Khalkhyn Gol were the decisive engagements of the undeclared Soviet–Japanese border conflicts fought among the Soviet Union, Mongolia, Japan and Manchukuo in 1939.
+              he battles resulted in the defeat of the Japanese Sixth Army resulting in the signature of a Ceasefire.
+            date: '1939-09-16'
+            photo_url: 'https://upload.wikimedia.org/wikipedia/commons/9/91/MNRA_soldiers_1939.jpg'
+            address: 'Khalkh River, Mongolia'
+            icon: 'pin_orange'
           - title: 'Nazi Germany and the Soviet Union agree on a division of Poland.'
             content: |
-              'Nazi Germany and the Soviet Union agree on a division of Poland after their invasion.'
+              Nazi Germany and the Soviet Union agree on a division of Poland after their invasion.
             date: '1939-09-28'
-            photo_url: 'https://i.ytimg.com/vi/yaCOwfA_ti8/hqdefault.jpg'
-            address: 'London, England'
-            icon: 'blue_red'
+            photo_url: 'https://upload.wikimedia.org/wikipedia/commons/3/30/Wrzesien2.jpg'
+            address: 'Warsaw, poland'
+            icon: 'pin_red'
           - title: 'Einstein–Szilárd letter'
             content: |
-              'The Einstein–Szilárd letter is delivered to President of the United States Franklin D. Roosevelt advising of the potential use of uranium to construct an atomic bomb, leading to the Manhattan Project.'
+              The Einstein–Szilárd letter is delivered to President of the United States Franklin D. Roosevelt advising of the potential use of uranium to construct an atomic bomb, leading to the Manhattan Project.
             date: '1939-10-11'
             photo_url: 'http://blog.nuclearsecrecy.com/wp-content/uploads/2014/02/1946-Einstein-Time-magazine-detail.jpg'
-            address: 'Washington, USA'
+            address: 'Washington D.C., USA'
             icon: 'pin_blue'
       - attributes:
           position: 3

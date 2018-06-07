@@ -57,9 +57,19 @@ if (mapElement) {
       });
       clickedEvt[0].opacity = 1;
       addMarkersMaps(selectedMar);
-      let totalLng = Math.abs(map.getBounds().b.f - map.getBounds().b.b);
+      let totalLng = ((map.getBounds().b.f - map.getBounds().b.b) % 360);
+      if (totalLng < 0) {totalLng += 360};
+      console.log('Math.abs(map.getBounds().b.f - bb');
+      console.log(map.getBounds().b.f);
+      console.log(map.getBounds().b.b);
       let clickedEvtDecal = clickedEvt
+      console.log('initial lng');
+      console.log(clickedEvt[0].lng);
       clickedEvtDecal[0].lng = clickedEvt[0].lng - (totalLng/4)
+      console.log('decale');
+      console.log(totalLng);
+      console.log('center lng');
+      console.log(clickedEvtDecal[0].lng);
       map.panTo(clickedEvtDecal[0]);
       clickedEvtDecal[0].lng = clickedEvt[0].lng + (totalLng/4)
     });
