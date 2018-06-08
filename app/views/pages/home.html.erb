@@ -9,7 +9,7 @@
       <div class="head-text">
         <h1>Tell Stories</h1>
         <h3>through Time and Space</h3>
-        <p>Create dynamic illustrations using a map and a timeline simultaneously and supercharge your storytelling.</p>
+        <p>Use StoryMap to make your story visual</p>
       </div>
       <div class="head-link">
         <%= link_to "Start building your StoryMap", new_story_path, class: "btn-lg btn-storymap btn-storymap-green text-center" %>
@@ -24,6 +24,9 @@
   <div id="wrapper-blue">
     <div class="container-media">
       <div class="media-top"></div>
+      <div class="gif-container main-image">
+        <%= image_tag "gif 4.gif", width: 980, height: 549 %>
+      </div>
       <div class="media-bottom"></div>
     </div>
     <%= image_tag "wave.svg", id: "wave" %>
@@ -37,13 +40,15 @@
         <h3>1. Create your StoryMap</h3>
         <p>Pick a story that you're passionate about and illustrate it with a picture of your choice.</p>
       </div>
-      <div class="gif-container" style="background-image: url(<%= image_path('Gif 1.gif') %>)">
+      <div class="gif-container">
         <%= image_tag "Gif 1.gif" %>
       </div>
     </div>
     <div class="step">
       <%= image_tag "step_2.svg" %>
-      <div class="gif-container"></div>
+      <div class="gif-container">
+        <%= image_tag "Gif 2.gif" %>
+      </div>
       <div class="step-text">
         <h3>2. Add blocks to your story</h3>
         <p>Divide your story into main sections and choose their order of appearance.</p>
@@ -53,9 +58,11 @@
       <%= image_tag "step_3.svg" %>
       <div class="step-text">
         <h3>3. Add events inside your blocks</h3>
-        <p>Fill your blocks with mindblowing events and customize your map with a variety of cool pins and zones. Now take a look at the final result.</p>
+        <p>Fill your blocks with mindblowing events and customize your map with a variety of cool features. Now take a look at the final result.</p>
       </div>
-      <div class="gif-container"></div>
+      <div class="gif-container">
+        <%= image_tag "gif 3.gif" %>
+      </div>
     </div>
     <div id="last" class="step">
       <%= image_tag "step_4.svg" %>
